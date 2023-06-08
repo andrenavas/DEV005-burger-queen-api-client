@@ -1,4 +1,22 @@
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+:root {
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-weight: 400;
+  size: 24px;
+
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-weight: 400;
+  size: 24px;
+}
+
+/*:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -27,8 +45,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height:root {
-: 100vh;
+  min-height: 100vh;
 }
 
 h1 {
@@ -66,4 +83,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-} */
+}*/

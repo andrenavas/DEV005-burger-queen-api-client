@@ -5,13 +5,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Login from './components/login.jsx'
-import Waiter from './components/waiter.jsx'
+// import Waiter from './components/waiter.jsx'
 function App() {
   return (
     <>
-    <h1>Pagina de Login</h1>
     <Login/>
-    <Waiter/>
+   {/* <Waiter/>*/}
     </>
   )
 }
