@@ -10,6 +10,19 @@ const Login = () => {
     console.log(data)
     console.log(data.email)
     console.log(data.password)
+
+    fetch('http://localhost:8080/login', {
+
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify({ email: data.email, password: data.password }), // data can be `string` or {object}!
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error))
+
   }
   return (
     <>
