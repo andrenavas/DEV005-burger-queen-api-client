@@ -1,11 +1,11 @@
 import './login.css'
 import BQLogo from '../assets/img/BQlogo.png'
 import FondoBQIpad from '../assets/img/FondoBQIpad.png'
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 const Login = () => {
   const { register, errors, handleSubmit } = useForm();
-
+  const navigateTo = useNavigate();
   const onSubmit = (data) => {
     console.log(data)
     console.log(data.email)
@@ -20,10 +20,14 @@ const Login = () => {
       }
     })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => {
+        if(data.user.role === 'waiter'){
+          navigateTo('/waiter');
+        }
+      })
       .catch(error => console.error('Error:', error))
-
   }
+
   return (
     <>
       <div style={{
