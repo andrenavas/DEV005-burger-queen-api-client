@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
-:root {
+
+/* :root {
   font-family: 'Mochiy Pop One', sans-serif;
   font-weight: 400;
   size: 24px;
 
-}
+} */
 
 body {
-  margin: 0;/*
-  min-width: 320px;
-  min-height: 100vh;*/
+  margin: 0;
+  /* min-width: 320px;
+  min-height: 100vh; */
   font-family: 'Mochiy Pop One', sans-serif;
   font-weight: 400;
-  size: 24px;
+  /* size: 24px; */
 }
 
 /*:root {
