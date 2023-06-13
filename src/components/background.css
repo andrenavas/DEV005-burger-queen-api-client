@@ -8,6 +8,7 @@
   justify-content: center;
 }
 .up-options{
+  margin: 0 auto;
   width: 95vw;
   height: 95vh;
   /* background-color: white; */
@@ -17,8 +18,12 @@
 }
 
 .nav-waiter{
-  width: 95vw;
+  margin: 0 auto;
+  /* width: 95vw; */
   height: 20%;
   background-color: white;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 16px 16px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
