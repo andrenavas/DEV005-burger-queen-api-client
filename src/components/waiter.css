@@ -2,3 +2,52 @@ h1 {
   font-size: large;
   color: black;
 }
+.background{
+  position: absolute;
+}
+
+.section-waiter{
+  border: 5px solid yellow;
+}
+.waiter-nav{
+  position: relative;
+  margin: 0 auto;
+  width: 95vw;
+  height: 20%;
+  /* background-color: violet; */
+}
+
+.logos{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.waiterIcon{
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 35px 35px;
+}
+
+.title{
+margin: 35px 225px;
+}
+
+
+.BQLogo{
+  width: 100px;
+  height: 100px;
+}
+.hrsIcon{
+  position: relative;
+  width: 45px;
+  height: 45px;
+  margin-right: 20px;
+}
+
+.container-logout{
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}

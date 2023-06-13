@@ -1,11 +1,20 @@
 import './login.css'
 import BQLogo from '../assets/img/BQlogo.png'
 import FondoBQIpad from '../assets/img/FondoBQIpad.png'
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+
 const Login = () => {
-  const { register, errors, handleSubmit } = useForm();
+  const [errorMessage, setErrorMessage] = useState('');
+  const { register, handleSubmit, reset } = useForm();
+  // fn que permite el ruteado dentro de la interfaz
   const navigateTo = useNavigate();
+  // información del usuario que ingresa almacena a través localStorage
+  const token = localStorage.getItem('accessToken');
+  const userEmail = localStorage.getItem('userEmail');
+  const userRole = localStorage.getItem('userRole');
+  // fn que envía el formulario a la api
   const onSubmit = (data) => {
     console.log(data)
     console.log(data.email)
@@ -13,69 +22,81 @@ const Login = () => {
 
     fetch('http://localhost:8080/login', {
 
-      method: 'POST', // or 'PUT'
+      method: 'POST',
       body: JSON.stringify({ email: data.email, password: data.password }), // data can be `string` or {object}!
       headers: {
         'Content-Type': 'application/json'
       }
     })
-      .then(response => response.json())
-      .then(data => {
-        if(data.user.role === 'waiter'){
-          navigateTo('/waiter');
-        }
+    .then(async (response) => {
+      if(response.ok){
+        return response.json();
+      }
+      throw new Error(await response.json());
+    })
+    .then((data) => {
+      if(data.user.role === 'waiter'){
+        navigateTo('/waiter');
+        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('userEmail', data.user.email);
+        localStorage.setItem('userRole', data.user.role);
+        console.log('EL TOKEN', token);
+        console.log('EL MAIL', userEmail);
+        console.log('EL ROL', userRole);
+      }
+    })
+    .catch((error) => {
+      if(error.message === 'Cannot find user'){
+        error.message = 'Usuario no existe';
+      } else if (error.message === 'Incorrect password'){
+        error.message = 'Contraseña incorrecta';
+      } else {
+        error.message = 'Credenciales incorrectas, ponte en contacto con el administrador'
+      }
+      setErrorMessage(error.message);
+      reset();
       })
-      .catch(error => console.error('Error:', error))
   }
-
   return (
     <>
-      <div style={{
-        backgroundImage: `url(${FondoBQIpad})`,
-        backgroundRepeat: 'no-repeat',
-      }} className='container-xl bq-container-height align-items-center'>
-
-        <div className="container container-email-password-logo align-items-center d-flex justify-content-center">
-          <div className="row align-items-center container-logo-login">
-            <img src={BQLogo} className="login-logo" />
+      <section style={{backgroundImage: `url(${FondoBQIpad})`,backgroundRepeat: 'no-repeat',}} 
+      className='container-xl bq-container-height align-items-center'>
+        <div className='container container-email-password-logo align-items-center d-flex justify-content-center'>
+          <div className='row align-items-center container-logo-login'>
+            <img src={BQLogo} className='login-logo' alt='Burger Queen Logo'/>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="mb-3 ">
-                <label htmlFor="exampleInputEmail1" className="form-label">
+              <div className='mb-3'>
+                <label htmlFor='inputEmail' className='form-label'>
                   Correo electrónico
                 </label>
-                <input {...register('email', { required: true, pattern: /^\S+@\S+$/i, message: 'correo invalido' })}
-                  type="email"
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
+                <input {...register('email', { required: 'Este campo es requerido', pattern: { value: /^\S+@\S+$/i, message: 'Correo electrónico inválido'}})}
+                  type='email'
+                  className='form-control'
+                  id='inputEmail'
+                  aria-describedby='emailHelp'
                 />
-                <div id="emailHelp" className="form-text">
-                  <span className="text-danger text-small d-block mb-2">
-                    {errors?.exampleInputEmail1?.message}
-                  </span>
-                </div>
               </div>
-              <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">
+              <div className='mb-3'>
+                <label htmlFor='inputPassword' className='form-label'>
                   Contraseña
                 </label>
-                <input {...register('password', { required: true, message: 'correo invalido' })}
-                  type="password"
-                  className="form-control"
-                  id="exampleInputPassword1"
+                <input {...register('password', {required: 'Este campo es requerido'})}
+                  type='password'
+                  className='form-control'
+                  id='inputPassword'
                 />
+                {errorMessage ? (<div className='error-message'>{errorMessage}</div>):''}
               </div>
               <div className='container-login-button d-flex justify-content-center'>
-                <button type="submit" className="btn btn-primary login-button">
+                <button type='submit' className='btn btn-primary login-button'>
                   Iniciar Sesión
                 </button>
               </div>
             </form>
           </div>
         </div>
-      </div>
+      </section>
     </>
-
   );
 };
 
