@@ -14,13 +14,24 @@ describe('Login', () => {
     screen.debug();
     expect(true).toBe(true)
   });
-  //it('has a button', ()=>{
-   // const btnSubmitTest = screen.getByRole('button', { name:'Iniciar Sesión'});
-  //});
+  it('has a button', ()=>{
+   const btnSubmitTest = screen.getByRole('button', { name:'Iniciar Sesión'});
+   expect(btnSubmitTest).toBeInTheDocument();
+  });
+  it('has in email input', () =>{
+    const inputEmailTest = screen.getByLabelText('Correo electrónico');
+    expect(inputEmailTest).toBeInTheDocument();
+
+  });
   it('has in password input', () =>{
     const inputPasswordTest = screen.getByLabelText('Contraseña');
     expect(inputPasswordTest).toBeInTheDocument();
 
   });
+  // it('should navigate to waiter', () => {
+  //   const btnSubmitTest = screen.getByRole('button', { name: 'Iniciar Sesión' });
+    
+
+  // })
   
 });
