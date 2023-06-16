@@ -27,7 +27,7 @@ const Waiter = () => {
     <div className='waiter-nav'>
       <div className='logos'>
         <img src={IconoMesero} className='waiterIcon' alt='waiter icon'/>
-        <h1> Mesero/Mesera </h1>
+        <h1> Mesera/Mesero </h1>
         <div className='container-logos'>
           <img src={BQLogo} className='BQLogo' alt='hours icon'/>
           <img src={IconoHrs} className='hrsIcon' alt='hours icon'/>
