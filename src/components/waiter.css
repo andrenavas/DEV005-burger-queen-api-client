@@ -95,3 +95,17 @@ margin: 35px 225px;
   padding-top: 3px;
   
 }
+.container-btn-menu{
+  padding-top: 1%;
+  display: flex;
+  justify-content: space-around;
+}
+.container-menu{
+  position: relative;
+  background-color: #d9d9d9cb;
+  height: 400px;
+  width: 60%;
+  margin-left: 4%;
+  border-radius: 20px;
+}
+
