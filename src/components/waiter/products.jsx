@@ -6,7 +6,7 @@ return (
   <div className='container-menu'>
   <div className='container-btn-menu'>
   <Button className ="btn btn-primary btn-order"  text="Desayuno"/>
-  <Button className ="btn btn-primary btn-order"  text="Desayuno"/>
+  <Button className ="btn btn-primary btn-order"  text="Almuerzo/Cena"/>
   </div>
   </div>
   </>
