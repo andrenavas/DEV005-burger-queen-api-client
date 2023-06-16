@@ -1,11 +1,13 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import Login from './login'
+// import Waiter from './waiter'
 import { vi } from 'vitest'
 
 //mockear la dependencias, navigate.
 vi.mock('react-router-dom', () => {
   return{useNavigate: vi.fn()}
 })
+
 describe('Login', () => {
   beforeEach(() => {
     render(<Login/>);
@@ -28,10 +30,25 @@ describe('Login', () => {
     expect(inputPasswordTest).toBeInTheDocument();
 
   });
-  // it('should navigate to waiter', () => {
-  //   const btnSubmitTest = screen.getByRole('button', { name: 'Iniciar Sesión' });
-    
+  // it('navigates to waiter page if user has "waiter" role', async () => {
+  //   vi.spyOn(localStorage, 'getItem').mockImplementation((key) => {
+  //     if (key === 'userRole') {
+  //       return 'waiter';
+  //     }
+  //     return null;
+  //   });
+  //   fireEvent.change(screen.getByLabelText('Correo electrónico'), {
+  //     target: { value: 'test@example.com' },
+  //   });
+  //   fireEvent.change(screen.getByLabelText('Contraseña'), {
+  //     target: { value: 'password123' },
+  //   });
+  //   fireEvent.click(screen.getByText(/iniciar sesión/i));
 
-  // })
-  
+  //   await waitFor(() => {
+  //     expect(screen.getByText('Mesera/Mesero')).toBeInTheDocument();
+
+  // });
 });
+  
+//});
