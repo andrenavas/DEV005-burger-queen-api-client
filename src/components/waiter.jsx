@@ -47,11 +47,15 @@ const Waiter = () => {
       </div>
     </div>
   </section>
-    <section className='client-credentials mb-3'>
+  <div className='container-waiter'>
+    <section className='client-credentials'>
+      <div className='container-input-btn'>
       <Input placeholder ="Nombre del Cliente" className="input-name" value = {clientValue} onChange={inputValue}/>
-      <Button className ="btn btn-primary" onClick={saveClientName} text="Agregar cliente"/>
+      <Button className ="btn btn-primary btn-order" onClick={saveClientName} text="Tomar pedido"/>
+      </div>
       <p className='clientName'>Nombre del Cliente: {clientValue}</p>
       </section>
+  </div>
   </>
   );
 };
