@@ -1,37 +1,56 @@
-import {Button} from '../gralComponents/gralComponents';
-import Cards from './cards';
+import { Button } from '../gralComponents/gralComponents';
+import Card from './card';
+import { useState } from 'react';
+import { useEffect } from 'react';
+
 
 const Products = () => {
-  const token = localStorage.getItem('accessToken');
-  console.log(token);
-  // const showProducts = (data) => {
+  const [products, setProducts] = useState([]);
+  //use State para almacenar las opciones del tipo de menu
+  const [selectedMenu, setSelectedMenu] = useState('')
+  const typeMenu = (selectedType) => {
+    console.log(selectedType)
+    setSelectedMenu(selectedType)
+  };
+
+  //const token = localStorage.getItem('accessToken');
+  //console.log(token);
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+
     fetch('http://localhost:8080/products', {
 
-    method: 'GET',  
-    headers: {
-      'Content-Type': 'application/json',
-      'authorization': `Bearer ${token}`,
-    }
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`,
+      }
     })
     .then((resp) => resp.json())
-    .then((data) => {
-      console.log('Esta es la data:', data);
+    .then((productsData) => {
+      console.log('Esto son los productos:', productsData);
+      setProducts(productsData)
+      console.log('QUIEN SOY??',products)
     })
-  // }
+    .catch(error => console.log(error))
+  },[]);
 
 
-  return (
-    <>
+return (
+  <>
     <div className='container-menu'>
       <div className='container-btn-menu'>
-      <Button className ="btn btn-primary btn-order"  text="Desayuno"/>
-      <Button className ="btn btn-primary btn-order"  text="Almuerzo/Cena"/>
+        <Button className="btn btn-primary btn-order" text="Desayuno" onClick={() => typeMenu("Desayuno")}/>
+        <Button className="btn btn-primary btn-order" text="Almuerzo/Cena" onClick={() => typeMenu("Almuerzo")}/>
       </div>
       <div className='container-products'>
-      <Cards/>
+        {products
+        .filter(product => product.type === selectedMenu)
+        .map(product => (<Card key={product.id} {...product}/>))}
       </div>
     </div>
-    </>
-  )
+  </>
+)
 };
 export default Products

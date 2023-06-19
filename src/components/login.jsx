@@ -36,7 +36,7 @@ const Login = () => {
     })
     .then((data) => {
       if(data.user.role === 'waiter'){
-        navigateTo('/waiter');
+       navigateTo('/waiter');
         localStorage.setItem('accessToken', data.accessToken);
         localStorage.setItem('userEmail', data.user.email);
         localStorage.setItem('userRole', data.user.role);
