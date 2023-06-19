@@ -5,11 +5,12 @@ const ClientName = () => {
   const inputValue = (event) => {
     setClientValue (event.target.value) 
   };
-  const saveClientName = () => {
-    console.log('teclickeo');
-  };
   //const clientValue será el nombre del cliente y set ClienteValue es la función
   const [clientValue, setClientValue] = useState('')
+  const saveClientName = () => {
+    console.log(clientValue)
+    console.log('teclickeo');
+  };
   return (
   <>
  <div className='container-waiter'>
