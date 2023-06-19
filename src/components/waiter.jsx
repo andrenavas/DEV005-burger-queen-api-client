@@ -3,6 +3,7 @@ import './waiter.css';
 import NavWaiter from './waiter/navWaiter';
 import ClientName from './waiter/clientName';
 import Products from './waiter/products';
+import Order from './waiter/order';
 
 
 const Waiter = () => {
@@ -18,11 +19,10 @@ const Waiter = () => {
   <section>
     <ClientName/>
   </section>
-  <section>
-    <Products/>
-  </section>
- 
- 
+  <section className='container-order-products'>
+    <Products/> 
+    <Order/>
+  </section> 
   </>
   );
 };
