@@ -7,15 +7,15 @@ const Products = () => {
   // const showProducts = (data) => {
     fetch('http://localhost:8080/products', {
 
-    method: 'GET',
-    authorization: token,
+    method: 'GET',  
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'authorization': `Bearer ${token}`,
     }
     })
     .then((resp) => resp.json())
     .then((data) => {
-      console.log('Esta es el name:', data[1].name);
+      console.log('Esta es la data:', data);
     })
   // }
 
