@@ -1,9 +1,7 @@
-import React from "react";
 
 export const Input = ({value,placeholder,className, onChange }) => {
   return (
-    <input  type="text" value={value}  placeholder = {placeholder} className={className} onChange={onChange}
-  />
+    <input  type="text" value={value}  placeholder = {placeholder} className={className} onChange={onChange} required/>
   )  
 };
 
