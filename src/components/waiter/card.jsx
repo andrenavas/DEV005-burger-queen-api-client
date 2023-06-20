@@ -1,5 +1,7 @@
 import {Button} from '../gralComponents/gralComponents';
-const Card = (products) => {
+const Card = (products, handleAddProduct) => {
+
+
   return(
     <>
     <div className="card-product">
@@ -12,7 +14,8 @@ const Card = (products) => {
         <div className="product-price">{products.price}</div>
         <div className="container-btn-add">
           {/* Falta agregar el onClick */}
-        <Button className ="btn-add" text="Agregar"/>
+        <Button className ="btn-add" text="Agregar" onClick= {() => handleAddProduct(products)}/>
+        {/* onClick={() => typeMenu("Almuerzo")} */}
         </div>
       </div>
     </div>

@@ -3,10 +3,22 @@ import './waiter.css';
 import NavWaiter from './waiter/navWaiter';
 import ClientName from './waiter/clientName';
 import Products from './waiter/products';
-import Order from './waiter/order';
+import Cart from './waiter/cart';
+import { useState } from 'react';
 
 
 const Waiter = () => {
+  //selección de productos del usuario
+  const[selectedProducts, setSelectedProducts] = useState([]);
+  //función del btn que agrega los productos seleccionados al carrito
+  const handleAddProduct = (selectedProduct) => {
+    setSelectedProducts([
+      ...selectedProducts, selectedProduct])
+      console.log('ADD')
+      
+  };
+
+
 
   return(
   <>
@@ -20,8 +32,8 @@ const Waiter = () => {
     <ClientName/>
   </section>
   <section className='container-order-products'>
-    <Products/> 
-    <Order/>
+    <Products handleAddProduct = {handleAddProduct}/> 
+    <Cart products = {selectedProducts} />
   </section> 
   </>
   );
