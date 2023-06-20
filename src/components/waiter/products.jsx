@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 
-const Products = (handleAddProduct) => {
+const Products = ({handleAddProduct}) => {
   const [products, setProducts] = useState([]);
   //use State para almacenar las opciones del tipo de menu
   const [selectedMenu, setSelectedMenu] = useState('')
@@ -44,7 +44,7 @@ return (
       <div className='container-products'>
         {products
         .filter(product => product.type === selectedMenu)
-        .map(product => (<Card key={product.id} {...product} handleAddProduct= {handleAddProduct} />))}
+        .map(product => (<Card key={product.id} product={product} handleAddProduct= {handleAddProduct} />))}
       </div>
     </div>
   </>

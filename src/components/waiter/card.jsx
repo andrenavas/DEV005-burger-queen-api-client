@@ -1,20 +1,21 @@
 import {Button} from '../gralComponents/gralComponents';
-const Card = (products, handleAddProduct) => {
+import PropTypes from 'prop-types';
+
+const Card = ({ product, handleAddProduct }) => {
 
 
   return(
     <>
     <div className="card-product">
-      <div className="product-name" >{products.name}
-      </div>
+      <div className="product-name">{product.name}</div>
       <div className="product-image">
-        <img className ="product-img" src = {products.image}/>
-        </div>
+        <img className ="product-img" src = {product.image}/>
+      </div>
       <div className="container-price-btnAdd">
-        <div className="product-price">{products.price}</div>
+        <div className="product-price">{product.price}</div>
         <div className="container-btn-add">
           {/* Falta agregar el onClick */}
-        <Button className ="btn-add" text="Agregar" onClick= {() => handleAddProduct(products)}/>
+        <Button className ="btn-add" text="Agregar" onClick= {() => handleAddProduct({product})}/>
         {/* onClick={() => typeMenu("Almuerzo")} */}
         </div>
       </div>
@@ -22,4 +23,8 @@ const Card = (products, handleAddProduct) => {
     </>
   )
 };
+Card.propTypes = {
+  handleAddProduct: PropTypes.func,
+  product: PropTypes.object,
+}
 export default Card

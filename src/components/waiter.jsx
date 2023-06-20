@@ -14,7 +14,8 @@ const Waiter = () => {
   const handleAddProduct = (selectedProduct) => {
     setSelectedProducts([
       ...selectedProducts, selectedProduct])
-      console.log('ADD')
+      console.log('ADD');
+      console.log(selectedProduct);
       
   };
 
