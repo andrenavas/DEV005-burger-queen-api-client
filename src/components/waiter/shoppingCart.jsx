@@ -1,10 +1,15 @@
 import Card from './card';
+import ShoppingList from './shoppingList';
+
 const ShoppingCart = ({clientProducts}) => {
+  // console.log(clientProducts[0].name)
   return(
     <>
-    <div className='container-menu'>
-      <div className='container-products'>
-        {clientProducts.map(product => (<Card key={product.id} product={product} />))}
+    <div className='container-order'>  
+      <div className='container-shopping-list'>
+        <ShoppingList products = {clientProducts}/>
+   
+    
       </div>
     </div>
   </>
@@ -12,16 +17,5 @@ const ShoppingCart = ({clientProducts}) => {
 
 };
 
-// const ShoppingCart = ({selectedProducts, handleAddProduct, products}) => {
-//   return(
-//     <>
-//     <div className='container-order'>
-//       <h1>soy el carro</h1>
-//       <Card selectedProducts={selectedProducts} handleAddProduct= {handleAddProduct} />
 
-//     </div>
-//     </>
-//   )
-
-// };
 export default ShoppingCart

@@ -28,9 +28,7 @@ const Products = ({handleAddProduct}) => {
     })
     .then((resp) => resp.json())
     .then((productsData) => {
-      // console.log('Esto son los productos:', productsData);
       setProducts(productsData)
-      // console.log('QUIEN SOY??',products)
     })
     .catch(error => console.log(error))
   },[]);
@@ -45,7 +43,7 @@ return (
       <div className='container-products'>
         {products
         .filter(product => product.type === selectedMenu)
-        .map(product => (<Card key={product.id} product={product} handleAddProduct= {handleAddProduct} />))}
+        .map(product => (<Card key={product.id} product={product} handleAddProduct= {handleAddProduct}/>))}
       </div>
     </div>
   </>

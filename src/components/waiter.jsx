@@ -20,21 +20,16 @@ const Waiter = () => {
   console.log('Este es el arreglo del producto seleccionado', selectedProducts);
 
   return(
-  <>
-  <section className='background'>
-    <Background/>
-  </section>
-  <section>
+  <> 
+  <Background/>
     <NavWaiter/>
-  </section>
-  <section>
+    <section>
     <ClientName/>
-  </section>
-  <section className='container-order-products'>
+    </section>
+    <section className='container-order-products'>
     <Products handleAddProduct = {handleAddProduct}/>
-    {/* <Products products = {selectedProducts}/> */}
     <ShoppingCart clientProducts = {selectedProducts} />
-  </section> 
+    </section> 
   </>
   );
 };
