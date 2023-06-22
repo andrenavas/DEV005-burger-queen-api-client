@@ -6,9 +6,9 @@ h1 {
   position: absolute;
 }
 
-.section-waiter{
+/* .section-waiter{
   border: 5px solid yellow;
-}
+} */
 .waiter-nav{
   position: relative;
   margin: 0 auto;
@@ -107,9 +107,11 @@ margin: 35px 225px;
   position: relative;
   background-color: #d9d9d9cb;
   height: 95%;
-  width: 70%;
+  width: 90%;
   margin-left: 4%;
   border-radius: 20px;
+  /* display: flex;
+  flex-direction: column; */
   /* background-color: orange; */
 }
 
@@ -122,6 +124,23 @@ margin: 35px 225px;
   width: 90%;
   margin-left: 3%;
   border-radius: 20px;
+}
+
+.container-products{
+  /* background-color: yellow; */
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+  padding: 1%;
+  width: 100%;
+  height: 90%;
+  justify-content: space-around;
+  align-items: center;
+}
+.product-img{
+  width: 95%;
+  height: 95%;
 }
 .container-order{
   position: relative;
@@ -138,22 +157,23 @@ margin: 35px 225px;
 } */
 .card-product{
   background-color: white;
-  width: 25%;
-  height: 45%;
+  width: 20%;
+  height: 40%;
   border-radius: 10px;
   border: 1px solid black;
   padding: 0.5%;
+
 }
 .product-name{
   text-align: center;
   align-items: center;
-  margin-top: 1%;
+  margin-top: 2%;
   font-size: 14px;
-  height: 45px;
+  height: 40px;
 }
 
 .product-image{
-  background-color: blue;
+  /* background-color: blue; */
   width: 100%;
   height: 60%;
   border-radius: 10px; 
@@ -175,21 +195,7 @@ margin: 35px 225px;
   background-color: #D98F4E;
   color: #04404B;
 }
-.container-products{
-  /* background-color: yellow; */
-  position: relative;
-  display: flex;
-  margin-top: 1%;
-  padding: 1%;
-  width: 100%;
-  height: 90%;
-  justify-content: space-around;
-  align-items: center;
-}
-.product-img{
-  width: 95%;
-  height: 95%;
-}
+
 
  /*<div className="card-product">
       <div className="product-name"></div>

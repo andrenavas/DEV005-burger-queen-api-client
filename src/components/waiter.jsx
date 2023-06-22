@@ -3,9 +3,8 @@ import './waiter.css';
 import NavWaiter from './waiter/navWaiter';
 import ClientName from './waiter/clientName';
 import Products from './waiter/products';
-import Cart from './waiter/cart';
+import ShoppingCart from './waiter/shoppingCart';
 import { useState } from 'react';
-
 
 const Waiter = () => {
   //selección de productos del usuario
@@ -14,12 +13,11 @@ const Waiter = () => {
   const handleAddProduct = (selectedProduct) => {
     setSelectedProducts([
       ...selectedProducts, selectedProduct])
-      console.log('ADD');
-      console.log(selectedProduct);
+      console.log('Click en agregar');
+      // console.log(selectedProduct);
       
   };
-
-
+  console.log('Este es el arreglo del producto seleccionado', selectedProducts);
 
   return(
   <>
@@ -34,7 +32,7 @@ const Waiter = () => {
   </section>
   <section className='container-order-products'>
     <Products handleAddProduct = {handleAddProduct}/> 
-    <Cart products = {selectedProducts} />
+    <ShoppingCart products = {selectedProducts} />
   </section> 
   </>
   );

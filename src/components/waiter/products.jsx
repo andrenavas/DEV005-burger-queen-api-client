@@ -2,6 +2,7 @@ import { Button } from '../gralComponents/gralComponents';
 import Card from './card';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 
 const Products = ({handleAddProduct}) => {
@@ -27,9 +28,9 @@ const Products = ({handleAddProduct}) => {
     })
     .then((resp) => resp.json())
     .then((productsData) => {
-      console.log('Esto son los productos:', productsData);
+      // console.log('Esto son los productos:', productsData);
       setProducts(productsData)
-      console.log('QUIEN SOY??',products)
+      // console.log('QUIEN SOY??',products)
     })
     .catch(error => console.log(error))
   },[]);
@@ -50,4 +51,8 @@ return (
   </>
 )
 };
+
+Products.propTypes = {
+  handleAddProduct: PropTypes.func,
+}
 export default Products
