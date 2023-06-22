@@ -31,8 +31,9 @@ const Waiter = () => {
     <ClientName/>
   </section>
   <section className='container-order-products'>
-    <Products handleAddProduct = {handleAddProduct}/> 
-    <ShoppingCart products = {selectedProducts} />
+    <Products handleAddProduct = {handleAddProduct}/>
+    {/* <Products products = {selectedProducts}/> */}
+    <ShoppingCart clientProducts = {selectedProducts} />
   </section> 
   </>
   );
