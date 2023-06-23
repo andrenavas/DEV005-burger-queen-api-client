@@ -1,0 +1,24 @@
+.container-order-cooking{
+    background-color: red;
+    position: relative;
+    margin: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.ticket-order{
+    background-color: yellow;
+    /* width: 25%;
+    height: 25%; */
+    border-radius: 10px;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* <div className="order-client">CLIENTE</div>
+      <div className="order-products">PRODUCTOS</div>
+      <div className="order-qty">CANTIDAD</div>
+      <div className="order-status">ESTADO</div>
+      <div className="order-date">FECHA</div> */

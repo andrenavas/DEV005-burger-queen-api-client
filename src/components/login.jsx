@@ -48,6 +48,20 @@ const Login = () => {
         console.log('EL ROL', userRole);
         console.log('userId', userId);
       }
+
+      if(data.user.role === 'chef' || data.user.role ==='admin'){
+        navigateTo('/chef');
+         localStorage.setItem('accessToken', data.accessToken);
+         localStorage.setItem('userEmail', data.user.email);
+         localStorage.setItem('userRole', data.user.role);
+         localStorage.setItem('userId', data.user.id);
+ 
+         console.log('EL TOKEN CHEF', token);
+         console.log('EL MAIL CHEF', userEmail);
+         console.log('EL ROL CHEF', userRole);
+         console.log('userId CHEF', userId);
+       }
+      
     })
     .catch((error) => {
       if(error.message === 'Cannot find user'){
