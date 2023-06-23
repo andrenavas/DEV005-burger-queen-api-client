@@ -29,10 +29,39 @@ const Waiter = () => {
       // console.log(selectedProduct);
       
   };
+
+  //Borra el item de la lista (no la cantidad)
+  const deleteProduct = productToDelete => {
+    console.log('CLICK EN DELETE')
+    const results = selectedProducts.filter(
+      item => item.id !== productToDelete.id
+    );
+    console.log('CONSTANTE RESULTS', results)
+    setTotalPrice(totalPrice - productToDelete.price)
+    setSelectedProducts(results)
+    console.log('RESULTS DESPUES', results)
+  }
   console.log('Este es el arreglo del producto seleccionado', selectedProducts);
   console.log('TOTAL PRICE', totalPrice)
-  
 
+  //Para disminuir la cantidad de item en 1
+  const reduceProduct = productToDelete => {
+    //si es 1 llama a deleteProduct para que elimine todo el item
+    if(productToDelete.quantity === 1){
+      deleteProduct(productToDelete);
+    } else {
+      const updatedProducts = selectedProducts.map((item) => {
+        if (item.id === productToDelete.id) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      });
+  
+      setSelectedProducts(updatedProducts);
+      setTotalPrice(totalPrice - productToDelete.price);
+    }
+  };
+ 
   return(
   <> 
   <Background/>
@@ -42,7 +71,7 @@ const Waiter = () => {
     </section>
     <section className='container-order-products'>
     <Products handleAddProduct = {handleAddProduct}/>
-    <ShoppingCart selectedProducts = {selectedProducts} totalPrice = {totalPrice} />
+    <ShoppingCart selectedProducts = {selectedProducts} totalPrice = {totalPrice} reduceProduct = {reduceProduct}/>
     </section> 
   </>
   );
