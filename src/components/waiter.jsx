@@ -86,7 +86,7 @@ const Waiter = () => {
         dataEntry: date
       };
 
-      fetch('http://localhost:8080/products', {
+      fetch('http://localhost:8080/orders', {
 
       method: 'POST',
       headers: {
