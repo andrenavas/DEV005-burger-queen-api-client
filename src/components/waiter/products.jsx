@@ -44,7 +44,6 @@ return (
         {products
        
         .filter(product => product.type === selectedMenu) 
-        // .reduce((acc, currentValue) => acc.concat(currentValue), [])
         .map(product => (<Card key={product.id} product={product} handleAddProduct= {handleAddProduct}/>))
        }
       </div>

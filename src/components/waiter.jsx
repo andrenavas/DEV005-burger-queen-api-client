@@ -4,7 +4,7 @@ import NavWaiter from './waiter/navWaiter';
 import ClientName from './waiter/clientName';
 import Products from './waiter/products';
 import ShoppingCart from './waiter/shoppingCart';
-import { useState } from 'react';
+import  {useState} from 'react';
 
 const Waiter = () => {
   //selección de productos del usuario
@@ -36,10 +36,8 @@ const Waiter = () => {
     const results = selectedProducts.filter(
       item => item.id !== productToDelete.id
     );
-    console.log('CONSTANTE RESULTS', results)
     setTotalPrice(totalPrice - productToDelete.price)
     setSelectedProducts(results)
-    console.log('RESULTS DESPUES', results)
   }
   console.log('Este es el arreglo del producto seleccionado', selectedProducts);
   console.log('TOTAL PRICE', totalPrice)
@@ -56,22 +54,86 @@ const Waiter = () => {
         }
         return item;
       });
-  
       setSelectedProducts(updatedProducts);
       setTotalPrice(totalPrice - productToDelete.price);
     }
   };
- 
+   //const clientValue será el nombre del cliente y set ClienteValue es la función
+   const [clientValue, setClientValue] = useState('')
+   
+  // Enviar la orden a la API
+    const sendOrder = () => {
+      //token de acceso
+      const token = localStorage.getItem('accessToken'); 
+      //id de la mesera que está tomando el pedido
+      const userId = localStorage.getItem('userId');
+      // nombre cliente
+      const client = clientValue ;
+      //fecha actual
+      const date =  new Date(Date.now()).toLocaleTimeString()
+      const manualStatus = 'pending';
+      // console.log('SEND-ORDER' , token);
+      // console.log('userId' , userId);
+      // console.log('clientName', client);
+      // console.log('products', selectedProducts);
+      // console.log('TIME', date);
+      // console.log('status', manualStatus)
+      const dataOrder = {
+        userId: userId,
+        client: client,
+        products: selectedProducts,
+        status: manualStatus,
+        dataEntry: date
+      };
+
+      fetch('http://localhost:8080/products', {
+
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(dataOrder),
+
+    })
+    .then(() => {
+
+      setSelectedProducts([]);
+      setTotalPrice(0);
+      console.log('DATA-ORDER', dataOrder)
+      
+      
+    })
+    .catch(error => console.log(error))
+  };
+
+  // useEffect(() => {
+  //   const token = localStorage.getItem('accessToken');
+
+  //   fetch('http://localhost:8080/products', {
+
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'authorization': `Bearer ${token}`,
+  //     }
+  //   })
+  //   .then((resp) => resp.json())
+  //   .then((productsData) => {
+  //     setProducts(productsData)
+  //   })
+  //   .catch(error => console.log(error))
+  // },[]);
   return(
   <> 
   <Background/>
     <NavWaiter/>
     <section>
-    <ClientName/>
+    <ClientName clientValue= {clientValue} setClientValue={setClientValue}/>
     </section>
     <section className='container-order-products'>
     <Products handleAddProduct = {handleAddProduct}/>
-    <ShoppingCart selectedProducts = {selectedProducts} totalPrice = {totalPrice} reduceProduct = {reduceProduct}/>
+    <ShoppingCart selectedProducts = {selectedProducts} totalPrice = {totalPrice} reduceProduct = {reduceProduct} sendOrder={sendOrder}/>
     </section> 
   </>
   );

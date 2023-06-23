@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import {Input , Button} from '../gralComponents/gralComponents';
 
-const ClientName = () => {
+const ClientName = ({clientValue, setClientValue}) => {
   const inputValue = (event) => {
     setClientValue (event.target.value) 
   };
-  //const clientValue será el nombre del cliente y set ClienteValue es la función
-  const [clientValue, setClientValue] = useState('')
+  // //const clientValue será el nombre del cliente y set ClienteValue es la función
+  // const [clientValue, setClientValue] = useState('')
   const saveClientName = (clientValue) => {
     console.log(clientValue)
   };
