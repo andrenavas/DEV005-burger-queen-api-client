@@ -1,15 +1,12 @@
-import Card from './card';
+import PropTypes from 'prop-types';
 import ShoppingList from './shoppingList';
 
-const ShoppingCart = ({clientProducts}) => {
-  // console.log(clientProducts[0].name)
+const ShoppingCart = ({selectedProducts, totalPrice}) => {
   return(
     <>
     <div className='container-order'>  
       <div className='container-shopping-list'>
-        <ShoppingList products = {clientProducts}/>
-   
-    
+        <ShoppingList selectedProducts = {selectedProducts} totalPrice = {totalPrice}/>
       </div>
     </div>
   </>
@@ -17,5 +14,8 @@ const ShoppingCart = ({clientProducts}) => {
 
 };
 
-
+ShoppingCart.propTypes = {
+  selectedProducts: PropTypes.array,
+  totalPrice: PropTypes.number
+}
 export default ShoppingCart
