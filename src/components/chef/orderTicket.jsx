@@ -8,21 +8,30 @@ const OrderTicket = ({order, changeStatus}) => {
     <>
     <div className="ticket-order">
       <div className="order-client">Cliente: {order.client}</div>
-      <div className="order-client">UserId: {order.userId}</div>
-      <div className="order-products">
-      {order.products.map((item, index) => (
-        <div key={index}>
-          <div> Producto: {item.name}</div>
-          <div>Cantidad: {item.quantity}</div>
-
-        </div>
-      ))}
+      {/* <div className="order-client">UserId: {order.userId}</div> */}
+      <div className="order-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Cant</th>
+            <th>Producto</th>
+          </tr>
+        </thead>
+        <tbody>
+          {order.products.map((item, index) => (
+            <tr key={index}>
+              <td>{item.quantity}</td>
+              <td>{item.name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       </div>
       <div className="order-status">Estado: {order.status}</div>
       <div className="order-date">Hora: {order.dataEntry}</div>
       <div className="container-btn-add">
     
-        <Button className ="btn-add" text="Listo para servir" onClick= {() => changeStatus()}/>
+        <Button className ="btn-add" text="Listo para servir" onClick= {() => changeStatus(order)}/>
 
       </div>
     </div>
@@ -30,7 +39,8 @@ const OrderTicket = ({order, changeStatus}) => {
   )
 };
 OrderTicket.propTypes = {
-  order: PropTypes.array,
+  order: PropTypes.object,
   changeStatus: PropTypes.func,
 }
 export default OrderTicket
+
