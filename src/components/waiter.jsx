@@ -7,6 +7,7 @@ import ShoppingCart from './waiter/shoppingCart';
 import  {useState} from 'react';
 
 const Waiter = () => {
+ 
   //selección de productos del usuario
   const[selectedProducts, setSelectedProducts] = useState([]);
   //constante con el total del valor a pagar
@@ -101,29 +102,9 @@ const Waiter = () => {
       setSelectedProducts([]);
       setTotalPrice(0);
       console.log('DATA-ORDER', dataOrder)
-      
-      
     })
     .catch(error => console.log(error))
   };
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem('accessToken');
-
-  //   fetch('http://localhost:8080/products', {
-
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'authorization': `Bearer ${token}`,
-  //     }
-  //   })
-  //   .then((resp) => resp.json())
-  //   .then((productsData) => {
-  //     setProducts(productsData)
-  //   })
-  //   .catch(error => console.log(error))
-  // },[]);
   return(
   <> 
   <Background/>
@@ -133,11 +114,10 @@ const Waiter = () => {
     </section>
     <section className='container-order-products'>
     <Products handleAddProduct = {handleAddProduct}/>
-    <ShoppingCart selectedProducts = {selectedProducts} totalPrice = {totalPrice} reduceProduct = {reduceProduct} sendOrder={sendOrder}/>
+    <ShoppingCart selectedProducts = {selectedProducts} totalPrice = {totalPrice} reduceProduct = {reduceProduct} sendOrder={sendOrder} clientValue={clientValue}/>
     </section> 
   </>
   );
 };
 
 export default Waiter
-

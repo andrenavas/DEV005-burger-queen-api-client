@@ -5,10 +5,10 @@ export const Input = ({value,placeholder,className, onChange }) => {
   )  
 };
 
-export const Button = ({onClick,text,className,}) => {
+export const Button = ({onClick,text,className, disabled}) => {
   return (
     <>
-   <button onClick={onClick} className={className}>{text}</button>
+   <button onClick={onClick} className={className} disabled={disabled}>{text}</button>
     </>
   );
 };
@@ -25,6 +25,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   text: PropTypes.string,
   className: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 
