@@ -12,7 +12,7 @@ const Card = ({ product, handleAddProduct }) => {
         <img className ="product-img" src = {product.image}/>
       </div>
       <div className="container-price-btnAdd">
-        <div className="product-price">{product.price}</div>
+        <div className="product-price">${product.price}</div>
         <div className="container-btn-add">
           {/* Falta agregar el onClick */}
         <Button className ="btn-add" text="Agregar" onClick= {() => handleAddProduct(product)}/>

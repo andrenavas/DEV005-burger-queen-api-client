@@ -25,12 +25,31 @@ h1 {
 }
 .waiterIcon{
   position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 35px 35px;
+  width: 100px;
+  height: 100px;
+  margin: 35px 0px;
+}
+.orderLogo{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+.container-order-logo{
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+.container-orders-view{
+  width: 200px;
+  display: flex;
 }
 .title{
 margin: 35px 225px;
+}
+.title-view{
+  font-size: 25px;
+  margin: 0px 10px;
 }
 .BQLogo{
   width: 100px;
@@ -45,7 +64,7 @@ margin: 35px 225px;
 .container-logout{
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 40px;
 }
 .container-waiter{
   display: flex;
@@ -74,8 +93,21 @@ margin: 35px 225px;
 }
 .btn-order{
  background-color:white;
- color: #04404B
+ color: #04404B;
+ cursor:pointer;
+ border: 1px solid black;
 }
+.btn-cook{
+  background-color: white;
+  color: #04404B;
+  border: 1px solid black;
+}
+
+.btn-add:active {
+  background-color: #ef7035;
+  color: rgb(227, 206, 193);
+}
+
 .clientName{
   /* background-color: red; */
   height: 35px;
@@ -93,9 +125,11 @@ margin: 35px 225px;
 .container-menu{
   position: relative;
   background-color: #d9d9d9cb;
-  height: 95%;
+  height: 485px;
   width: 85%;
   border-radius: 20px;
+  margin-left: 0.5%;
+  border: #04404B 10px double;
   /* background-color: orange; */
 }
 .container-order-products{
@@ -107,6 +141,7 @@ margin: 35px 225px;
   width: 94%;
   height: 100%;
   border-radius: 20px;
+  
 }
 .container-products{
   /* background-color: yellow; */
@@ -133,14 +168,17 @@ margin: 35px 225px;
   border-radius: 20px;
   /* border: 2px solid blue; */
   padding: 1%;
+  border: #04404B 10px double;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
 }
-/* .container-menu{
-  background-color: blue;
-  position: relative;
-} */
+
 .card-product{
   background-color: white;
-  width: 20%;
+  width: 22%;
   height: 40%;
   border-radius: 10px;
   border: 1px solid black;
@@ -168,6 +206,7 @@ margin: 35px 225px;
 }
 .product-price{
   font-size: 14px;
+  margin: 0px 4px 0px 8px;
 }
 .btn-add{
   border-radius: 20px;
@@ -179,9 +218,7 @@ margin: 35px 225px;
   font-size: 14px;
   box-shadow: 5px 5px rgba(0,0,0,0.5);
 }
-/* .btn-add :hover{
-  background-color:aquamarine;
-} */
+
 .shopping-table{
   /* border: 2px solid red; */
   margin: 3%;

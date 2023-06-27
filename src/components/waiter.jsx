@@ -120,4 +120,10 @@ const Waiter = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Waiter
+=======
+
+export default Waiter
+
+>>>>>>> e21b4f273445ce9c309055153e6898e37f27f6f4
