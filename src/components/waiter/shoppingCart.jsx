@@ -21,7 +21,7 @@ const ShoppingCart = ({selectedProducts, totalPrice, reduceProduct,sendOrder, cl
         <ShoppingList selectedProducts = {selectedProducts} totalPrice = {totalPrice} reduceProduct = {reduceProduct}/>
       </div>
       <div className='container-btn-order'>
-        <Button onClick ={()=> sendOrder()} text="A cocinar" disabled={!btnActive}/>
+        <Button className = "btn btn-primary btn-cook"  onClick ={()=> sendOrder()} text="A cocinar" disabled={!btnActive}/>
       </div>
     </div>
   </>
