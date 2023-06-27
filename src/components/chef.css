@@ -1,0 +1,36 @@
+
+.container-order-cooking{
+    /* background-color: red; */
+    position: relative;
+    margin: 3%;
+}
+.container-order-ticket{
+    /* background-color: green; */
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: auto;
+    
+}
+
+.ticket-order{
+    background-color: white;
+    width: 25%;
+    height: 320px;
+    border-radius: 10px;
+    margin: 1%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    gap:5px;
+}
+
+/* <div className="order-client">CLIENTE</div>
+      <div className="order-products">PRODUCTOS</div>
+      <div className="order-qty">CANTIDAD</div>
+      <div className="order-status">ESTADO</div>
+      <div className="order-date">FECHA</div> */
