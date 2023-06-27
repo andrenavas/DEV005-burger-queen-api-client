@@ -9,6 +9,8 @@ import './index.css'
 import Login from './components/login.jsx';
 import ErrorPage from './components/error-page';
 import Waiter from './components/waiter';
+import Chef from './components/chef';
+import StatusOrder from './components/status-order';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
   {
     path: "/waiter",
     element: <Waiter/>,
+  },
+  {
+    path: "/chef",
+    element: <Chef/>,
+  },
+  {
+    path: "/statusorder",
+    element: <StatusOrder/>,
   },
 ]);
 

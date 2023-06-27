@@ -42,7 +42,6 @@ return (
       </div>
       <div className='container-products'>
         {products
-       
         .filter(product => product.type === selectedMenu) 
         .map(product => (<Card key={product.id} product={product} handleAddProduct= {handleAddProduct}/>))
        }
