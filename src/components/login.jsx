@@ -5,8 +5,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-console.log('Hola, soy Pauli');
-
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const { register, handleSubmit, reset } = useForm();
@@ -14,6 +12,7 @@ const Login = () => {
   const navigateTo = useNavigate();
   // información del usuario que ingresa almacena a través localStorage
   const token = localStorage.getItem('accessToken');
+  const userId = localStorage.getItem('userId');
   const userEmail = localStorage.getItem('userEmail');
   const userRole = localStorage.getItem('userRole');
   // fn que envía el formulario a la api
@@ -37,14 +36,17 @@ const Login = () => {
       throw new Error(await response.json());
     })
     .then((data) => {
-      if(data.user.role === 'waiter'){
-        navigateTo('/waiter');
+      if(data.user.role === 'waiter' || data.user.role ==='admin'){
+       navigateTo('/waiter');
         localStorage.setItem('accessToken', data.accessToken);
         localStorage.setItem('userEmail', data.user.email);
         localStorage.setItem('userRole', data.user.role);
+        localStorage.setItem('userId', data.user.id);
+
         console.log('EL TOKEN', token);
         console.log('EL MAIL', userEmail);
         console.log('EL ROL', userRole);
+        console.log('userId', userId);
       }
     })
     .catch((error) => {
