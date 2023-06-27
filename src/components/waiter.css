@@ -23,12 +23,31 @@ h1 {
 }
 .waiterIcon{
   position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 35px 35px;
+  width: 100px;
+  height: 100px;
+  margin: 35px 0px;
+}
+.orderLogo{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+.container-order-logo{
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+.container-orders-view{
+  width: 200px;
+  display: flex;
 }
 .title{
 margin: 35px 225px;
+}
+.title-view{
+  font-size: 25px;
+  margin: 0px 10px;
 }
 .BQLogo{
   width: 100px;
@@ -43,7 +62,7 @@ margin: 35px 225px;
 .container-logout{
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 40px;
 }
 .container-waiter{
   display: flex;
@@ -80,10 +99,9 @@ margin: 35px 225px;
   background-color: white;
   color: #04404B;
   border: 1px solid black;
-  cursor:pointer;
 }
 
-.btn-add:hover {
+.btn-add:active {
   background-color: #ef7035;
   color: rgb(227, 206, 193);
 }
@@ -198,9 +216,7 @@ margin: 35px 225px;
   font-size: 14px;
   box-shadow: 5px 5px rgba(0,0,0,0.5);
 }
-/* .btn-add :hover{
-  background-color:aquamarine;
-} */
+
 .shopping-table{
   /* border: 2px solid red; */
   margin: 3%;

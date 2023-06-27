@@ -6,12 +6,14 @@ import { useState, useEffect } from 'react';
 
 const ShoppingCart = ({selectedProducts, totalPrice, reduceProduct,sendOrder, clientValue}) => {
    //habilita/deshabilita el btn de cocinar
+  //  console.log(selectedProducts)
    const [btnActive, setBtnActive] = useState(false);
    useEffect(() => {
     //evaluar un valor y cambiarlos a boolean, se usa doble !!(doble negación)
-    setBtnActive(!!clientValue && clientValue.length > 0);
-    console.log('CLIENT VALUE',!!clientValue && clientValue.length > 0);
-  }, [clientValue]);
+    setBtnActive(!!clientValue && clientValue.length > 0 && selectedProducts.length > 0);
+    console.log('selectedProducts', selectedProducts)
+    console.log('CLIENT VALUE',!!clientValue && clientValue.length > 0,);
+  }, [clientValue, selectedProducts]);
 
    
   return(
