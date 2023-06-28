@@ -1,7 +1,8 @@
 import {Button} from '../gralComponents/gralComponents';
 import PropTypes from 'prop-types';
 
-const OrderTicket = ({order, changeStatus}) => {
+const OrderTicket = ({order, changeStatus, showButton}) => {
+  // let showButton = true;
   
 
   return(
@@ -27,11 +28,15 @@ const OrderTicket = ({order, changeStatus}) => {
         </tbody>
       </table>
       </div>
-      <div className="order-status">Estado: {order.status}</div>
-      <div className="order-date">Hora: {order.dataEntry}</div>
+      <div className='container-orderdate-orderstatus'>
+        <div className='order-status'>Estado: {order.status}</div>
+        <div className='order-date'>Hora: {order.dataEntry}</div>
+      </div>
       <div className="container-btn-add">
-    
-        <Button className ="btn-add" text="Listo para servir" onClick= {() => changeStatus(order)}/>
+        {showButton &&
+        <Button className ="btn-order-ready" text="Preparado" onClick= {() => changeStatus(order)}/>
+        
+        }
 
       </div>
     </div>

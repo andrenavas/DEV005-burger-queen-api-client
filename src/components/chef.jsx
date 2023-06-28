@@ -58,16 +58,27 @@ const Chef = () => {
       });
     });
   };
+  let showButton = true;
+
 
   return(
   <> 
   <Background/>
-    <NavChef/>
+    <NavChef/> 
+    <section className='title-chef-orders'>
+      <h1 className='title-status-chef'>Pendientes</h1>
+      <h1 className='title-status-chef'>Listas para servir</h1>
+      </section>
     <section className='container-order-cooking'>
         <div className='container-order-ticket'>
         {orders
         .filter(order => order.status === 'pending')
-        .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatus}/>))}
+        .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatus} showButton= {showButton}/>))}
+        </div>
+        <div className='container-order-to-delivery'>
+        {orders
+        .filter(order => order.status === 'delivery')
+        .map(order => (<OrderTicket key={order.id} order={order} showButton= {false}/>))}
         </div>
         
    </section> 
