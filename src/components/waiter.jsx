@@ -98,9 +98,9 @@ const Waiter = () => {
 
     })
     .then(() => {
-
       setSelectedProducts([]);
       setTotalPrice(0);
+      setClientValue('');
       console.log('DATA-ORDER', dataOrder)
     })
     .catch(error => console.log(error))

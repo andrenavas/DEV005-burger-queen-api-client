@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import IconoMesero from '../../assets/img/IconoMesero.png';
+import IconoChef from '../../assets/img/IconoChef.png'
 import IconoHrs from '../../assets/img/IconoHrs.png'
 import BQLogo from '../../assets/img/BQLogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -17,7 +17,7 @@ const NavChef= () => {
     <section className='section-waiter'>
     <div className='waiter-nav'>
       <div className='logos'>
-        <img src={IconoMesero} className='waiterIcon' alt='waiter icon'/>
+        <img src={IconoChef} className='waiterIcon' alt='waiter icon'/>
         <h1> Chefcita / Chefcito </h1>
         <div className='container-logos'>
           <img src={BQLogo} className='BQLogo' alt='hours icon'/>

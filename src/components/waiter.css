@@ -14,6 +14,8 @@ h1 {
   border-radius: 20px 20px 0 0;
   margin-top: 1%;
 }
+
+
 .logos{
   display: flex;
   align-items: center;
@@ -23,12 +25,31 @@ h1 {
 }
 .waiterIcon{
   position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 35px 35px;
+  width: 100px;
+  height: 100px;
+  margin: 35px 0px;
+}
+.orderLogo{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+.container-order-logo{
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+.container-orders-view{
+  width: 200px;
+  display: flex;
 }
 .title{
 margin: 35px 225px;
+}
+.title-view{
+  font-size: 25px;
+  margin: 0px 10px;
 }
 .BQLogo{
   width: 100px;
@@ -43,7 +64,7 @@ margin: 35px 225px;
 .container-logout{
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 40px;
 }
 .container-waiter{
   display: flex;
@@ -80,10 +101,9 @@ margin: 35px 225px;
   background-color: white;
   color: #04404B;
   border: 1px solid black;
-  cursor:pointer;
 }
 
-.btn-add:hover {
+.btn-add:active {
   background-color: #ef7035;
   color: rgb(227, 206, 193);
 }
@@ -121,6 +141,7 @@ margin: 35px 225px;
   width: 94%;
   height: 100%;
   border-radius: 20px;
+  padding-right: 10px;
   
 }
 .container-products{
@@ -143,11 +164,11 @@ margin: 35px 225px;
   position: relative;
   background-color: #d9d9d9cb;
   height: 95%;
-  width: 40%;
+  width: 45%;
   margin-left: 2%;
   border-radius: 20px;
   /* border: 2px solid blue; */
-  padding: 1%;
+  padding: 10px 0px 5px 0px;
   border: #04404B 10px double;
   display: flex;
   justify-content: center;
@@ -173,9 +194,12 @@ margin: 35px 225px;
 }
 .product-image{
   /* background-color: blue; */
-  width: 100%;
+  width: 80%;
   height: 60%;
   border-radius: 10px; 
+  margin-left: 12px;
+  /* revisar con andre */
+  
 }
 .container-price-btnAdd{
   /* background-color: red; */
@@ -194,13 +218,12 @@ margin: 35px 225px;
   background-color: #D98F4E;
   color: #04404B;
   border: 0.5px solid black;
-  padding: 5px;
-  font-size: 14px;
-  box-shadow: 5px 5px rgba(0,0,0,0.5);
+  padding: 2px 5px 5px 2px;
+  font-size: 12px;
+  box-shadow: 0px 2px 4px #050505;
+  /* box-shadow: 5px 5px rgba(0,0,0,0.5); */
 }
-/* .btn-add :hover{
-  background-color:aquamarine;
-} */
+
 .shopping-table{
   /* border: 2px solid red; */
   margin: 3%;
@@ -208,10 +231,19 @@ margin: 35px 225px;
 table, th, td {
   font-size: 12px;
   border: 1px solid black;
+  text-align: center;
+  padding: 3px;
 }
+th{
+  font-size: 13px;
+}
+
 .container-shopping-list{
   /* border: 2px solid yellow; */
   display: flex;
   justify-content: center;
   align-items: self-start;
+}
+.container-delete-icon{
+  padding: 5px;
 }
