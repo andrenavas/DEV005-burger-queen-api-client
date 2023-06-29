@@ -41,7 +41,7 @@
     text-align: center;
     gap:5px;
 }
-.order-status, .order-date {
+.order-status, .order-date, .order-date-exit {
     font-size: 12px;
 }
 .order-status{

@@ -2,9 +2,7 @@ import {Button} from '../gralComponents/gralComponents';
 import PropTypes from 'prop-types';
 
 const OrderTicket = ({order, changeStatus, showButton}) => {
-  // let showButton = true;
   
-
   return(
     <>
     <div className="ticket-order">
@@ -30,8 +28,12 @@ const OrderTicket = ({order, changeStatus, showButton}) => {
       </div>
       <div className='container-orderdate-orderstatus'>
         <div className='order-status'>Estado: {order.status}</div>
-        <div className='order-date'>Hora: {order.dataEntry}</div>
+        <div className='order-date'>A cocina: {order.dataEntry}</div>
+        {order.dataExit && ( <div className='order-date-exit'> A servir: {order.dataExit}</div>)}
+       
       </div>
+      
+      
       <div className="container-btn-add">
         {showButton &&
         <Button className ="btn-order-ready" text="Preparado" onClick= {() => changeStatus(order)}/>
@@ -46,6 +48,7 @@ const OrderTicket = ({order, changeStatus, showButton}) => {
 OrderTicket.propTypes = {
   order: PropTypes.object,
   changeStatus: PropTypes.func,
+  showButton: PropTypes.bool,
 }
 export default OrderTicket
 

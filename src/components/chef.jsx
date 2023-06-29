@@ -9,26 +9,38 @@ import { useState, useEffect } from 'react';
 const Chef = () => {
 
   const [orders, setOrders] = useState([]);
+  //crear const con dataExit en memoria
+  // const [dataExit, setDataExit] = useState(null);
   const token = localStorage.getItem('accessToken');
+  //variable que se crea al presionar el boton de chef cuando el pedido está listo
   useEffect(() =>{ 
-    fetch('http://localhost:8080/orders', {
-
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'authorization': `Bearer ${token}`,
+    function getOrders() {
+      fetch('http://localhost:8080/orders', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'authorization': `Bearer ${token}`,
+        }
+      })
+      .then((resp) => resp.json())
+      .then((dataOrders) => {
+        console.log(dataOrders);
+        setOrders(dataOrders);
+      })
+      .catch(error => console.log(error));
     }
-    })
-    .then((resp) => resp.json())
-    .then((dataOrders) => {
-      console.log(dataOrders)
-      setOrders(dataOrders)
-    })
-    .catch(error => console.log(error))
+    // se ejecuta getOrders una vez para que la primera llamada sea inmediata y no esperar 5 segundos
+    getOrders();
+    // crear un intervalo, donde va la función que trae la petición fetch y luego el tiempo en milisegundos(5 segundos)
+    const intervalId = setInterval(getOrders, 5000)
+    //este retorno es opcional del useEffect, evita que se ejecute cuando estoy en otra pantalla o que se pueda duplicar
+    return () => {
+      clearInterval(intervalId)
+    };
   }, [token])
 
-  //Cambiando el estado de la orden de pending a delivery
   const changeStatus = (order) => {
+      //Cambiando el estado de la orden de pending a delivery
     console.log(order.id)
     fetch(`http://localhost:8080/orders/${order.id}`, {
 
@@ -42,23 +54,28 @@ const Chef = () => {
   })
   .then((resp) => resp.json())
     .then((updatedOrder) => {
-      updateOrderStatus(updatedOrder.id, updatedOrder.status);
+      //agreggamos constante newDataExit y le asignamos la hora actual
+      const newDataExit = new Date(Date.now()).toLocaleTimeString();
+      //pasamos hora actual a Data exit
+      //agregamos al objeto la propiedad newDataEXit
+      updateOrderStatus(updatedOrder.id, updatedOrder.status, newDataExit);
     })
   .catch(error => console.log(error))
   }
 
   // Actualizando la lista de pedidos luego del cambio de estado  
-  const updateOrderStatus = (orderId, newStatus) => {
+
+  const updateOrderStatus = (orderId, newStatus, newDataExit) => {
     setOrders(prevOrders => {
       return prevOrders.map(order => {
         if (order.id === orderId) {
-          return { ...order, status: newStatus };
+          return { ...order, status: newStatus, dataExit: newDataExit};
         }
         return order;
       });
     });
   };
-  let showButton = true;
+  //mostrar el Button Preparar en el ticket Chef
 
 
   return(
@@ -73,7 +90,7 @@ const Chef = () => {
         <div className='container-order-ticket'>
         {orders
         .filter(order => order.status === 'pending')
-        .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatus} showButton= {showButton}/>))}
+        .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatus} showButton= {true}/>))}
         </div>
         <div className='container-order-to-delivery'>
         {orders
