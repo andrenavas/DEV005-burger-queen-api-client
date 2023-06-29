@@ -2,7 +2,7 @@ import Background from './background';
 import './chef.css';
 import NavChef from './chef/navChef';
 import OrderTicket from './chef/orderTicket';
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 
 
 
@@ -32,7 +32,7 @@ const Chef = () => {
     // se ejecuta getOrders una vez para que la primera llamada sea inmediata y no esperar 5 segundos
     getOrders();
     // crear un intervalo, donde va la función que trae la petición fetch y luego el tiempo en milisegundos(5 segundos)
-    const intervalId = setInterval(getOrders, 5000)
+    const intervalId = setInterval(getOrders, 10000)
     //este retorno es opcional del useEffect, evita que se ejecute cuando estoy en otra pantalla o que se pueda duplicar
     return () => {
       clearInterval(intervalId)
@@ -53,23 +53,29 @@ const Chef = () => {
   body: JSON.stringify({status: 'delivery'})
   })
   .then((resp) => resp.json())
-    .then((updatedOrder) => {
+  .then((updatedOrder) => {
       //agreggamos constante newDataExit y le asignamos la hora actual
+      const dataEntry = order.dataEntry;
       const newDataExit = new Date(Date.now()).toLocaleTimeString();
-      //pasamos hora actual a Data exit
+      const entryTime = new Date(`01/01/2000 ${dataEntry}`);
+      const exitTime = new Date(`01/01/2000 ${newDataExit}`);
+      const minutesDiference = (exitTime - entryTime) / 60000;
+      console.log('Esta es la hora de entrada del pedido', dataEntry);
+      console.log('Esta es la hora de salida del pedido', newDataExit);
+      console.log('Estos son los minutos que tardó en preparar', minutesDiference);
       //agregamos al objeto la propiedad newDataEXit
-      updateOrderStatus(updatedOrder.id, updatedOrder.status, newDataExit);
+      updateOrderStatus(updatedOrder.id, updatedOrder.status, minutesDiference);
     })
   .catch(error => console.log(error))
   }
 
   // Actualizando la lista de pedidos luego del cambio de estado  
 
-  const updateOrderStatus = (orderId, newStatus, newDataExit) => {
+  const updateOrderStatus = (orderId, newStatus, minutesDiference) => {
     setOrders(prevOrders => {
       return prevOrders.map(order => {
         if (order.id === orderId) {
-          return { ...order, status: newStatus, dataExit: newDataExit};
+          return { ...order, status: newStatus, dataExit: minutesDiference};
         }
         return order;
       });

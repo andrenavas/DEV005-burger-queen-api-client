@@ -1,13 +1,17 @@
 import {Button} from '../gralComponents/gralComponents';
 import PropTypes from 'prop-types';
+// import { useEffect, useState } from 'react';
 
 const OrderTicket = ({order, changeStatus, showButton}) => {
-  
+  // const [dataExit, setDataExit] = useState(order.dataExit);
+
+  // useEffect(() => {
+  //   setDataExit(order.dataExit);
+  // }, [order.dataExit]);
   return(
     <>
     <div className="ticket-order">
       <div className="order-client">Cliente: {order.client}</div>
-      {/* <div className="order-client">UserId: {order.userId}</div> */}
       <div className="order-list">
       <table>
         <thead>
@@ -29,17 +33,15 @@ const OrderTicket = ({order, changeStatus, showButton}) => {
       <div className='container-orderdate-orderstatus'>
         <div className='order-status'>Estado: {order.status}</div>
         <div className='order-date'>A cocina: {order.dataEntry}</div>
-        {order.dataExit && ( <div className='order-date-exit'> A servir: {order.dataExit}</div>)}
+        <div className='order-date-exit'> T.Preparación: {order.dataExit}</div>
        
       </div>
       
       
       <div className="container-btn-add">
         {showButton &&
-        <Button className ="btn-order-ready" text="Preparado" onClick= {() => changeStatus(order)}/>
-        
+        <Button className ="btn-order-ready" text="Preparado" onClick= {() => changeStatus(order)}/> 
         }
-
       </div>
     </div>
     </>
