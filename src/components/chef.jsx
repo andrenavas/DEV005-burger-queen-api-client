@@ -42,35 +42,38 @@ const Chef = () => {
   const changeStatus = (order) => {
       //Cambiando el estado de la orden de pending a delivery
     console.log(order.id)
+          //agreggamos constante newDataExit y le asignamos la hora actual
+    const dataEntry = order.dataEntry;
+    const newDataExit = new Date(Date.now()).toLocaleTimeString();
+    const entryTime = new Date(`01/01/2000 ${dataEntry}`);
+    const exitTime = new Date(`01/01/2000 ${newDataExit}`);
+    const minutesDiference = (exitTime - entryTime) / 60000;
+    console.log('Esta es la hora de entrada del pedido', dataEntry);
+    console.log('Esta es la hora de salida del pedido', newDataExit);
+    console.log('Estos son los minutos que tardó en preparar', minutesDiference);
+
+    const dataOrder = {
+      status: 'delivery',
+      dataExit: minutesDiference,
+    };
     fetch(`http://localhost:8080/orders/${order.id}`, {
 
-  method: 'PATCH',
-  headers: {
-    'Content-Type': 'application/json',
-    'authorization': `Bearer ${token}`,
-    
-  },
-  body: JSON.stringify({status: 'delivery'})
-  })
-  .then((resp) => resp.json())
-  .then((updatedOrder) => {
-      //agreggamos constante newDataExit y le asignamos la hora actual
-      const dataEntry = order.dataEntry;
-      const newDataExit = new Date(Date.now()).toLocaleTimeString();
-      const entryTime = new Date(`01/01/2000 ${dataEntry}`);
-      const exitTime = new Date(`01/01/2000 ${newDataExit}`);
-      const minutesDiference = (exitTime - entryTime) / 60000;
-      console.log('Esta es la hora de entrada del pedido', dataEntry);
-      console.log('Esta es la hora de salida del pedido', newDataExit);
-      console.log('Estos son los minutos que tardó en preparar', minutesDiference);
-      //agregamos al objeto la propiedad newDataEXit
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'authorization': `Bearer ${token}`,  
+    },
+    body: JSON.stringify(dataOrder)
+    })
+    .then((resp) => resp.json())
+    .then((updatedOrder) => {
+    //actualizamos los estados
       updateOrderStatus(updatedOrder.id, updatedOrder.status, minutesDiference);
     })
-  .catch(error => console.log(error))
+    .catch(error => console.log(error))
   }
 
   // Actualizando la lista de pedidos luego del cambio de estado  
-
   const updateOrderStatus = (orderId, newStatus, minutesDiference) => {
     setOrders(prevOrders => {
       return prevOrders.map(order => {
@@ -81,8 +84,6 @@ const Chef = () => {
       });
     });
   };
-  //mostrar el Button Preparar en el ticket Chef
-
 
   return(
   <> 
