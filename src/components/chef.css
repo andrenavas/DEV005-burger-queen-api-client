@@ -2,18 +2,31 @@
 .container-order-cooking{
     /* background-color: red; */
     position: relative;
-    margin: 3%;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10px 0px 10px;
 }
 .container-order-ticket{
     /* background-color: green; */
+    width: 50%;
     height: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap:1%;
     overflow: auto;
-    
+    border-right: 2px solid white; 
 }
-
+.container-order-to-delivery{
+    /* background-color: green; */
+    width: 50%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:1%;
+    overflow: auto;
+}
 .ticket-order{
     background-color: white;
     width: 30%;

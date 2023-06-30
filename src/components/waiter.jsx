@@ -84,7 +84,8 @@ const Waiter = () => {
         client: client,
         products: selectedProducts,
         status: manualStatus,
-        dataEntry: date
+        dataEntry: date,
+        dataExit: null,
       };
 
       fetch('http://localhost:8080/orders', {
