@@ -13,7 +13,8 @@ const StatusOrder = () => {
     console.log('Cambiando status a entregado')
   }
   
-useEffect(() =>{const token = localStorage.getItem('accessToken'); 
+useEffect(() =>{
+  const token = localStorage.getItem('accessToken'); 
   fetch('http://localhost:8080/orders', {
 
   method: 'GET',

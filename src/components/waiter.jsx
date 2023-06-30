@@ -84,7 +84,8 @@ const Waiter = () => {
         client: client,
         products: selectedProducts,
         status: manualStatus,
-        dataEntry: date
+        dataEntry: date,
+        dataExit: null,
       };
 
       fetch('http://localhost:8080/orders', {
@@ -98,7 +99,6 @@ const Waiter = () => {
 
     })
     .then(() => {
-
       setSelectedProducts([]);
       setTotalPrice(0);
       console.log('DATA-ORDER', dataOrder)
@@ -119,6 +119,7 @@ const Waiter = () => {
   </>
   );
 };
+
 
 export default Waiter
 
