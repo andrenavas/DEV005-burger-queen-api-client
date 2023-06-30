@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import IconoMesero from '../../assets/img/IconoMesero.png';
 import IconoOrders from '../../assets/img/IconoOrders.png'
 import IconoHrs from '../../assets/img/IconoHrs.png'
 import BQLogo from '../../assets/img/BQLogo.png'
@@ -12,12 +13,27 @@ const NavOrders= () => {
   const logout = () => {
     navigateTo('/');
   } 
+  const navMenu = () => {
+    console.log('click en order')
+     navigateTo('/waiter');
+  };
+  const navStatusOrder = () => {
+    console.log('click en order')
+     navigateTo('/statusorder');
+  };
   return (
     <>
     <section className='section-waiter'>
     <div className='waiter-nav'>
       <div className='logos'>
-        <img src={IconoOrders} className='waiterIcon' alt='waiter icon'/>
+      <div className='container-orders-view'>
+        <div className='container-order-logo'onClick={navMenu}>
+          <img src={IconoMesero} className='waiterIcon' alt='waiter icon' />
+        </div>
+        <div className='container-order-logo'onClick={navStatusOrder}>
+          <img src={IconoOrders} className='orderLogo' alt='orders icon'/> 
+        </div>      
+      </div>
         <h1> Estado de órdenes </h1>
         <div className='container-logos'>
           <img src={BQLogo} className='BQLogo' alt='hours icon'/>

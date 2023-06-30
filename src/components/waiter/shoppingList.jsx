@@ -7,7 +7,7 @@ const iconDeleteTrash = <FontAwesomeIcon icon={faTrashCan} size="xl" style={{col
 
 const ShoppingList = ({selectedProducts, totalPrice, reduceProduct}) => {
   return (
-        <table>
+        <table className='table-products'>
           <thead>
             <tr>
               <th>Producto</th>

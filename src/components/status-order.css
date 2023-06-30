@@ -1,0 +1,19 @@
+.container-order-status{
+    /* background-color: yellow; */
+    position: relative;
+    display: flex;
+    padding: 0px 10px 0px 10px;
+}
+
+.container-order-ticket-status{
+    /* background-color: green; */
+    width: 95%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: auto;
+    margin-left: 1%;
+    gap: 5%;
+    margin-top: 1%;
+}

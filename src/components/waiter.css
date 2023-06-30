@@ -76,15 +76,15 @@ margin: 35px 225px;
   width: 95%;
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .container-input-btn{
-  width: 70%;
+  width: 50%;
   display: flex;
   align-items: center;
   /* background-color: yellow; */
-  margin-left: 5%;
+  /* margin-left: 5%; */
 }
 .input-name{
   height: 35px;
@@ -113,7 +113,7 @@ margin: 35px 225px;
   height: 35px;
   width: 30%;
   color: white;
-  margin: 10px;
+  margin: 10px 10px 10px 50px;
   vertical-align: text-bottom;
   padding: 3px;
 }

@@ -56,7 +56,7 @@ const Chef = () => {
     const newDataExit = new Date(Date.now()).toLocaleTimeString();
     const entryTime = new Date(`01/01/2000 ${dataEntry}`);
     const exitTime = new Date(`01/01/2000 ${newDataExit}`);
-    const minutesDiference = (exitTime - entryTime) / 60000;
+    const minutesDiference = Math.floor((exitTime - entryTime) / 60000);
     console.log('Esta es la hora de entrada del pedido', dataEntry);
     console.log('Esta es la hora de salida del pedido', newDataExit);
     console.log('Estos son los minutos que tardó en preparar', minutesDiference);
@@ -93,6 +93,7 @@ const Chef = () => {
       });
     });
   };
+  let showButton = true;
 
   return(
   <> 
@@ -106,12 +107,12 @@ const Chef = () => {
         <div className='container-order-ticket'>
         {orders
         .filter(order => order.status === 'pending')
-        .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatus} showButton= {true}/>))}
+        .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatus} showButton= {showButton} text="Preparado"/>))}
         </div>
         <div className='container-order-to-delivery'>
         {orders
         .filter(order => order.status === 'delivery')
-        .map(order => (<OrderTicket key={order.id} order={order} showButton= {false}/>))}
+        .map(order => (<OrderTicket key={order.id} order={order} showButton= {false} />))}
         </div>
         
    </section> 

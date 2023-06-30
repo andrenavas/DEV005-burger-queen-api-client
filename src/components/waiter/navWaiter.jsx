@@ -14,6 +14,10 @@ const NavWaiter = () => {
   const logout = () => {
     navigateTo('/');
   } 
+  const navMenu = () => {
+    console.log('click en order')
+     navigateTo('/waiter');
+  };
   const statusOrder = () => {
     console.log('click en order')
      navigateTo('/statusorder');
@@ -25,7 +29,9 @@ const NavWaiter = () => {
       <div className='logos'>
           <div className='container-logo-order-waiter'>
               <div className='container-orders-view'>
+              <div className='container-order-logo'onClick={navMenu}>
                 <img src={IconoMesero} className='waiterIcon' alt='waiter icon' />
+              </div>
                 <div className='container-order-logo'onClick={statusOrder}>
                   <img src={Orders} className='orderLogo' alt='orders icon'/> 
                 </div>
