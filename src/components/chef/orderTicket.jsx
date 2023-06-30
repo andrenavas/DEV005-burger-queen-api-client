@@ -33,7 +33,7 @@ const OrderTicket = ({order, changeStatus, showButton}) => {
       <div className='container-orderdate-orderstatus'>
         <div className='order-status'>Estado: {order.status}</div>
         <div className='order-date'>A cocina: {order.dataEntry}</div>
-        <div className='order-date-exit'> T.Preparación: {order.dataExit} min</div>
+        {order.dataExit !== null && <div className='order-date-exit'> T.Preparación: {order.dataExit} min</div>}
        
       </div>
       

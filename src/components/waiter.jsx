@@ -99,7 +99,6 @@ const Waiter = () => {
 
     })
     .then(() => {
-
       setSelectedProducts([]);
       setTotalPrice(0);
       console.log('DATA-ORDER', dataOrder)

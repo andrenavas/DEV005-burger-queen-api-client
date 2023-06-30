@@ -27,10 +27,19 @@ const Chef = () => {
         console.log(dataOrders);
         setOrders(dataOrders);
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error)
+      })
+      .finally(() => {
+        /* const intervalId = setTimeout(() => {
+          clearTimeout(intervalId);
+          getOrders();
+        }, 10000) */
+      });
     }
     // se ejecuta getOrders una vez para que la primera llamada sea inmediata y no esperar 5 segundos
     getOrders();
+    
     // crear un intervalo, donde va la función que trae la petición fetch y luego el tiempo en milisegundos(5 segundos)
     const intervalId = setInterval(getOrders, 10000)
     //este retorno es opcional del useEffect, evita que se ejecute cuando estoy en otra pantalla o que se pueda duplicar
@@ -58,12 +67,12 @@ const Chef = () => {
     };
     fetch(`http://localhost:8080/orders/${order.id}`, {
 
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-      'authorization': `Bearer ${token}`,  
-    },
-    body: JSON.stringify(dataOrder)
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`,  
+      },
+      body: JSON.stringify(dataOrder)
     })
     .then((resp) => resp.json())
     .then((updatedOrder) => {
