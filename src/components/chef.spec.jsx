@@ -1,4 +1,4 @@
-import {render,waitFor, screen} from '@testing-library/react'
+import {render, screen} from '@testing-library/react'
 import Chef from './chef'
 import { vi } from 'vitest'
 import OrderTicket from './chef/orderTicket'
@@ -73,8 +73,5 @@ describe('orderTicket render', () => {
         expect(screen.getByText('John Doe')).toBeInTheDocument();
         expect(screen.getByText('Product 1')).toBeInTheDocument();
         expect(screen.getByText('Product 2')).toBeInTheDocument();
-        // expect(screen.getByText('Estado: pending')).toBeInTheDocument();
-        // expect(screen.getByText('A cocina: 2022-01-01 12:00:00')).toBeInTheDocument();
-        // expect(screen.getByText('Preparado')).toBeInTheDocument();
     });
 });

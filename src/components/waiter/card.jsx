@@ -1,7 +1,7 @@
 import {Button} from '../gralComponents/gralComponents';
 import PropTypes from 'prop-types';
 
-const Card = ({ product, handleAddProduct }) => {
+const Card = ({ product, handleAddProduct, children }) => {
 
 
   return(
@@ -17,6 +17,7 @@ const Card = ({ product, handleAddProduct }) => {
           {/* Falta agregar el onClick */}
         <Button className='btn-add' text='+' onClick= {() => handleAddProduct(product)} aria-labelledby='add-button'/>
         {/* onClick={() => typeMenu("Almuerzo")} */}
+        {children}
         </div>
       </div>
     </div>

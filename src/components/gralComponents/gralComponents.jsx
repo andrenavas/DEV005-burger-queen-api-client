@@ -5,10 +5,10 @@ export const Input = ({value,placeholder,className, onChange }) => {
   )  
 };
 
-export const Button = ({onClick,text,className, disabled}) => {
+export const Button = ({onClick,text,className, disabled, dataTestid}) => {
   return (
     <>
-   <button onClick={onClick} className={className} disabled={disabled}>{text}</button>
+   <button data-testid={dataTestid} onClick={onClick} className={className} disabled={disabled}>{text}</button>
     </>
   );
 };

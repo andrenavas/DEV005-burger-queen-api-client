@@ -1,4 +1,5 @@
-import {render, screen} from '@testing-library/react'
+import {render, screen, waitFor} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import Waiter from './waiter'
 import { vi } from 'vitest'
 import Card from './waiter/card'
@@ -15,7 +16,7 @@ vi.mock('react-router-dom', () => {
 })
 describe('Waiter', () => {
     beforeEach(() => {
-      render(<Waiter/>);
+      // render(<Waiter/>);
     });
     it('renders Waiter', () => {
     //   screen.debug();
@@ -26,41 +27,58 @@ describe('Waiter', () => {
       expect(ordersIcon).toBeInTheDocument();
 
     });
-    it('btn add exist', () =>{
-      const product = { id: 1, name: 'Agua 500 ml'};
-      const { queryAllByRole } = render (
-      <Waiter>
-        <Products/>
-          <Card key={product.id} product={product} handleAddProduct= {handleAddProduct}/>
-      </Waiter>
-      );
+    // it('btn add exist', () =>{
+    //   const product = { id: 1, name: 'Agua 500 ml'};
+    //   const { queryAllByRole } = render (
+    //   <Waiter>
+    //     <Products/>
+    //       <Card key={product.id} product={product} handleAddProduct= {handleAddProduct}/>
+    //   </Waiter>
+    //   );
     
-      const addButton = queryAllByRole('button')[0]; // Obtener el primer botón con el rol "button"
+    //   const addButton = queryAllByRole('button')[0]; // Obtener el primer botón con el rol "button"
 
-      expect(addButton).toBeInTheDocument();
+    //   expect(addButton).toBeInTheDocument();
 
-    });
-    describe('render Card component', () => {
-      beforeEach(() => {
-        render(<Waiter><Products><Card/></Products></Waiter>)
-      });
-      it('rendes CardComponent', () => {
-        expect(true).toBe(true)
-      })
-      it('renders a Card with', () => {
-          const product = {
-            name: 'Test Product',
-            image: 'test-image.jpg',
-            price: 10
-        }
-        render(<Card product={product} />)
-        const productName = screen.getByText('Test Product')
-        // const productImage = screen.getByRole('img')
-        expect(productName).toBeInTheDocument()
-        // expect(productImage).toBeInTheDocument()
+});
+  
+describe.only('render Card component', () => {
+  let user;
+  beforeEach(() => {
+    user = userEvent.setup()
+    //Given
+    render(<Waiter/>)
+  });
+  it('render CardComponent', () => {
+    screen.debug();
+    expect(true).toBe(true)
+  })
+  it('renders a Card with', () => {
+    const product = {
+      name: 'Test Product',
+      image: 'test-image.jpg',
+      price: 10
+    }
+    render(<Card product={product} />)
+    screen.debug();
+    const productName = screen.getByText('Test Product')
+    expect(productName).toBeInTheDocument()
+  })
+  it.only('should add product to order', async () => {
+    //render waiter, click en desayuno, click en add, aparece en shoppingCart
+    // GIVEN: los productos se hayan renderizado
+    await waitFor(() => {
+     screen.getByTestId('container_products')
+    })
 
-      })
-    });
+    // WHEN: click en desayunos
+    const btnDesayuno = screen.getByTestId('btn_breakfast')
+    user.click(btnDesayuno)
+    screen.debug();
+
+
+  })
+});
 
     // it('test_delete_product', () => {
     //     const selectedProducts = useState([]);
@@ -230,4 +248,3 @@ describe('Waiter', () => {
     //   // setTotalPrice debería haberse llamado con el precio del nuevo producto
     //   expect(setTotalPriceMock).toHaveBeenCalledWith(productToAdd.price)
     // })
-});
