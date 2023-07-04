@@ -11,38 +11,46 @@ const OrderTicket = ({order, changeStatus, showButton, text}) => {
   return(
     <>
     <div className="ticket-order">
-      <div className="order-client">{order.client}</div>
-      <div className="order-list">
-      <table>
-        <thead>
-          <tr>
-            <th>Cant</th>
-            <th>Producto</th>
-          </tr>
-        </thead>
-        <tbody>
-          {order.products.map((item, index) => (
-            <tr key={index}>
-              <td>{item.quantity}</td>
-              <td>{item.name}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div>
+        <div className="order-client">{order.client}</div>
+        <div className="order-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Cant</th>
+                <th>Producto</th>
+              </tr>
+            </thead>
+            <tbody>
+              {order.products.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.quantity}</td>
+                  <td>{item.name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <div className='container-orderdate-orderstatus'>
         <div className='order-status'>Estado: {order.status}</div>
         <div className='order-date'>A cocina: {order.dataEntry}</div>
-        {order.dataExit !== null && <div className='order-date-exit'> T.Preparación: {order.dataExit} min</div>}
-      </div>
-      <div className="container-btn-add">
+        {/* {order.dataExit && order.dataExit instanceof String &&
+          <div className='order-date-exit'> T.Preparación: {order.dataExit} min</div>
+        } */}
+         {order.dataExit !== null &&
+          <div className='order-date-exit'> T.Preparación: {order.dataExit} min</div>
+        }
+        <div className="container-btn-add">
         {/* {showButton &&
         <Button className ="btn-order-ready" text="Preparado" showButton= {true} onClick= {() => changeStatus(order)}/> 
         } */}
          {showButton &&
         <Button className ="btn-order-ready" text={text} showButton= {true} onClick= {() => changeStatus(order)}/> 
         }
+        </div>
       </div>
+      
     </div>
     </>
   )
@@ -54,4 +62,3 @@ OrderTicket.propTypes = {
   text: PropTypes.string
 }
 export default OrderTicket
-

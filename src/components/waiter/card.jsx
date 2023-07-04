@@ -15,7 +15,7 @@ const Card = ({ product, handleAddProduct }) => {
         <div className="product-price">${product.price}</div>
         <div className="container-btn-add">
           {/* Falta agregar el onClick */}
-        <Button className ="btn-add" text="+" onClick= {() => handleAddProduct(product)}/>
+        <Button className='btn-add' text='+' onClick= {() => handleAddProduct(product)} aria-labelledby='add-button'/>
         {/* onClick={() => typeMenu("Almuerzo")} */}
         </div>
       </div>

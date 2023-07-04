@@ -30,16 +30,18 @@
 .ticket-order{
     background-color: white;
     width: 225px;
-    height: 350px;
+    height: 370px;
     border-radius: 10px;
     margin: 1%;
     padding: 1.5%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     /* justify-content: center; */
     align-items: center;
     text-align: center;
     gap:5px;
+    /* position: absolute; */
 }
 .order-status, .order-date, .order-date-exit {
     font-size: 12px;
@@ -75,4 +77,14 @@
     font-weight: bold;
     box-shadow: 0px 2px 4px #050505;
 }
+.container-orderdate-orderstatus{
+    /* background-color: #D98F4E; */
+    /* margin-top: 90%; */
+    padding-bottom: 3px;
+    width: 195px;
+}
 
+.order-list{
+    margin-top: 3%;
+    /* background-color: green; */
+}

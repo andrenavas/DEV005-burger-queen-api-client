@@ -5,6 +5,7 @@ import ClientName from './waiter/clientName';
 import Products from './waiter/products';
 import ShoppingCart from './waiter/shoppingCart';
 import  {useState} from 'react';
+import PropTypes from 'prop-types';
 
 const Waiter = () => {
  
@@ -12,6 +13,8 @@ const Waiter = () => {
   const[selectedProducts, setSelectedProducts] = useState([]);
   //constante con el total del valor a pagar
   const [totalPrice, setTotalPrice] = useState(0);
+  //const clientValue será el nombre del cliente y set ClienteValue es la función
+  const [clientValue, setClientValue] = useState('')
   //función del btn que agrega los productos seleccionados al carrito
   const handleAddProduct = (selectedProduct) => {
     //revisar si el elemento agregado existe a través del id del producto, 
@@ -27,8 +30,7 @@ const Waiter = () => {
     setSelectedProducts([
       ...selectedProducts, selectedProduct])
       console.log('Click en agregar');
-      // console.log(selectedProduct);
-      
+      // console.log(selectedProduct);  
   };
 
   //Borra el item de la lista (no la cantidad)
@@ -59,8 +61,6 @@ const Waiter = () => {
       setTotalPrice(totalPrice - productToDelete.price);
     }
   };
-   //const clientValue será el nombre del cliente y set ClienteValue es la función
-   const [clientValue, setClientValue] = useState('')
    
   // Enviar la orden a la API
     const sendOrder = () => {
@@ -73,12 +73,7 @@ const Waiter = () => {
       //fecha actual
       const date =  new Date(Date.now()).toLocaleTimeString()
       const manualStatus = 'pending';
-      // console.log('SEND-ORDER' , token);
-      // console.log('userId' , userId);
-      // console.log('clientName', client);
-      // console.log('products', selectedProducts);
-      // console.log('TIME', date);
-      // console.log('status', manualStatus)
+
       const dataOrder = {
         userId: userId,
         client: client,
@@ -121,6 +116,8 @@ const Waiter = () => {
   );
 };
 
-
+ClientName.propTypes = {
+  clientValue: PropTypes.string,
+  setClientValue: PropTypes.func // en lugar de PropTypes.string
+} 
 export default Waiter
-
