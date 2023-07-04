@@ -11,12 +11,16 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.4",
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@hookform/error-message": "^2.0.1",
+    "@mui/material": "^5.13.7",
     "babel-plugin-macros": "^3.1.0",
     "bootstrap": "^5.3.0",
     "jsdom": "^22.1.0",
@@ -24,6 +28,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.3",
     "react-router-dom": "^6.12.1",
+    "react-table": "^7.8.0",
     "vitest": "^0.32.0"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, getByText} from '@testing-library/react'
+import {render, screen} from '@testing-library/react'
 import Waiter from './waiter'
 import { vi } from 'vitest'
 import Card from './waiter/card'
@@ -26,6 +26,42 @@ describe('Waiter', () => {
       expect(ordersIcon).toBeInTheDocument();
 
     });
+    it('btn add exist', () =>{
+      const product = { id: 1, name: 'Agua 500 ml'};
+      const { queryAllByRole } = render (
+      <Waiter>
+        <Products/>
+          <Card key={product.id} product={product} handleAddProduct= {handleAddProduct}/>
+      </Waiter>
+      );
+    
+      const addButton = queryAllByRole('button')[0]; // Obtener el primer botón con el rol "button"
+
+      expect(addButton).toBeInTheDocument();
+
+    });
+    describe('render Card component', () => {
+      beforeEach(() => {
+        render(<Waiter><Products><Card/></Products></Waiter>)
+      });
+      it('rendes CardComponent', () => {
+        expect(true).toBe(true)
+      })
+      it('renders a Card with', () => {
+          const product = {
+            name: 'Test Product',
+            image: 'test-image.jpg',
+            price: 10
+        }
+        render(<Card product={product} />)
+        const productName = screen.getByText('Test Product')
+        // const productImage = screen.getByRole('img')
+        expect(productName).toBeInTheDocument()
+        // expect(productImage).toBeInTheDocument()
+
+      })
+    });
+
     // it('test_delete_product', () => {
     //     const selectedProducts = useState([]);
     //     const totalPrice = useState(0);
@@ -169,20 +205,29 @@ describe('Waiter', () => {
     //   expect(selectedProducts).toEqual([product]);
     // });
 
-        it('btn add exist', () =>{
-      const product = { id: 1, name: 'Agua 500 ml'};
-      const { queryAllByRole } = render (
-      <Waiter>
-        <Products/>
-          <Card key={product.id} product={product} handleAddProduct= {handleAddProduct}/>
-      </Waiter>
-      );
-    
-      const addButton = queryAllByRole('button')[0]; // Obtener el primer botón con el rol "button"
-      
-      // fireEvent.click(btnAdd);
+    // it('handleAddProduct should add product to selectedProducts and update totalPrice', async () => {
+    //   const { queryAllByRole } = render (
+    //       <Waiter setSelectedProducts={setSelectedProductsMock} setTotalPrice={setTotalPriceMock}>
+    //         <Products/>
+    //           <Card />
+    //       </Waiter>
+    //       );
         
-      expect(addButton).toBeInTheDocument();
+    //       const addButton = queryAllByRole('button')[0]; // Obtener el primer botón con el rol "button"
+  
 
-    });
+
+    //   const productToAdd = { id: '1', price: 100 };
+  
+     
+  
+    //   // Hacer clic en el botón
+    //   fireEvent.click(addButton)
+  
+    //   // setSelectedProducts debería haberse llamado con el nuevo producto
+    //   expect(setSelectedProductsMock).toHaveBeenCalledWith(expect.arrayContaining([productToAdd]))
+  
+    //   // setTotalPrice debería haberse llamado con el precio del nuevo producto
+    //   expect(setTotalPriceMock).toHaveBeenCalledWith(productToAdd.price)
+    // })
 });

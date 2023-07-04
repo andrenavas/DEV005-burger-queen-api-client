@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/waiter/card.jsx</title>
+    <title>Code coverage report for components/chef/navChef.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/waiter</a> card.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/chef</a> navChef.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">94.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>33/35</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">94.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>33/35</span>
             </div>
         
             
@@ -92,7 +92,12 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -102,55 +107,65 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import {Button} from '../gralComponents/gralComponents';
-import PropTypes from 'prop-types';
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useNavigate } from 'react-router-dom';
+import IconoChef from '../../assets/img/IconoChef.png'
+import IconoHrs from '../../assets/img/IconoHrs.png'
+import BQLogo from '../../assets/img/BQLogo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 &nbsp;
-const Card = ({ product, handleAddProduct }) =&gt; {
+const logoutIcon = &lt;FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{color:"#db3f0a",}} /&gt;
 &nbsp;
-&nbsp;
-  return(
+const NavChef= () =&gt; {
+  const navigateTo = useNavigate();
+  const logout = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    navigateTo('/');</span>
+<span class="cstat-no" title="statement not covered" >  } </span>
+  return (
     &lt;&gt;
-    &lt;div className="card-product"&gt;
-      &lt;div className="product-name"&gt;{product.name}&lt;/div&gt;
-      &lt;div className="product-image"&gt;
-        &lt;img className ="product-img" src = {product.image}/&gt;
-      &lt;/div&gt;
-      &lt;div className="container-price-btnAdd"&gt;
-        &lt;div className="product-price"&gt;${product.price}&lt;/div&gt;
-        &lt;div className="container-btn-add"&gt;
-          {/* Falta agregar el onClick */}
-        &lt;Button className='btn-add' text='+' onClick= {<span class="fstat-no" title="function not covered" >() =&gt; handleAddProduct(product)} a</span>ria-labelledby='add-button'/&gt;
-        {/* onClick={() =&gt; typeMenu("Almuerzo")} */}
+    &lt;section className='section-waiter'&gt;
+    &lt;div className='waiter-nav'&gt;
+      &lt;div className='logos'&gt;
+        &lt;img src={IconoChef} className='waiterIcon' alt='waiter icon'/&gt;
+        &lt;h1&gt; Chefcita / Chefcito &lt;/h1&gt;
+        &lt;div className='container-logos'&gt;
+          &lt;img src={BQLogo} className='BQLogo' alt='hours icon'/&gt;
+          &lt;img src={IconoHrs} className='hrsIcon' alt='hours icon'/&gt;
         &lt;/div&gt;
       &lt;/div&gt;
+      &lt;div className='container-logout' onClick={logout}&gt;
+        {logoutIcon}
+      &lt;/div&gt;
     &lt;/div&gt;
+  &lt;/section&gt;
     &lt;/&gt;
-  )
+  );
 };
-Card.propTypes = {
-  handleAddProduct: PropTypes.func,
-  product: PropTypes.object,
-}
-export default Card</pre></td></tr></table></pre>
+export default NavChef</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

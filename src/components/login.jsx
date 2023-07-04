@@ -49,7 +49,7 @@ const Login = () => {
         console.log('userId', userId);
       }
 
-      if(data.user.role === 'chef' || data.user.role ==='admin'){
+      if(data.user.role === 'chef'){
         navigateTo('/chef');
          localStorage.setItem('accessToken', data.accessToken);
          localStorage.setItem('userEmail', data.user.email);
@@ -60,6 +60,18 @@ const Login = () => {
          console.log('EL MAIL CHEF', userEmail);
          console.log('EL ROL CHEF', userRole);
          console.log('userId CHEF', userId);
+       }
+       if(data.user.role === 'admin'){
+        navigateTo('/admin');
+         localStorage.setItem('accessToken', data.accessToken);
+         localStorage.setItem('userEmail', data.user.email);
+         localStorage.setItem('userRole', data.user.role);
+         localStorage.setItem('userId', data.user.id);
+ 
+         console.log('EL TOKEN ADMIN', token);
+         console.log('EL MAIL ADMIN', userEmail);
+         console.log('EL ROL ADMIN', userRole);
+         console.log('userId ADMIN', userId);
        }
       
     })

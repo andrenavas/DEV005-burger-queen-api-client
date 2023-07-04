@@ -24,7 +24,7 @@ const Chef = () => {
       })
       .then((resp) => resp.json())
       .then((dataOrders) => {
-        console.log(dataOrders);
+        // console.log(dataOrders);
         setOrders(dataOrders);
       })
       .catch(error => {
