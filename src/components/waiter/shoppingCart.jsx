@@ -11,8 +11,8 @@ const ShoppingCart = ({selectedProducts, totalPrice, reduceProduct,sendOrder, cl
    useEffect(() => {
     //evaluar un valor y cambiarlos a boolean, se usa doble !!(doble negación)
     setBtnActive(!!clientValue && clientValue.length > 0 && selectedProducts.length > 0);
-    console.log('selectedProducts', selectedProducts)
-    console.log('CLIENT VALUE',!!clientValue && clientValue.length > 0,);
+    // console.log('selectedProducts', selectedProducts)
+    // console.log('CLIENT VALUE',!!clientValue && clientValue.length > 0,);
   }, [clientValue, selectedProducts]);
 
    

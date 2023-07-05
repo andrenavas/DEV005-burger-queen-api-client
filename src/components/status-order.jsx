@@ -12,7 +12,7 @@ const StatusOrder = () => {
   const [orders, setOrders] = useState([]);
 
   const changeStatusDelivered = (order) => {
-    console.log('Cambiando status a entregado');
+    // console.log('Cambiando status a entregado');
     const token = localStorage.getItem('accessToken');
     fetch(`http://localhost:8080/orders/${order.id}`, {
       method: 'PATCH',
@@ -25,7 +25,7 @@ const StatusOrder = () => {
     .then((resp) => resp.json())
     .then((updatedOrder) => {
       updateOrderStatus(updatedOrder.id, updatedOrder.status);
-      console.log(updatedOrder.status);
+      // console.log(updatedOrder.status);
     })
     .catch(error => console.log(error))
   }

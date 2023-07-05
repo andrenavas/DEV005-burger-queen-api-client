@@ -3,6 +3,7 @@ import Card from './card';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { getProducts } from '../gralComponents/apiRequest';
 
 const Products = ({ handleAddProduct }) => {
   const [products, setProducts] = useState([]);
@@ -10,35 +11,40 @@ const Products = ({ handleAddProduct }) => {
   const [selectedMenu, setSelectedMenu] = useState('')
   const [getProductsRequestStatus, setGetProductsRequestStatus] = useState('loading')
   const typeMenu = (selectedType) => {
-    console.log(selectedType)
+    // console.log(selectedType)
     setSelectedMenu(selectedType)
   };
   //const token = localStorage.getItem('accessToken');
   //console.log(token);
   useEffect(() => {
-    // const token = localStorage.getItem('accessToken');
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lc2Vyb0BidXJnZXJxdWVlbi5jb20iLCJpYXQiOjE2ODg1MTEwNjMsImV4cCI6MTY4ODUxNDY2Mywic3ViIjoiMyJ9.z7yn9iegtMvr6rB7FrWUI5hjRClyaWqhyxkOtZHzgVM'
+    const token = localStorage.getItem('accessToken');
+    getProducts(token, setGetProductsRequestStatus, setProducts);
+    // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lc2Vyb0BidXJnZXJxdWVlbi5jb20iLCJpYXQiOjE2ODg1MTEwNjMsImV4cCI6MTY4ODUxNDY2Mywic3ViIjoiMyJ9.z7yn9iegtMvr6rB7FrWUI5hjRClyaWqhyxkOtZHzgVM'
+    // const getProducts = () => {
+    //   fetch('http://localhost:8080/products', {
 
-    fetch('http://localhost:8080/products', {
+    //   method: 'GET',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'authorization': `Bearer ${token}`,
+    //   }
+    // })
+    //   .then((resp) => resp.json())
+    //   .then((productsData) => {
+    //     setGetProductsRequestStatus('success')
 
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'authorization': `Bearer ${token}`,
-      }
-    })
-      .then((resp) => resp.json())
-      .then((productsData) => {
-        setGetProductsRequestStatus('success')
+    //     if (productsData && Array.isArray(productsData)) {
+    //       setProducts(productsData)
+    //     }
+    //   })
+    //   .catch(error => {
+    //     setGetProductsRequestStatus('error')
+    //     console.log(error)
+    //   })
+    // }
 
-        if (productsData && Array.isArray(productsData)) {
-          setProducts(productsData)
-        }
-      })
-      .catch(error => {
-        setGetProductsRequestStatus('error')
-        console.log(error)
-      })
+    
+
   }, []);
 
   return (
@@ -53,13 +59,14 @@ const Products = ({ handleAddProduct }) => {
           <div className='container-products' data-testid={'container_products'}>
             {products
               .filter(product => product.type === selectedMenu)
-              .map(product => (<Card key={product.id} product={product} handleAddProduct={handleAddProduct}><span>Hola</span> <span>Andre</span></Card>))
+              .map(product => (<Card key={product.id} product={product} handleAddProduct={handleAddProduct}/>))
             }
           </div>
         ) : null}
       </div>
     </>
   )
+
 };
 
 Products.propTypes = {

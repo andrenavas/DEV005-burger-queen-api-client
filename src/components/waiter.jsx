@@ -29,21 +29,21 @@ const Waiter = () => {
     setTotalPrice(totalPrice + selectedProduct.price)
     setSelectedProducts([
       ...selectedProducts, selectedProduct])
-      console.log('Click en agregar');
+      // console.log('Click en agregar');
       // console.log(selectedProduct);  
   };
 
   //Borra el item de la lista (no la cantidad)
   const deleteProduct = productToDelete => {
-    console.log('CLICK EN DELETE')
+    // console.log('CLICK EN DELETE')
     const results = selectedProducts.filter(
       item => item.id !== productToDelete.id
     );
     setTotalPrice(totalPrice - productToDelete.price)
     setSelectedProducts(results)
   }
-  console.log('Este es el arreglo del producto seleccionado', selectedProducts);
-  console.log('TOTAL PRICE', totalPrice)
+  // console.log('Este es el arreglo del producto seleccionado', selectedProducts);
+  // console.log('TOTAL PRICE', totalPrice)
 
   //Para disminuir la cantidad de item en 1
   const reduceProduct = productToDelete => {
@@ -97,7 +97,7 @@ const Waiter = () => {
       setSelectedProducts([]);
       setTotalPrice(0);
       setClientValue('');
-      console.log('DATA-ORDER', dataOrder)
+      // console.log('DATA-ORDER', dataOrder)
     })
     .catch(error => console.log(error))
   };

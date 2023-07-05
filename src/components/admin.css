@@ -12,6 +12,18 @@
     width: 95%;
     height: 530px;
 }
-TableRow{
-    color: azure;
+.container-table-workers{
+  
+    border-radius: 20px;
+    border: 2px solid yellow
+}
+.table-dashboard-workers{
+    background-color: white;
+    border: none;
+}
+
+.table-subtitles{
+    font-weight: bold;
+    background-color:rgb(219, 216, 216);
+    font-size: 20px;
 }

@@ -50,16 +50,16 @@ const Chef = () => {
 
   const changeStatus = (order) => {
       //Cambiando el estado de la orden de pending a delivery
-    console.log(order.id)
+    // console.log(order.id)
           //agreggamos constante newDataExit y le asignamos la hora actual
     const dataEntry = order.dataEntry;
     const newDataExit = new Date(Date.now()).toLocaleTimeString();
     const entryTime = new Date(`01/01/2000 ${dataEntry}`);
     const exitTime = new Date(`01/01/2000 ${newDataExit}`);
     const minutesDiference = Math.floor((exitTime - entryTime) / 60000);
-    console.log('Esta es la hora de entrada del pedido', dataEntry);
-    console.log('Esta es la hora de salida del pedido', newDataExit);
-    console.log('Estos son los minutos que tardó en preparar', minutesDiference);
+    // console.log('Esta es la hora de entrada del pedido', dataEntry);
+    // console.log('Esta es la hora de salida del pedido', newDataExit);
+    // console.log('Estos son los minutos que tardó en preparar', minutesDiference);
 
     const dataOrder = {
       status: 'delivery',

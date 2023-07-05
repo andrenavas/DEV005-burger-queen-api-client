@@ -15,11 +15,11 @@ const NavWaiter = () => {
     navigateTo('/');
   } 
   const navMenu = () => {
-    console.log('click en order')
+    // console.log('click en order')
      navigateTo('/waiter');
   };
   const statusOrder = () => {
-    console.log('click en order')
+    // console.log('click en order')
      navigateTo('/statusorder');
   };
   return (

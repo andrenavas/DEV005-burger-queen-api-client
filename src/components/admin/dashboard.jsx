@@ -5,11 +5,11 @@ const Dashboard = ({workers}) => {
     return(
         <>
         <div className="container-table-btn">
-            <TableContainer>
-                <Table>
+            <TableContainer className='container-table-workers'>
+                <Table className='table-dashboard-workers'>
                     <TableHead>
-                        <TableRow>
-                            <TableCell>Nº</TableCell>
+                        <TableRow className='table-subtitles'>
+                            <TableCell >Nº</TableCell>
                             <TableCell>ID</TableCell>
                             <TableCell>Nombre</TableCell>
                             <TableCell>Rol</TableCell>

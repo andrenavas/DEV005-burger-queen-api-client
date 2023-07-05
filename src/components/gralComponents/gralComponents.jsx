@@ -25,7 +25,8 @@ Button.propTypes = {
   onClick: PropTypes.func,
   text: PropTypes.string,
   className: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  dataTestid: PropTypes.string,
 };
 
 

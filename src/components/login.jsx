@@ -17,9 +17,9 @@ const Login = () => {
   const userRole = localStorage.getItem('userRole');
   // fn que envía el formulario a la api
   const onSubmit = (data) => {
-    console.log(data)
-    console.log(data.email)
-    console.log(data.password)
+    // console.log(data)
+    // console.log(data.email)
+    // console.log(data.password)
 
     fetch('http://localhost:8080/login', {
 
@@ -43,10 +43,10 @@ const Login = () => {
         localStorage.setItem('userRole', data.user.role);
         localStorage.setItem('userId', data.user.id);
 
-        console.log('EL TOKEN', token);
-        console.log('EL MAIL', userEmail);
-        console.log('EL ROL', userRole);
-        console.log('userId', userId);
+        // console.log('EL TOKEN', token);
+        // console.log('EL MAIL', userEmail);
+        // console.log('EL ROL', userRole);
+        // console.log('userId', userId);
       }
 
       if(data.user.role === 'chef'){
@@ -56,10 +56,10 @@ const Login = () => {
          localStorage.setItem('userRole', data.user.role);
          localStorage.setItem('userId', data.user.id);
  
-         console.log('EL TOKEN CHEF', token);
-         console.log('EL MAIL CHEF', userEmail);
-         console.log('EL ROL CHEF', userRole);
-         console.log('userId CHEF', userId);
+        //  console.log('EL TOKEN CHEF', token);
+        //  console.log('EL MAIL CHEF', userEmail);
+        //  console.log('EL ROL CHEF', userRole);
+        //  console.log('userId CHEF', userId);
        }
        if(data.user.role === 'admin'){
         navigateTo('/admin');
@@ -68,10 +68,10 @@ const Login = () => {
          localStorage.setItem('userRole', data.user.role);
          localStorage.setItem('userId', data.user.id);
  
-         console.log('EL TOKEN ADMIN', token);
-         console.log('EL MAIL ADMIN', userEmail);
-         console.log('EL ROL ADMIN', userRole);
-         console.log('userId ADMIN', userId);
+        //  console.log('EL TOKEN ADMIN', token);
+        //  console.log('EL MAIL ADMIN', userEmail);
+        //  console.log('EL ROL ADMIN', userRole);
+        //  console.log('userId ADMIN', userId);
        }
       
     })
