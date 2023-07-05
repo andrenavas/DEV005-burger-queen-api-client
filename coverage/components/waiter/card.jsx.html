@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">32.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>9/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">32.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>9/28</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -90,35 +90,29 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -126,29 +120,26 @@
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import {Button} from '../gralComponents/gralComponents';
 import PropTypes from 'prop-types';
 &nbsp;
-const Card = ({ product, handleAddProduct, children }) =&gt; {
-&nbsp;
-&nbsp;
-  return(
-    &lt;&gt;
-    &lt;div className="card-product"&gt;
-      &lt;div className="product-name"&gt;{product.name}&lt;/div&gt;
-      &lt;div className="product-image"&gt;
-        &lt;img className ="product-img" src = {product.image}/&gt;
-      &lt;/div&gt;
-      &lt;div className="container-price-btnAdd"&gt;
-        &lt;div className="product-price"&gt;${product.price}&lt;/div&gt;
-        &lt;div className="container-btn-add"&gt;
-          {/* Falta agregar el onClick */}
-        &lt;Button className='btn-add' text='+' onClick= {<span class="fstat-no" title="function not covered" >() =&gt; handleAddProduct(product)} a</span>ria-labelledby='add-button'/&gt;
-        {/* onClick={() =&gt; typeMenu("Almuerzo")} */}
-        {children}
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;/&gt;
-  )
-};
+const Card = <span class="fstat-no" title="function not covered" >({ product, handleAddProduct}) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  return(</span>
+<span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;div className="card-product"&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;div className="product-name"&gt;{product.name}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;div className="product-image"&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;img className="product-img" src={product.image}/&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;div className="container-price-btnAdd"&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className="product-price"&gt;${product.price}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className="container-btn-add"&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;Button className='btn-add' text='+' onClick={() =&gt; handleAddProduct(product)} aria-labelledby='add-button'/&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >  )</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 Card.propTypes = {
   handleAddProduct: PropTypes.func,
   product: PropTypes.object,
@@ -160,7 +151,7 @@ export default Card</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-04T23:26:19.577Z
+                at 2023-07-05T19:24:24.913Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

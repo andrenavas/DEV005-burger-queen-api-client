@@ -1,7 +1,16 @@
 import {TableContainer, Table, TableHead, TableBody, TableRow,TableCell} from '@mui/material'
 import { PropTypes } from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserPen } from '@fortawesome/free-solid-svg-icons';
+import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
+import ModalApp from '../gralComponents/modal';
 
-const Dashboard = ({workers}) => {
+
+
+const iconEditWorker = <FontAwesomeIcon icon={faUserPen} size="2xl" style={{color:"#1E3050",}} />
+const iconDeleteWorker = <FontAwesomeIcon icon={faUserXmark} size="2xl" style={{color:"#D11515",}} />
+
+const Dashboard = ({workers,openModal,closeModal,modalIsOpen, editWorker, deleteWorker}) => {
     return(
         <>
         <div className="container-table-btn">
@@ -10,7 +19,6 @@ const Dashboard = ({workers}) => {
                     <TableHead>
                         <TableRow className='table-subtitles'>
                             <TableCell >Nº</TableCell>
-                            <TableCell>ID</TableCell>
                             <TableCell>Nombre</TableCell>
                             <TableCell>Rol</TableCell>
                             <TableCell>Correo</TableCell>
@@ -19,18 +27,24 @@ const Dashboard = ({workers}) => {
                             <TableCell>Eliminar</TableCell>
                         </TableRow>
                     </TableHead>
+                    {/* <td className='container-delete-icon' onClick={() => reduceProduct(item)}>  <i>{iconDeleteTrash}</i></td> */}
 
                     <TableBody>
                         {workers.map((worker, index) => (
                             <TableRow key ={index}>
-                                <TableCell>{worker.id}</TableCell>
-                                <TableCell>{worker.id}</TableCell>
-                                <TableCell>{worker.email}</TableCell>
-                                <TableCell>{worker.role}</TableCell>
-                                <TableCell>{worker.email}</TableCell>
-                                {/* <TableCell>{worker.password}</TableCell> */}
-                                <TableCell>Edit</TableCell>
-                                <TableCell>Delete</TableCell>
+                                <td className='dashboard-table-row'>{worker.id}</td>
+                                <td className='dashboard-table-row'>{worker.email}</td>
+                                <td className='dashboard-table-row'>{worker.role}</td>
+                                <td className='dashboard-table-row'>{worker.email}</td>
+                                <td className='container-edit-icon' onClick={openModal}><i>{iconEditWorker}</i></td>
+                                    <ModalApp isOpen={modalIsOpen} onRequestClose={closeModal} handleClickModal={editWorker} 
+                                    text='¿Estás seguro que deseas editar al  trabajador?' textBtn='Editar'>
+                                    </ModalApp>
+                                <td className='container-delete-icon' onClick={openModal}><i>{iconDeleteWorker}</i></td>
+                                    <ModalApp isOpen={modalIsOpen} onRequestClose={closeModal} handleClickModal={deleteWorker}
+                                    text='¿Estás seguro que deseas ELIMINAR al  trabajador?' textBtn='Eliminar'>
+                                    </ModalApp>
+                             
                             </TableRow>
                         ))}
                     </TableBody>
@@ -41,6 +55,13 @@ const Dashboard = ({workers}) => {
     )
 };
 Dashboard.propTypes = {
-    workers: PropTypes.obj
+    workers: PropTypes.obj,
+    openModal: PropTypes.func,
+    closeModal: PropTypes.func,
+    modalIsOpen: PropTypes.func,
+    text: PropTypes.str,
+    textBtn: PropTypes.str,
+    editWorker: PropTypes.func,
+    deleteWorker: PropTypes.func
 }
 export default Dashboard

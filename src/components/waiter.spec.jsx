@@ -1,4 +1,4 @@
-import {render, screen, waitFor} from '@testing-library/react'
+import {render, screen, waitFor, act} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Waiter from './waiter'
 import { vi } from 'vitest'
@@ -9,7 +9,14 @@ import Card from './waiter/card'
 import handleAddProduct from './waiter'
 import Products from './waiter/products'
 
-
+global.fetch = () => Promise.resolve ({json:()=>[{
+  "id": 1,
+  "name": "Jugos de fruta natural",
+  "price": 700,
+  "image": "https://img.freepik.com/foto-gratis/delicioso-vaso-jugo-naranja_144627-16582.jpg?w=740&t=st=1687371270~exp=1687371870~hmac=2d060f477ac0d1235e3194870d4b838b9eb36e8cb71a3ca5d49ad6f9200e7901",
+  "type": "Desayuno",
+  "quantity": 1
+}]});
 //mockear la dependencias, navigate.
 vi.mock('react-router-dom', () => {
   return{useNavigate: vi.fn()}
@@ -42,7 +49,7 @@ describe('Waiter', () => {
 
 });
   
-describe.only('render Card component', () => {
+describe('render Card component', () => {
   let user;
   beforeEach(() => {
     user = userEvent.setup()
@@ -55,10 +62,13 @@ describe.only('render Card component', () => {
   })
   it('renders a Card with', () => {
     const product = {
-      name: 'Test Product',
-      image: 'test-image.jpg',
-      price: 10
-    }
+      "id": 1,
+      "name": "Jugos de fruta natural",
+      "price": 700,
+      "image": "https://img.freepik.com/foto-gratis/delicioso-vaso-jugo-naranja_144627-16582.jpg?w=740&t=st=1687371270~exp=1687371870~hmac=2d060f477ac0d1235e3194870d4b838b9eb36e8cb71a3ca5d49ad6f9200e7901",
+      "type": "Desayuno",
+      "quantity": 1
+  }
     render(<Card product={product} />)
     screen.debug();
     const productName = screen.getByText('Test Product')
@@ -67,13 +77,19 @@ describe.only('render Card component', () => {
   it.only('should add product to order', async () => {
     //render waiter, click en desayuno, click en add, aparece en shoppingCart
     // GIVEN: los productos se hayan renderizado
+     // WHEN: click en desayunos
+    const btnDesayuno = screen.getByTestId('btn_breakfast')
+    console.log(btnDesayuno)
+    act(() => {
+      /* fire events that update state */
+      // btnDesayuno.click()
+      user.click(btnDesayuno)
+    });
+    
     await waitFor(() => {
      screen.getByTestId('container_products')
     })
 
-    // WHEN: click en desayunos
-    const btnDesayuno = screen.getByTestId('btn_breakfast')
-    user.click(btnDesayuno)
     screen.debug();
 
 

@@ -27,8 +27,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.3",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.12.1",
     "react-table": "^7.8.0",
+    "styled-components": "^6.0.2",
     "vitest": "^0.32.0"
   },
   "devDependencies": {

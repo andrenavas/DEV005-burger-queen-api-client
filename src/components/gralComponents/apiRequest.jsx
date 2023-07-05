@@ -10,7 +10,7 @@ export const getProducts = (token, setGetProductsRequestStatus, setProducts) => 
     .then((resp) => resp.json())
     .then((productsData) => {
       setGetProductsRequestStatus('success')
-
+      console.log('SETPRODUCTS', productsData)
       if (productsData && Array.isArray(productsData)) {
         setProducts(productsData)
       }

@@ -9,12 +9,12 @@ const Card = ({ product, handleAddProduct}) => {
     <div className="card-product">
       <div className="product-name">{product.name}</div>
       <div className="product-image">
-        <img className ="product-img" src = {product.image}/>
+        <img className="product-img" src={product.image}/>
       </div>
       <div className="container-price-btnAdd">
         <div className="product-price">${product.price}</div>
         <div className="container-btn-add">
-        <Button className='btn-add' text='+' onClick= {() => handleAddProduct(product)} aria-labelledby='add-button'/>
+        <Button className='btn-add' text='+' onClick={() => handleAddProduct(product)} aria-labelledby='add-button'/>
         </div>
       </div>
     </div>

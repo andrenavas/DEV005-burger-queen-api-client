@@ -23,7 +23,11 @@
 }
 
 .table-subtitles{
-    font-weight: bold;
     background-color:rgb(219, 216, 216);
-    font-size: 20px;
+    font-size: 25px;
+}
+.dashboard-table-row{
+    /* background-color: blue; */
+    font-size: 14px;
+    padding: 1%;
 }

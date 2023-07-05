@@ -2,12 +2,27 @@ import Background from './background';
 import NavAdmin from './admin/navAdmin';
 import Dashboard from './admin/dashboard';
 import { useEffect, useState } from 'react';
+import ModalApp from './gralComponents/modal';
 import './admin.css';
 
 const Admin = () => {
     const [workers, setWorkers] = useState([]);
-  //crear const con dataExit en memoria
-  // const [dataExit, setDataExit] = useState(null);
+    const [modalIsOpenId, setModalIsOpenId] = useState(false)
+
+    //función abre el modal
+    const openModal = () =>{
+      setModalIsOpenId(true)
+    }
+    //fn que cierra el modal
+    const closeModal = () =>{
+      setModalIsOpenId(null)
+    }
+    const deleteWorker = ()=>{
+      console.log('eliminar')
+    }
+    const editWorker = ()=>{
+      console.log('editar')
+    }
   const token = localStorage.getItem('accessToken');
   //variable que se crea al presionar el boton de chef cuando el pedido está listo
   useEffect(() =>{ 
@@ -42,7 +57,8 @@ const Admin = () => {
     <>
     <Background/>
     <NavAdmin/>
-    <div className='container-dashboard'><Dashboard workers = {workers}/>
+    <div className='container-dashboard'>
+      <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} deleteWorker={deleteWorker} editWorker={editWorker}/>
     </div>
     </>
     )

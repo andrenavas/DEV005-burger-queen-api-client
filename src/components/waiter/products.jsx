@@ -11,7 +11,7 @@ const Products = ({ handleAddProduct }) => {
   const [selectedMenu, setSelectedMenu] = useState('')
   const [getProductsRequestStatus, setGetProductsRequestStatus] = useState('loading')
   const typeMenu = (selectedType) => {
-    // console.log(selectedType)
+    console.log('BUTTON CLICK',selectedType)
     setSelectedMenu(selectedType)
   };
   //const token = localStorage.getItem('accessToken');
@@ -56,7 +56,7 @@ const Products = ({ handleAddProduct }) => {
         </div>
         {getProductsRequestStatus === 'loading' ? <span>Cargando...</span> : null }
         {getProductsRequestStatus === 'success' && products.length ? (
-          <div className='container-products' data-testid={'container_products'}>
+          <div className='container-products' data-testid='container_products'>
             {products
               .filter(product => product.type === selectedMenu)
               .map(product => (<Card key={product.id} product={product} handleAddProduct={handleAddProduct}/>))
