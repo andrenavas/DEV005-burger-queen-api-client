@@ -84,6 +84,21 @@ const Admin = () => {
     console.log('editar')
   }
 
+  const handleAddWorker = () => {
+    console.log('Click en add');
+    // setModalText('¿Estás seguro que deseas borrar al trabajador?');
+    // setModalBtnText('Borrar');
+    // setModalData({
+    //     modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
+    //     modalBtnText: 'Agregar',
+    //     aceptarFn: () => {
+    //         addWorker()
+    //         closeModal();
+    //     }
+    // });
+    // openModal();
+};
+
 
   return (
     <>
@@ -91,10 +106,13 @@ const Admin = () => {
       <NavAdmin />
       <div className='container-dashboard-btnAddWorker'>
         <div className='container-btn-add-worker'>
-          <Button  className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'}></Button>
+        <Button  className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'} onClick={() => handleAddWorker()}></Button>
         </div>
         <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} deleteWorker={deleteWorker} editWorker={editWorker} />
       </div>
+      {/* <ModalApp isOpen={modalIsOpenId} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn} 
+                                    text={modalData.modalText} textBtn={modalData.modalBtnText}>
+                                    </ModalApp> */}
     </>
   )
 };
