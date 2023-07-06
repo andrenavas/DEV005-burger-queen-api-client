@@ -14,7 +14,7 @@ const Card = ({ product, handleAddProduct}) => {
       <div className="container-price-btnAdd">
         <div className="product-price">${product.price}</div>
         <div className="container-btn-add">
-        <Button className='btn-add' text='+' onClick={() => handleAddProduct(product)} aria-labelledby='add-button'/>
+        <Button dataTestid={'btn_add'} className='btn-add' text='+' onClick={() => handleAddProduct(product)}/>
         </div>
       </div>
     </div>

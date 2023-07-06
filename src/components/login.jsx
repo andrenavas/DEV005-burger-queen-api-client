@@ -43,10 +43,10 @@ const Login = () => {
         localStorage.setItem('userRole', data.user.role);
         localStorage.setItem('userId', data.user.id);
 
-        // console.log('EL TOKEN', token);
-        // console.log('EL MAIL', userEmail);
-        // console.log('EL ROL', userRole);
-        // console.log('userId', userId);
+        console.log('EL TOKEN', token);
+        console.log('EL MAIL', userEmail);
+        console.log('EL ROL', userRole);
+        console.log('userId', userId);
       }
 
       if(data.user.role === 'chef'){

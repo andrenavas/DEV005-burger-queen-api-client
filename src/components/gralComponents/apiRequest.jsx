@@ -1,5 +1,6 @@
-export const getProducts = (token, setGetProductsRequestStatus, setProducts) => {
-    fetch('http://localhost:8080/products', {
+export const getProducts = (setGetProductsRequestStatus, setProducts) => {
+  const token = localStorage.getItem('accessToken');  
+  fetch('http://localhost:8080/products', {
 
     method: 'GET',
     headers: {

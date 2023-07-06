@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/waiter/shoppingList.jsx</title>
+    <title>Code coverage report for components/chef/orderTicket.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/waiter</a> shoppingList.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/chef</a> orderTicket.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">98.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>51/51</span>
+                <span class='fraction'>63/64</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">98.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>51/51</span>
+                <span class='fraction'>63/64</span>
             </div>
         
             
@@ -113,29 +113,21 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -147,73 +139,123 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import PropTypes from 'prop-types';
-// import { Button } from '../gralComponents/gralComponents';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Button} from '../gralComponents/gralComponents';
+import PropTypes from 'prop-types';
+// import { useEffect, useState } from 'react';
 &nbsp;
-const iconDeleteTrash = &lt;FontAwesomeIcon icon={faTrashCan} size="xl" style={{color:"#D11515",}} /&gt;
+const OrderTicket = ({order, changeStatus, showButton, text}) =&gt; {
+  // const [dataExit, setDataExit] = useState(order.dataExit);
 &nbsp;
-const ShoppingList = ({selectedProducts, totalPrice, reduceProduct}) =&gt; {
-  return (
-        &lt;table className='table-products'&gt;
-          &lt;thead&gt;
-            &lt;tr&gt;
-              &lt;th&gt;Producto&lt;/th&gt;
-              &lt;th&gt;Precio&lt;/th&gt;
-              &lt;th&gt;Cant&lt;/th&gt;
-              &lt;th&gt;Total&lt;/th&gt;
-              &lt;td&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-          &lt;/thead&gt;
-          &lt;tbody&gt;
-            {selectedProducts.map((item, index) =&gt; (
-              &lt;tr key={index}&gt;
-                &lt;td&gt;{item.name}&lt;/td&gt;
-                &lt;td&gt;${item.price}&lt;/td&gt;
-                &lt;td&gt;{item.quantity}&lt;/td&gt;
-                &lt;td&gt;${item.quantity * item.price}&lt;/td&gt;
-                {/* &lt;td onClick={() =&gt; reduceProduct(item)}&gt; {iconDeleteTrash}&lt;/td&gt; */}
-                {/* &lt;td&gt;{&lt;Button onClick={() =&gt; reduceProduct(item)}/&gt;}&lt;/td&gt; */}
-                &lt;td className='container-delete-icon' onClick={<span class="fstat-no" title="function not covered" >() =&gt; reduceProduct(item)}&gt; </span> &lt;i&gt;{iconDeleteTrash}&lt;/i&gt;&lt;/td&gt;
-&nbsp;
-&nbsp;
-               {/* &lt;td&gt; &lt;button onClick={() =&gt; reduceProduct(item)}&gt; &lt;i&gt;{iconDeleteTrash}&lt;/i&gt;&lt;/button&gt;&lt;/td&gt; */}
-                
+  // useEffect(() =&gt; {
+  //   setDataExit(order.dataExit);
+  // }, [order.dataExit]);
+  return(
+    &lt;&gt;
+    &lt;div className="ticket-order"&gt;
+      &lt;div&gt;
+        &lt;div className="order-client"&gt;{order.client}&lt;/div&gt;
+        &lt;div className="order-list"&gt;
+          &lt;table&gt;
+            &lt;thead&gt;
+              &lt;tr&gt;
+                &lt;th&gt;Cant&lt;/th&gt;
+                &lt;th&gt;Producto&lt;/th&gt;
               &lt;/tr&gt;
-            ))}
-          &lt;/tbody&gt;
-          &lt;tfoot&gt;
-        &lt;tr&gt;
-          &lt;td colSpan={3} align="center"&gt;Total a pagar&lt;/td&gt;
-          &lt;td&gt;${totalPrice}&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tfoot&gt;
-        &lt;/table&gt;
-      );
-    };
-    ShoppingList.propTypes = {
-      selectedProducts: PropTypes.array,
-      totalPrice: PropTypes.number,
-      reduceProduct: PropTypes.func
-    }
-export default ShoppingList</pre></td></tr></table></pre>
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+              {order.products.map((item, index) =&gt; (
+                &lt;tr key={index}&gt;
+                  &lt;td&gt;{item.quantity}&lt;/td&gt;
+                  &lt;td&gt;{item.name}&lt;/td&gt;
+                &lt;/tr&gt;
+              ))}
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className='container-orderdate-orderstatus'&gt;
+        &lt;div className='order-status'&gt;Estado: {order.status}&lt;/div&gt;
+        &lt;div className='order-date'&gt;A cocina: {order.dataEntry}&lt;/div&gt;
+        {/* {order.dataExit &amp;&amp; order.dataExit instanceof String &amp;&amp;
+          &lt;div className='order-date-exit'&gt; T.Preparación: {order.dataExit} min&lt;/div&gt;
+        } */}
+         {order.dataExit !== <span class="branch-0 cbranch-no" title="branch not covered" >null &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;div className='order-date-exit'&gt; T.Preparación: {order.dataExit} min&lt;/div&gt;</span>
+        }
+        &lt;div className="container-btn-add"&gt;
+        {/* {showButton &amp;&amp;
+        &lt;Button className ="btn-order-ready" text="Preparado" showButton= {true} onClick= {() =&gt; changeStatus(order)}/&gt; 
+        } */}
+         {showButton &amp;&amp;
+        &lt;Button className ="btn-order-ready" text={text} showButton= {true} onClick= {<span class="fstat-no" title="function not covered" >() =&gt; changeStatus(order)}/</span>&gt; 
+        }
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+    &lt;/&gt;
+  )
+};
+OrderTicket.propTypes = {
+  order: PropTypes.object,
+  changeStatus: PropTypes.func,
+  showButton: PropTypes.bool,
+  text: PropTypes.string
+}
+export default OrderTicket
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
