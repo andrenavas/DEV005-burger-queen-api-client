@@ -30,27 +30,30 @@ const Dashboard = ({workers,openModal,closeModal,modalIsOpen, editWorker, delete
     //     //     deleteWorker();
     //     // }
     // }
-    const handleEditar = () => {
+    const handleEditar = (worker) => {
         // setModalText('¿Estás seguro que deseas editar al trabajador?');
         // setModalBtnText('Editar');
         setModalData({
             modalText: '¿Estás seguro que deseas editar al trabajador?',
             modalBtnText: 'Editar',
             aceptarFn: () => {
-                editWorker();
+                editWorker(worker);
                 closeModal();
             }
         });
         openModal();
     };
-    const handleBorrar = () => {
+    const handleBorrar = (worker) => {
         // setModalText('¿Estás seguro que deseas borrar al trabajador?');
         // setModalBtnText('Borrar');
         setModalData({
             modalText: '¿Estás seguro que deseas borrar al trabajador?',
             modalBtnText: 'Borrar',
             aceptarFn: () => {
-                deleteWorker();
+                deleteWorker(worker)
+                //cambiar la respuesta a un archivo legible por JS
+                // .then((resp) => resp.json())
+                // .then(res =>(console.log('HOLA',res)))
                 closeModal();
             }
         });
@@ -59,7 +62,7 @@ const Dashboard = ({workers,openModal,closeModal,modalIsOpen, editWorker, delete
 
     return(
         <>
-        <div className="container-table-btn">
+        <div className="container-table">
             <TableContainer className='container-table-workers'>
                 <Table className='table-dashboard-workers'>
                     <TableHead>
@@ -76,17 +79,17 @@ const Dashboard = ({workers,openModal,closeModal,modalIsOpen, editWorker, delete
                     {/* <td className='container-delete-icon' onClick={() => reduceProduct(item)}>  <i>{iconDeleteTrash}</i></td> */}
 
                     <TableBody>
-                        {workers.map((worker, index) => (
+                        {Array.isArray && workers.map((worker, index) => (
                             <TableRow key ={index}>
                                 <td className='dashboard-table-row'>{worker.id}</td>
                                 <td className='dashboard-table-row'>{worker.email}</td>
                                 <td className='dashboard-table-row'>{worker.role}</td>
                                 <td className='dashboard-table-row'>{worker.email}</td>
-                                <td className='container-edit-icon' onClick={handleEditar}><i>{iconEditWorker}</i></td>
+                                <td className='container-edit-icon' onClick={() => handleEditar(worker)}><i>{iconEditWorker}</i></td>
                                     {/* <ModalApp isOpen={modalIsOpen} onRequestClose={closeModal} handleClickModal={editWorker} 
                                     text='¿Estás seguro que deseas editar al  trabajador?' textBtn='Editar'>
                                     </ModalApp> */}
-                                <td className='container-delete-icon' onClick={handleBorrar}><i>{iconDeleteWorker}</i></td>
+                                <td className='container-delete-icon' onClick={() => handleBorrar(worker)}><i>{iconDeleteWorker}</i></td>
                                     {/* <ModalApp isOpen={modalIsOpen} onRequestClose={closeModal} handleClickModal={deleteWorker}
                                     text='¿Estás seguro que deseas ELIMINAR al  trabajador?' textBtn='Eliminar'>
                                     </ModalApp> */}
@@ -104,14 +107,14 @@ const Dashboard = ({workers,openModal,closeModal,modalIsOpen, editWorker, delete
     )
 };
 
-Dashboard.propTypes = {
-    workers: PropTypes.obj,
-    openModal: PropTypes.func,
-    closeModal: PropTypes.func,
-    modalIsOpen: PropTypes.func,
-    text: PropTypes.str,
-    textBtn: PropTypes.str,
-    editWorker: PropTypes.func,
-    deleteWorker: PropTypes.func
-}
+// Dashboard.propTypes = {
+//     workers: PropTypes.obj,
+//     openModal: PropTypes.func,
+//     closeModal: PropTypes.func,
+//     modalIsOpen: PropTypes.func,
+//     text: PropTypes.str,
+//     textBtn: PropTypes.str,
+//     editWorker: PropTypes.func,
+//     deleteWorker: PropTypes.func
+// }
 export default Dashboard
