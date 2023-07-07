@@ -17,7 +17,6 @@ const Waiter = () => {
   const [clientValue, setClientValue] = useState('')
   //función del btn que agrega los productos seleccionados al carrito
   const handleAddProduct = (selectedProduct) => {
-    console.log('HOLA SEBA')
     //revisar si el elemento agregado existe a través del id del producto, 
     if(selectedProducts.find(item => item.id === selectedProduct.id)){
       const newProducts = selectedProducts.map(item => item.id === selectedProduct.id

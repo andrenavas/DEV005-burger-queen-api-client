@@ -4,7 +4,8 @@ import Dashboard from './admin/dashboard';
 import { useEffect, useState } from 'react';
 import ModalApp from './gralComponents/modal';
 import './admin.css';
-import { Button } from './gralComponents/gralComponents';
+// import { Button } from './gralComponents/gralComponents';
+import Form from './gralComponents/form';
 
 const Admin = () => {
   const [workers, setWorkers] = useState([]);
@@ -83,21 +84,49 @@ const Admin = () => {
   const editWorker = () => {
     console.log('editar')
   }
+  const [newUserData, setNewUserData] = useState({
+    email: '',
+    password: '',
+    role: ''
+});
+  const addWorker = () => {
+    console.log('ADDING WORKER')
+    //elemento a enviar, trabajador
+    const newWorker = {
+      email: newUserData.email,
+      password: newUserData.password,
+      role: newUserData.role
+    };
+    fetch('http://localhost:8080/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(newWorker),
+    })
+    .then(() => {
+      setNewUserData.email='',
+      setNewUserData.password='',
+      setNewUserData.role=''
+    })
 
-  const handleAddWorker = () => {
-    console.log('Click en add');
-    // setModalText('¿Estás seguro que deseas borrar al trabajador?');
-    // setModalBtnText('Borrar');
-    // setModalData({
-    //     modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
-    //     modalBtnText: 'Agregar',
-    //     aceptarFn: () => {
-    //         addWorker()
-    //         closeModal();
-    //     }
-    // });
-    // openModal();
-};
+  }
+
+//   const handleAddWorker = () => {
+//     console.log('Click en add');
+//     // setModalText('¿Estás seguro que deseas borrar al trabajador?');
+//     // setModalBtnText('Borrar');
+//     // setModalData({
+//     //     modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
+//     //     modalBtnText: 'Agregar',
+//     //     aceptarFn: () => {
+//     //         addWorker()
+//     //         closeModal();
+//     //     }
+//     // });
+//     // openModal();
+// };
 
 
   return (
@@ -105,10 +134,11 @@ const Admin = () => {
       <Background />
       <NavAdmin />
       <div className='container-dashboard-btnAddWorker'>
-        <div className='container-btn-add-worker'>
+        {/* <div className='container-btn-add-worker'>
         <Button  className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'} onClick={() => handleAddWorker()}></Button>
-        </div>
-        <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} deleteWorker={deleteWorker} editWorker={editWorker} />
+        </div> */}
+        <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} deleteWorker={deleteWorker} editWorker={editWorker} addWorker={addWorker} />
+        <Form addWorker={addWorker} newUserData={newUserData} setNewUserData={setNewUserData}/>
       </div>
       {/* <ModalApp isOpen={modalIsOpenId} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn} 
                                     text={modalData.modalText} textBtn={modalData.modalBtnText}>
