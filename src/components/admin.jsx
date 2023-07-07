@@ -2,6 +2,7 @@ import Background from './background';
 import NavAdmin from './admin/navAdmin';
 import Dashboard from './admin/dashboard';
 import { useEffect, useState } from 'react';
+import ModalApp from './gralComponents/modal';
 import './admin.css';
 // import { Button } from './gralComponents/gralComponents';
 import Form from './gralComponents/form';
@@ -40,6 +41,11 @@ const Admin = () => {
     };
   }, [token])
   //funciones que modifican la data de los trabajadores
+  const [modalData, setModalData] = useState({
+    modalText: '',
+    modalBtnText: '',
+    aceptarFn: () => { }
+});
   //función abre el modal
   const openModal = () => {
     setModalIsOpenId(true)
@@ -115,6 +121,45 @@ const Admin = () => {
 
   }
 
+  const handleAddWorker = (worker) => {
+    console.log('Abrir el modal');
+    setModalData({
+        modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
+        modalBtnText: 'Agregar',
+        aceptarFn: () => {
+            addWorker(worker);
+            closeModal();
+        }
+    });
+    openModal();
+  };
+  const handleEditar = (worker) => {
+    // setModalText('¿Estás seguro que deseas editar al trabajador?');
+    // setModalBtnText('Editar');
+    setModalData({
+        modalText: '¿Estás seguro que deseas editar al trabajador?',
+        modalBtnText: 'Editar',
+        aceptarFn: () => {
+            editWorker(worker);
+            closeModal();
+        }
+    });
+    openModal();
+};
+const handleBorrar = (worker) => {
+    // setModalText('¿Estás seguro que deseas borrar al trabajador?');
+    // setModalBtnText('Borrar');
+    setModalData({
+      modalText: '¿Estás seguro que deseas borrar al trabajador?',
+      modalBtnText: 'Borrar',
+      aceptarFn: () => {
+        deleteWorker(worker)
+        closeModal();
+      }
+    });
+    openModal();
+};
+
   return (
     <>
       <Background />
@@ -123,12 +168,11 @@ const Admin = () => {
         {/* <div className='container-btn-add-worker'>
         <Button  className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'} onClick={() => handleAddWorker()}></Button>
         </div> */}
-        <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} deleteWorker={deleteWorker} editWorker={editWorker} addWorker={addWorker} />
-        <Form addWorker={addWorker} newUserData={newUserData} setNewUserData={setNewUserData}/>
+        <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} handleAddWorker={handleAddWorker} handleBorrar={handleBorrar} handleEditar={handleEditar} />
       </div>
-      {/* <ModalApp isOpen={modalIsOpenId} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn} 
-                                    text={modalData.modalText} textBtn={modalData.modalBtnText}>
-                                    </ModalApp> */}
+      <ModalApp isOpen={modalIsOpenId} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn} text={modalData.modalText} textBtn={modalData.modalBtnText}>
+        <Form addWorker={addWorker} newUserData={newUserData} setNewUserData={setNewUserData} handleClickModal={modalData.aceptarFn}/>
+      </ModalApp>
     </>
   )
 };

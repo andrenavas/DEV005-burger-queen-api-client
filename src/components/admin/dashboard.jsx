@@ -13,7 +13,7 @@ const iconDeleteWorker = <FontAwesomeIcon icon={faUserXmark} size="2xl" style={{
 
 
 
-const Dashboard = ({ workers, openModal, closeModal, modalIsOpen, editWorker, deleteWorker, addWorker}) => {
+const Dashboard = ({ workers, openModal, closeModal, modalIsOpen, handleAddWorker, handleBorrar, handleEditar}) => {
     // const [modalText, setModalText] = useState('');
     // const [modalBtnText, setModalBtnText] = useState('');
     const [modalData, setModalData] = useState({
@@ -31,47 +31,47 @@ const Dashboard = ({ workers, openModal, closeModal, modalIsOpen, editWorker, de
     //     //     deleteWorker();
     //     // }
     // }
-    const handleEditar = (worker) => {
-        // setModalText('¿Estás seguro que deseas editar al trabajador?');
-        // setModalBtnText('Editar');
-        setModalData({
-            modalText: '¿Estás seguro que deseas editar al trabajador?',
-            modalBtnText: 'Editar',
-            aceptarFn: () => {
-                editWorker(worker);
-                closeModal();
-            }
-        });
-        openModal();
-    };
-    const handleBorrar = (worker) => {
-        // setModalText('¿Estás seguro que deseas borrar al trabajador?');
-        // setModalBtnText('Borrar');
-        setModalData({
-            modalText: '¿Estás seguro que deseas borrar al trabajador?',
-            modalBtnText: 'Borrar',
-            aceptarFn: () => {
-                deleteWorker(worker)
-                //cambiar la respuesta a un archivo legible por JS
-                // .then((resp) => resp.json())
-                // .then(res =>(console.log('HOLA',res)))
-                closeModal();
-            }
-        });
-        openModal();
-    };
-    const handleAddWorker = (worker) => {
-        console.log('Click en add');
-        setModalData({
-            modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
-            modalBtnText: 'Agregar',
-            aceptarFn: () => {
-                addWorker(worker)
-                closeModal();
-            }
-        });
-        openModal();
-    };
+    // const handleEditar = (worker) => {
+    //     // setModalText('¿Estás seguro que deseas editar al trabajador?');
+    //     // setModalBtnText('Editar');
+    //     setModalData({
+    //         modalText: '¿Estás seguro que deseas editar al trabajador?',
+    //         modalBtnText: 'Editar',
+    //         aceptarFn: () => {
+    //             editWorker(worker);
+    //             closeModal();
+    //         }
+    //     });
+    //     openModal();
+    // };
+    // const handleBorrar = (worker) => {
+    //     // setModalText('¿Estás seguro que deseas borrar al trabajador?');
+    //     // setModalBtnText('Borrar');
+    //     setModalData({
+    //         modalText: '¿Estás seguro que deseas borrar al trabajador?',
+    //         modalBtnText: 'Borrar',
+    //         aceptarFn: () => {
+    //             deleteWorker(worker)
+    //             //cambiar la respuesta a un archivo legible por JS
+    //             // .then((resp) => resp.json())
+    //             // .then(res =>(console.log('HOLA',res)))
+    //             closeModal();
+    //         }
+    //     });
+    //     openModal();
+    // };
+    // const handleAddWorker = (worker) => {
+    //     console.log('Click en add');
+    //     setModalData({
+    //         modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
+    //         modalBtnText: 'Agregar',
+    //         aceptarFn: () => {
+    //             addWorker(worker)
+    //             closeModal();
+    //         }
+    //     });
+    //     openModal();
+    // };
 
     return (
         <>
