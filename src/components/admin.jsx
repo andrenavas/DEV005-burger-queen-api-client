@@ -6,6 +6,7 @@ import ModalApp from './gralComponents/modal';
 import './admin.css';
 // import { Button } from './gralComponents/gralComponents';
 import Form from './gralComponents/form';
+import EditForm from './gralComponents/editForm'
 
 const Admin = () => {
   const [workers, setWorkers] = useState([]);
@@ -45,7 +46,7 @@ const Admin = () => {
     modalText: '',
     modalBtnText: '',
     aceptarFn: () => { }
-});
+  });
   //función abre el modal
   const openModal = () => {
     setModalIsOpenId(true)
@@ -56,7 +57,7 @@ const Admin = () => {
   }
   const deleteWorker = (user) => {
     console.log('eliminar')
-    console.log('HOLA',user.id)
+    console.log('HOLA', user.id)
     fetch(`http://localhost:8080/users/${user.id}`, {
 
       method: 'DELETE',
@@ -66,11 +67,11 @@ const Admin = () => {
       },
 
     })
-    .then((resp) => resp.json())
-    .then((user) =>{
-      updateWorkersData(user)
-    })
-    .catch(error => console.log(error))
+      .then((resp) => resp.json())
+      .then((user) => {
+        updateWorkersData(user)
+      })
+      .catch(error => console.log(error))
 
     console.log('eliminar')
   }
@@ -79,21 +80,48 @@ const Admin = () => {
     setWorkers(prevWorkers => {
       return prevWorkers.map(worker => {
         if (worker.id === user.id) {
-          return {worker};
+          return { worker };
         }
         return worker;
       });
     });
   };
+  const [editUserData, setEditUserData] = useState({
+    email: '',
+    password: '',
+    role: ''
+  });
 
-  const editWorker = () => {
+  const editWorker = (user) => {
     console.log('editar')
+    const editWorker = {
+      email: editUserData.email,
+      password: editUserData.password,
+      role: editUserData.role
+    };
+    fetch(`http://localhost:8080/users/${user.id}}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(editWorker),
+    })
+    .then(() => {
+      setEditUserData.email = '',
+      setEditUserData.password = '',
+      setEditUserData.role = '',
+      editUserData.email = '',
+      editUserData.password = '',
+      editUserData.role = ''
+  })
+
   }
   const [newUserData, setNewUserData] = useState({
     email: '',
     password: '',
     role: ''
-});
+  });
   const addWorker = () => {
     console.log('ADDING WORKER')
     //elemento a enviar, trabajador
@@ -110,26 +138,24 @@ const Admin = () => {
       },
       body: JSON.stringify(newWorker),
     })
-    .then(() => {
-      setNewUserData.email='',
-      setNewUserData.password='',
-      setNewUserData.role='',
-      newUserData.email='',
-      newUserData.password='',
-      newUserData.role=null
-    })
-
+      .then(() => {
+          setNewUserData.email = '',
+          setNewUserData.password = '',
+          setNewUserData.role = '',
+          newUserData.email = '',
+          newUserData.password = '',
+          newUserData.role = ''
+      })
   }
-
-  const handleAddWorker = (worker) => {
+  const handleAddWorker = () => {
     console.log('Abrir el modal');
     setModalData({
-        modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
-        modalBtnText: 'Agregar',
-        aceptarFn: () => {
-            addWorker(worker);
-            closeModal();
-        }
+      modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
+      modalBtnText: 'Agregar'
+      // aceptarFn: () => {
+      //   addWorker(worker);
+      //   closeModal();
+      // }
     });
     openModal();
   };
@@ -137,16 +163,17 @@ const Admin = () => {
     // setModalText('¿Estás seguro que deseas editar al trabajador?');
     // setModalBtnText('Editar');
     setModalData({
-        modalText: '¿Estás seguro que deseas editar al trabajador?',
-        modalBtnText: 'Editar',
-        aceptarFn: () => {
-            editWorker(worker);
-            closeModal();
-        }
+      modalText: '¿Estás seguro que deseas editar al trabajador?',
+      modalBtnText: 'Editar',
+      aceptarFn: () => {
+        setNewUserData(worker);
+        editWorker(worker);
+        closeModal();
+      }
     });
     openModal();
-};
-const handleBorrar = (worker) => {
+  };
+  const handleBorrar = (worker) => {
     // setModalText('¿Estás seguro que deseas borrar al trabajador?');
     // setModalBtnText('Borrar');
     setModalData({
@@ -158,7 +185,7 @@ const handleBorrar = (worker) => {
       }
     });
     openModal();
-};
+  };
 
   return (
     <>
@@ -171,7 +198,8 @@ const handleBorrar = (worker) => {
         <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} handleAddWorker={handleAddWorker} handleBorrar={handleBorrar} handleEditar={handleEditar} />
       </div>
       <ModalApp isOpen={modalIsOpenId} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn} text={modalData.modalText} textBtn={modalData.modalBtnText} >
-        <Form addWorker={addWorker} newUserData={newUserData} setNewUserData={setNewUserData} handleClickModal={modalData.aceptarFn}/>
+        <Form addWorker={addWorker} newUserData={newUserData} setNewUserData={setNewUserData} handleClickModal={modalData.aceptarFn} closeModal={closeModal} />
+        {/* <EditForm editWorker={editWorker} editUserData={editUserData} setEditUserData={setEditUserData} handleClickModal={modalData.aceptarFn} closeModal={closeModal}></EditForm> */}
       </ModalApp>
     </>
   )

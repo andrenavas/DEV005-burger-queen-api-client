@@ -116,9 +116,9 @@ const Dashboard = ({ workers, openModal, closeModal, modalIsOpen, handleAddWorke
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    <ModalApp isOpen={modalIsOpen} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn}
+                    {/* <ModalApp isOpen={modalIsOpen} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn}
                         text={modalData.modalText} textBtn={modalData.modalBtnText}>
-                    </ModalApp>
+                    </ModalApp> */}
                 </div>
             </div>
             {/* <div>
