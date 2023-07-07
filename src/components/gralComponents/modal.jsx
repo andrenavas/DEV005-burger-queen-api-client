@@ -15,9 +15,9 @@ return (
       style={customStyles}
     >
       <h1>{text}</h1>
-      {children}
+      {textBtn !== 'Borrar' && children}
       <ContainerButtonModal>
-        <button onClick={handleClickModal}>{textBtn}</button>
+        {textBtn === 'Borrar' && <button className='btn-accept' onClick={handleClickModal}>{textBtn}</button>} 
         <button onClick={onRequestClose}>Cancelar</button>
       </ContainerButtonModal>
     </ReactModal>

@@ -170,7 +170,7 @@ const handleBorrar = (worker) => {
         </div> */}
         <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} handleAddWorker={handleAddWorker} handleBorrar={handleBorrar} handleEditar={handleEditar} />
       </div>
-      <ModalApp isOpen={modalIsOpenId} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn} text={modalData.modalText} textBtn={modalData.modalBtnText}>
+      <ModalApp isOpen={modalIsOpenId} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn} text={modalData.modalText} textBtn={modalData.modalBtnText} >
         <Form addWorker={addWorker} newUserData={newUserData} setNewUserData={setNewUserData} handleClickModal={modalData.aceptarFn}/>
       </ModalApp>
     </>
