@@ -2,7 +2,6 @@ import Background from './background';
 import NavAdmin from './admin/navAdmin';
 import Dashboard from './admin/dashboard';
 import { useEffect, useState } from 'react';
-import ModalApp from './gralComponents/modal';
 import './admin.css';
 // import { Button } from './gralComponents/gralComponents';
 import Form from './gralComponents/form';
@@ -108,26 +107,13 @@ const Admin = () => {
     .then(() => {
       setNewUserData.email='',
       setNewUserData.password='',
-      setNewUserData.role=''
+      setNewUserData.role='',
+      newUserData.email='',
+      newUserData.password='',
+      newUserData.role=null
     })
 
   }
-
-//   const handleAddWorker = () => {
-//     console.log('Click en add');
-//     // setModalText('¿Estás seguro que deseas borrar al trabajador?');
-//     // setModalBtnText('Borrar');
-//     // setModalData({
-//     //     modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
-//     //     modalBtnText: 'Agregar',
-//     //     aceptarFn: () => {
-//     //         addWorker()
-//     //         closeModal();
-//     //     }
-//     // });
-//     // openModal();
-// };
-
 
   return (
     <>

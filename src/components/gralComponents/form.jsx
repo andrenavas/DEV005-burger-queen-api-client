@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 
@@ -27,24 +26,34 @@ const Form = ({ addWorker, newUserData, setNewUserData }) => {
         { value: 'waiter', label: 'Mesera(o)' },
         { value: 'chef', label: 'Chef' },
         { value: 'admin', label: 'Admin' },
-      ];
+    ];
+
+    //función para resetear los valores del input
+    // const resetForm = () => {
+    //     reset();
+    //     setNewUserData({ email: '', password: '', role: '' });
+    // };
 
 
 
 
     return (
         <form onSubmit={handleSubmit((data) => console.log(data))}>
-            <input type='email'{...register('email', { required: true })} value={newUserData.email} onChange={newUserEmailValue} />
+            <input type='email'{...register('email', { required: true })} value={newUserData.email} onChange={newUserEmailValue} placeholder='Correo electrónico'/>
             {errors.email && <p>Email requerido</p>}
-            <input type='password'{...register('password', { required: true })} value={newUserData.password} onChange={newUserPasswordValue} />
+            <input type='password'{...register('password', { required: true })} value={newUserData.password} onChange={newUserPasswordValue} placeholder='Contraseña'/>
             {errors.password && <p>Contraseña requerida</p>}
             <Select
                 onChange={newUserRoleValue}
                 options={options}
+                value={newUserData.role ? { value: newUserData.role, label: newUserData.role } : null}
             />
             {/* <input type='text'{...register('rol', { required: true })} value ={newUserData.role} onChange={newUserRoleValue} />
             {errors.rol && <p>Porfavor agrega un rol</p>} */}
-            <input type="submit" onClick={() => addWorker()} />
+            <input type="submit" onClick={() => {
+                addWorker();
+                // resetForm();
+            }} />
         </form>
     );
 

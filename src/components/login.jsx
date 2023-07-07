@@ -85,7 +85,7 @@ const Login = () => {
       }
       setErrorMessage(error.message);
       reset();
-      })
+    })
   }
   return (
     <>
