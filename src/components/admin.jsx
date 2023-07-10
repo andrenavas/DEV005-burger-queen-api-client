@@ -93,13 +93,13 @@ const Admin = () => {
   });
 
   const editWorker = (user) => {
-    console.log('editar')
+    console.log('editar', user)
     const editWorker = {
-      email: editUserData.email,
-      password: editUserData.password,
-      role: editUserData.role
+      email: user.email,
+      password: user.password,
+      role: user.role
     };
-    fetch(`http://localhost:8080/users/${user.id}}`, {
+    fetch(`http://localhost:8080/users/${user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -162,6 +162,7 @@ const Admin = () => {
   const handleEditar = (worker) => {
     // setModalText('¿Estás seguro que deseas editar al trabajador?');
     // setModalBtnText('Editar');
+    setNewUserData(worker);
     setModalData({
       modalText: '¿Estás seguro que deseas editar al trabajador?',
       modalBtnText: 'Editar',
@@ -198,7 +199,7 @@ const Admin = () => {
         <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} handleAddWorker={handleAddWorker} handleBorrar={handleBorrar} handleEditar={handleEditar} />
       </div>
       <ModalApp isOpen={modalIsOpenId} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn} text={modalData.modalText} textBtn={modalData.modalBtnText} >
-        <Form addWorker={addWorker} newUserData={newUserData} setNewUserData={setNewUserData} handleClickModal={modalData.aceptarFn} closeModal={closeModal} />
+        <Form editWorker={editWorker} newUserData={newUserData} setNewUserData={setNewUserData} handleClickModal={modalData.aceptarFn} closeModal={closeModal} />
         {/* <EditForm editWorker={editWorker} editUserData={editUserData} setEditUserData={setEditUserData} handleClickModal={modalData.aceptarFn} closeModal={closeModal}></EditForm> */}
       </ModalApp>
     </>

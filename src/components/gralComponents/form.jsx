@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 
 
-const Form = ({ addWorker, newUserData, setNewUserData,closeModal }) => {
+const Form = ({ editWorker, newUserData, setNewUserData,closeModal }) => {
     const {
         register,
         handleSubmit,
@@ -35,10 +35,14 @@ const Form = ({ addWorker, newUserData, setNewUserData,closeModal }) => {
     // };
 
 
-    console.log('newUserData', newUserData);
+    //console.log('newUserData', newUserData);
 
     return (
-        <form onSubmit={handleSubmit((data) => console.log(data))}>
+        <form onSubmit={handleSubmit((data) => {
+            console.log('form submit data',data);
+            editWorker(newUserData);
+            closeModal();
+        })}>
             <input type='email'{...register('email', { required: true })} value={newUserData.email} onChange={newUserEmailValue} placeholder='Correo electrónico'/>
             {errors.email && <p>Email requerido</p>}
             <input type='password'{...register('password', { required: true })} value={newUserData.password} onChange={newUserPasswordValue} placeholder='Contraseña'/>
@@ -50,11 +54,7 @@ const Form = ({ addWorker, newUserData, setNewUserData,closeModal }) => {
             />
             {/* <input type='text'{...register('rol', { required: true })} value ={newUserData.role} onChange={newUserRoleValue} />
             {errors.rol && <p>Porfavor agrega un rol</p>} */}
-            <input type="submit" value='Agregar'onClick={() => {
-                addWorker();
-                closeModal();
-                // resetForm();
-            }} />
+            <input type="submit" value='Agregar' />
         </form>
     );
 

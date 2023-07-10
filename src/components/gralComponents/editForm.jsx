@@ -38,7 +38,9 @@ const EditForm = ({ editWorker, editUserData, setEditUserData,closeModal }) => {
 
 
     return (
-        <form onSubmit={handleSubmit((data) => console.log(data))}>
+        <form onSubmit={handleSubmit((data) => {console.log(data)
+         editWorker();
+        closeModal();})}>
             <input type='email'{...register('email', { required: true })} value={editUserData.email} onChange={editUserEmailValue} placeholder='Correo electrónico'/>
             {errors.email && <p>Email requerido</p>}
             <input type='password'{...register('password', { required: true })} value={editUserData.password} onChange={editUserPasswordValue} placeholder='Contraseña'/>
@@ -50,11 +52,9 @@ const EditForm = ({ editWorker, editUserData, setEditUserData,closeModal }) => {
             />
             {/* <input type='text'{...register('rol', { required: true })} value ={newUserData.role} onChange={newUserRoleValue} />
             {errors.rol && <p>Porfavor agrega un rol</p>} */}
-            <input type="submit" value='Editar'onClick={() => {
-                editWorker();
-                closeModal();
+            <input type="submit" value='Editar'
                 // resetForm();
-            }} />
+             />
         </form>
     );
 
