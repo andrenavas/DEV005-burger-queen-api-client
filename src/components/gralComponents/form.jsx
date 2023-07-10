@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 
 
-const Form = ({ editWorker, newUserData, setNewUserData,closeModal }) => {
+const Form = ({  handleAddEdit,editWorker, newUserData, setNewUserData,closeModal }) => {
     const {
         register,
         handleSubmit,
@@ -40,8 +40,9 @@ const Form = ({ editWorker, newUserData, setNewUserData,closeModal }) => {
     return (
         <form onSubmit={handleSubmit((data) => {
             console.log('form submit data',data);
-            editWorker(newUserData);
-            closeModal();
+            handleAddEdit(newUserData);
+            // editWorker(newUserData);
+            // closeModal();
         })}>
             <input type='email'{...register('email', { required: true })} value={newUserData.email} onChange={newUserEmailValue} placeholder='Correo electrónico'/>
             {errors.email && <p>Email requerido</p>}

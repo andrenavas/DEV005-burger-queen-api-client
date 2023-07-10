@@ -107,14 +107,14 @@ const Admin = () => {
       },
       body: JSON.stringify(editWorker),
     })
-    .then(() => {
-      setEditUserData.email = '',
-      setEditUserData.password = '',
-      setEditUserData.role = '',
-      editUserData.email = '',
-      editUserData.password = '',
-      editUserData.role = ''
-  })
+      .then(() => {
+        setEditUserData.email = '',
+          setEditUserData.password = '',
+          setEditUserData.role = '',
+          editUserData.email = '',
+          editUserData.password = '',
+          editUserData.role = ''
+      })
 
   }
   const [newUserData, setNewUserData] = useState({
@@ -139,7 +139,7 @@ const Admin = () => {
       body: JSON.stringify(newWorker),
     })
       .then(() => {
-          setNewUserData.email = '',
+        setNewUserData.email = '',
           setNewUserData.password = '',
           setNewUserData.role = '',
           newUserData.email = '',
@@ -187,6 +187,18 @@ const Admin = () => {
     });
     openModal();
   };
+  const [showEditForm, setShowEditForm] = useState(true)
+
+  const handleAddEdit = (worker) => {
+    if (showEditForm) {
+      editWorker(worker);
+      closeModal();
+    }
+    else {
+      addWorker();
+      closeModal();
+    }
+  }
 
   return (
     <>
@@ -196,10 +208,29 @@ const Admin = () => {
         {/* <div className='container-btn-add-worker'>
         <Button  className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'} onClick={() => handleAddWorker()}></Button>
         </div> */}
-        <Dashboard workers={workers} openModal={openModal} closeModal={closeModal} modalIsOpen={modalIsOpenId} handleAddWorker={handleAddWorker} handleBorrar={handleBorrar} handleEditar={handleEditar} />
+        <Dashboard
+        setShowEditForm = {setShowEditForm}
+          workers={workers}
+          openModal={openModal}
+          closeModal={closeModal}
+          modalIsOpen={modalIsOpenId}
+          handleAddWorker={handleAddWorker}
+          handleBorrar={handleBorrar}
+          handleEditar={handleEditar} />
       </div>
-      <ModalApp isOpen={modalIsOpenId} onRequestClose={closeModal} handleClickModal={modalData.aceptarFn} text={modalData.modalText} textBtn={modalData.modalBtnText} >
-        <Form editWorker={editWorker} newUserData={newUserData} setNewUserData={setNewUserData} handleClickModal={modalData.aceptarFn} closeModal={closeModal} />
+      <ModalApp
+        isOpen={modalIsOpenId}
+        onRequestClose={closeModal}
+        handleClickModal={modalData.aceptarFn}
+        text={modalData.modalText}
+        textBtn={modalData.modalBtnText} >
+        <Form 
+        handleAddEdit = {handleAddEdit}
+          // editWorker={editWorker}
+          newUserData={newUserData}
+          setNewUserData={setNewUserData}
+          handleClickModal={modalData.aceptarFn}
+          closeModal={closeModal} />
         {/* <EditForm editWorker={editWorker} editUserData={editUserData} setEditUserData={setEditUserData} handleClickModal={modalData.aceptarFn} closeModal={closeModal}></EditForm> */}
       </ModalApp>
     </>

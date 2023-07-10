@@ -13,7 +13,7 @@ const iconDeleteWorker = <FontAwesomeIcon icon={faUserXmark} size="2xl" style={{
 
 
 
-const Dashboard = ({ workers, openModal, closeModal, modalIsOpen, handleAddWorker, handleBorrar, handleEditar}) => {
+const Dashboard = ({ setShowEditForm,workers, openModal, closeModal, modalIsOpen, handleAddWorker, handleBorrar, handleEditar}) => {
     // const [modalText, setModalText] = useState('');
     // const [modalBtnText, setModalBtnText] = useState('');
     const [modalData, setModalData] = useState({
@@ -22,63 +22,12 @@ const Dashboard = ({ workers, openModal, closeModal, modalIsOpen, handleAddWorke
         aceptarFn: () => { }
     });
 
-    // const handleAceptar = () => {
-    //     // if (modalBtnText === 'Editar') {
-    //     //     console.log("Aceptado editar");
-    //     //     editWorker();
-    //     // } else {
-    //     //     console.log("Aceptado borrar");
-    //     //     deleteWorker();
-    //     // }
-    // }
-    // const handleEditar = (worker) => {
-    //     // setModalText('¿Estás seguro que deseas editar al trabajador?');
-    //     // setModalBtnText('Editar');
-    //     setModalData({
-    //         modalText: '¿Estás seguro que deseas editar al trabajador?',
-    //         modalBtnText: 'Editar',
-    //         aceptarFn: () => {
-    //             editWorker(worker);
-    //             closeModal();
-    //         }
-    //     });
-    //     openModal();
-    // };
-    // const handleBorrar = (worker) => {
-    //     // setModalText('¿Estás seguro que deseas borrar al trabajador?');
-    //     // setModalBtnText('Borrar');
-    //     setModalData({
-    //         modalText: '¿Estás seguro que deseas borrar al trabajador?',
-    //         modalBtnText: 'Borrar',
-    //         aceptarFn: () => {
-    //             deleteWorker(worker)
-    //             //cambiar la respuesta a un archivo legible por JS
-    //             // .then((resp) => resp.json())
-    //             // .then(res =>(console.log('HOLA',res)))
-    //             closeModal();
-    //         }
-    //     });
-    //     openModal();
-    // };
-    // const handleAddWorker = (worker) => {
-    //     console.log('Click en add');
-    //     setModalData({
-    //         modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
-    //         modalBtnText: 'Agregar',
-    //         aceptarFn: () => {
-    //             addWorker(worker)
-    //             closeModal();
-    //         }
-    //     });
-    //     openModal();
-    // };
-
     return (
         <>
             <div className='new-container'>
                 <div className="container-table">
                     <div className='new-container-btn-add'>
-                        <Button className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'} onClick={() => handleAddWorker()} ></Button>
+                        <Button className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'} onClick={() => {setShowEditForm(false); handleAddWorker();} } ></Button>
                     </div>
                     <TableContainer className='container-table-workers'>
                         <Table className='table-dashboard-workers'>
@@ -102,7 +51,7 @@ const Dashboard = ({ workers, openModal, closeModal, modalIsOpen, handleAddWorke
                                         <td className='dashboard-table-row'>{worker.email}</td>
                                         <td className='dashboard-table-row'>{worker.role}</td>
                                         <td className='dashboard-table-row'>{worker.email}</td>
-                                        <td className='container-edit-icon' onClick={() => handleEditar(worker)}><i>{iconEditWorker}</i></td>
+                                        <td className='container-edit-icon' onClick={() => {setShowEditForm(true); handleEditar(worker)}}><i>{iconEditWorker}</i></td>
                                         {/* <ModalApp isOpen={modalIsOpen} onRequestClose={closeModal} handleClickModal={editWorker} 
                                     text='¿Estás seguro que deseas editar al  trabajador?' textBtn='Editar'>
                                     </ModalApp> */}
