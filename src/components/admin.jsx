@@ -4,9 +4,7 @@ import Dashboard from './admin/dashboard';
 import { useEffect, useState } from 'react';
 import ModalApp from './gralComponents/modal';
 import './admin.css';
-// import { Button } from './gralComponents/gralComponents';
 import Form from './gralComponents/form';
-import EditForm from './gralComponents/editForm'
 
 const Admin = () => {
   const [workers, setWorkers] = useState([]);
@@ -193,10 +191,12 @@ const Admin = () => {
     if (showEditForm) {
       editWorker(worker);
       closeModal();
+
     }
     else {
       addWorker();
       closeModal();
+      // value ='agregar'
     }
   }
 
@@ -230,7 +230,8 @@ const Admin = () => {
           newUserData={newUserData}
           setNewUserData={setNewUserData}
           handleClickModal={modalData.aceptarFn}
-          closeModal={closeModal} />
+          closeModal={closeModal}
+          isEditForm={showEditForm} />
         {/* <EditForm editWorker={editWorker} editUserData={editUserData} setEditUserData={setEditUserData} handleClickModal={modalData.aceptarFn} closeModal={closeModal}></EditForm> */}
       </ModalApp>
     </>

@@ -2,7 +2,9 @@ import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 
 
-const Form = ({  handleAddEdit,editWorker, newUserData, setNewUserData,closeModal }) => {
+const Form = ({ isEditForm,handleAddEdit,editWorker,
+     newUserData, setNewUserData,
+     closeModal }) => {
     const {
         register,
         handleSubmit,
@@ -55,7 +57,7 @@ const Form = ({  handleAddEdit,editWorker, newUserData, setNewUserData,closeModa
             />
             {/* <input type='text'{...register('rol', { required: true })} value ={newUserData.role} onChange={newUserRoleValue} />
             {errors.rol && <p>Porfavor agrega un rol</p>} */}
-            <input type="submit" value='Agregar' />
+            <input className='btn-form-submit-accept' type="submit" value={isEditForm ? 'Editar' : 'Agregar'} />
         </form>
     );
 
