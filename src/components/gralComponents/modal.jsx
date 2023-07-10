@@ -18,7 +18,7 @@ return (
       {textBtn !== 'Borrar' && children}
       <ContainerButtonModal>
         {textBtn === 'Borrar' && <button className='btn-accept' onClick={handleClickModal}>{textBtn}</button>} 
-        <button onClick={onRequestClose}>Cancelar</button>
+        <button className= 'btn-cancel' onClick={onRequestClose}>Cancelar</button>
       </ContainerButtonModal>
     </ReactModal>
   );

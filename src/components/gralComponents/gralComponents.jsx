@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
-export const Input = ({value,placeholder,className, onChange }) => {
+export const Input = ({ value, placeholder, className, onChange }) => {
   return (
-    <input  type="text" value={value}  placeholder = {placeholder} className={className} onChange={onChange} required/>
-  )  
+    <input type="text" value={value} placeholder={placeholder} className={className} onChange={onChange} required />
+  )
 };
 
-export const Button = ({onClick,text,className, disabled, dataTestid}) => {
+export const Button = ({ onClick, text, className, disabled, dataTestid, icon }) => {
   return (
     <>
-   <button data-testid={dataTestid} onClick={onClick} className={className} disabled={disabled}>{text}</button>
+      <button data-testid={dataTestid} onClick={onClick} className={className} disabled={disabled}>
+        {icon && <span className="button-icon">{icon}</span>}{text}
+      </button>
     </>
   );
 };
@@ -28,6 +30,5 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   dataTestid: PropTypes.string,
 };
-
 
 

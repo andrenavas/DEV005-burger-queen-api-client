@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import Select from 'react-select';
+import './form.css'
 
 
 const Form = ({ isEditForm,handleAddEdit,editWorker,
@@ -40,7 +41,7 @@ const Form = ({ isEditForm,handleAddEdit,editWorker,
     //console.log('newUserData', newUserData);
 
     return (
-        <form onSubmit={handleSubmit((data) => {
+        <form className='container-form' onSubmit={handleSubmit((data) => {
             console.log('form submit data',data);
             handleAddEdit(newUserData);
             // editWorker(newUserData);

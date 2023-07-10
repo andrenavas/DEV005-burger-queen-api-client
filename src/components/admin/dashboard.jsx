@@ -3,6 +3,8 @@ import { PropTypes } from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPen } from '@fortawesome/free-solid-svg-icons';
 import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus} from '@fortawesome/free-solid-svg-icons';
+const iconAddWorker = <FontAwesomeIcon icon={faUserPlus} size="2xl" style={{ color: "#1E3050", }} />
 import ModalApp from '../gralComponents/modal';
 import { useState } from 'react';
 import { Button } from '../gralComponents/gralComponents';
@@ -27,7 +29,10 @@ const Dashboard = ({ setShowEditForm,workers, openModal, closeModal, modalIsOpen
             <div className='new-container'>
                 <div className="container-table">
                     <div className='new-container-btn-add'>
-                        <Button className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'} onClick={() => {setShowEditForm(false); handleAddWorker();} } ></Button>
+                        {/* <Button className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'} onClick={() => {setShowEditForm(false); handleAddWorker();} } ></Button> */}
+                        <Button className='btn-add-worker' dataTestid={'Testidbtn'}  icon={iconAddWorker} onClick={() => {setShowEditForm(false); handleAddWorker();} } >
+                        <FontAwesomeIcon icon={iconDeleteWorker} />
+                        </Button>
                     </div>
                     <TableContainer className='container-table-workers'>
                         <Table className='table-dashboard-workers'>
