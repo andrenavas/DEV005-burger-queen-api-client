@@ -71,6 +71,7 @@ describe('render Card component', () => {
     const productName = screen.getByText('Jugos de fruta natural')
     expect(productName).toBeInTheDocument()
   }) 
+  //test asincrono
   it('should add product to order', async () => {
     const user = userEvent.setup()
     //render waiter, click en add, aparece en shoppingCart
