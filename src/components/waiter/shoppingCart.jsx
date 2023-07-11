@@ -4,29 +4,28 @@ import { Button } from '../gralComponents/gralComponents';
 import { useState, useEffect } from 'react';
 
 
-const ShoppingCart = ({selectedProducts, totalPrice, reduceProduct,sendOrder, clientValue}) => {
-   //habilita/deshabilita el btn de cocinar
+const ShoppingCart = ({ selectedProducts, totalPrice, reduceProduct, sendOrder, clientValue }) => {
+  //habilita/deshabilita el btn de cocinar
   //  console.log(selectedProducts)
-   const [btnActive, setBtnActive] = useState(false);
-   useEffect(() => {
+  const [btnActive, setBtnActive] = useState(false);
+  useEffect(() => {
     //evaluar un valor y cambiarlos a boolean, se usa doble !!(doble negación)
     setBtnActive(!!clientValue && clientValue.length > 0 && selectedProducts.length > 0);
     // console.log('selectedProducts', selectedProducts)
     // console.log('CLIENT VALUE',!!clientValue && clientValue.length > 0,);
   }, [clientValue, selectedProducts]);
 
-   
-  return(
+  return (
     <>
-    <div className='container-order'>  
-      <div className='container-shopping-list'>
-        <ShoppingList selectedProducts = {selectedProducts} totalPrice = {totalPrice} reduceProduct = {reduceProduct}/>
+      <div className='container-order'>
+        <div className='container-shopping-list'>
+          <ShoppingList selectedProducts={selectedProducts} totalPrice={totalPrice} reduceProduct={reduceProduct} />
+        </div>
+        <div className='container-btn-order'>
+          <Button className="btn btn-primary btn-cook" onClick={() => sendOrder()} text="A cocinar" disabled={!btnActive} />
+        </div>
       </div>
-      <div className='container-btn-order'>
-        <Button className = "btn btn-primary btn-cook"  onClick ={()=> sendOrder()} text="A cocinar" disabled={!btnActive}/>
-      </div>
-    </div>
-  </>
+    </>
   )
 };
 

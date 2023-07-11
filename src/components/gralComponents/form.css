@@ -1,4 +1,4 @@
-.container-form{
+.container-form {
     /* background-color: blue; */
     padding: 5%;
     margin: 1% 5% 10% 5%;
@@ -8,7 +8,8 @@
     width: 98%;
     justify-content: center;
 }
-.btn-form-submit-accept{
+
+.btn-form-submit-accept {
     /* background-color: blue; */
     position: absolute;
     margin-top: 21%;
@@ -18,9 +19,11 @@
     width: 120px;
     height: 45px;
 }
-.btn-cancel,.btn-accept{
+
+.btn-cancel,
+.btn-accept {
     padding: 3%;
-    border-radius: 20px; 
+    border-radius: 20px;
     width: 120px;
     height: 45px;
 }

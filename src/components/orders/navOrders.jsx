@@ -6,45 +6,45 @@ import BQLogo from '../../assets/img/BQLogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
-const logoutIcon = <FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{color:"#db3f0a",}} />
+const logoutIcon = <FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{ color: "#db3f0a", }} />
 
-const NavOrders= () => {
+const NavOrders = () => {
   const navigateTo = useNavigate();
   const logout = () => {
     navigateTo('/');
-  } 
+  }
   const navMenu = () => {
     console.log('click en order')
-     navigateTo('/waiter');
+    navigateTo('/waiter');
   };
   const navStatusOrder = () => {
     console.log('click en order')
-     navigateTo('/statusorder');
+    navigateTo('/statusorder');
   };
   return (
     <>
-    <section className='section-waiter'>
-    <div className='waiter-nav'>
-      <div className='logos'>
-      <div className='container-orders-view'>
-        <div className='container-order-logo'onClick={navMenu}>
-          <img src={IconoMesero} className='waiterIcon' alt='waiter icon' />
+      <section className='section-waiter'>
+        <div className='waiter-nav'>
+          <div className='logos'>
+            <div className='container-orders-view'>
+              <div className='container-order-logo' onClick={navMenu}>
+                <img src={IconoMesero} className='waiterIcon' alt='waiter icon' />
+              </div>
+              <div className='container-order-logo' onClick={navStatusOrder}>
+                <img src={IconoOrders} className='orderLogo' alt='orders icon' />
+              </div>
+            </div>
+            <h1> Estado de órdenes </h1>
+            <div className='container-logos'>
+              <img src={BQLogo} className='BQLogo' alt='hours icon' />
+              <img src={IconoHrs} className='hrsIcon' alt='hours icon' />
+            </div>
+          </div>
+          <div className='container-logout' onClick={logout}>
+            {logoutIcon}
+          </div>
         </div>
-        <div className='container-order-logo'onClick={navStatusOrder}>
-          <img src={IconoOrders} className='orderLogo' alt='orders icon'/> 
-        </div>      
-      </div>
-        <h1> Estado de órdenes </h1>
-        <div className='container-logos'>
-          <img src={BQLogo} className='BQLogo' alt='hours icon'/>
-          <img src={IconoHrs} className='hrsIcon' alt='hours icon'/>
-        </div>
-      </div>
-      <div className='container-logout' onClick={logout}>
-        {logoutIcon}
-      </div>
-    </div>
-  </section>
+      </section>
     </>
   );
 };

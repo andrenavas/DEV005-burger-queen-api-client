@@ -5,8 +5,6 @@ import OrderTicket from './chef/orderTicket';
 import { useState, useEffect } from 'react';
 import NavOrders from './orders/navOrders';
 
-
-
 const StatusOrder = () => {
 
   const [orders, setOrders] = useState([]);
@@ -17,17 +15,17 @@ const StatusOrder = () => {
     fetch(`http://localhost:8080/orders/${order.id}`, {
       method: 'PATCH',
       headers: {
-      'Content-Type': 'application/json',
-      'authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`,
       },
-      body: JSON.stringify({status: 'delivered'})
+      body: JSON.stringify({ status: 'delivered' })
     })
-    .then((resp) => resp.json())
-    .then((updatedOrder) => {
-      updateOrderStatus(updatedOrder.id, updatedOrder.status);
-      // console.log(updatedOrder.status);
-    })
-    .catch(error => console.log(error))
+      .then((resp) => resp.json())
+      .then((updatedOrder) => {
+        updateOrderStatus(updatedOrder.id, updatedOrder.status);
+        // console.log(updatedOrder.status);
+      })
+      .catch(error => console.log(error))
   }
 
   const updateOrderStatus = (orderId, newStatus) => {
@@ -35,52 +33,54 @@ const StatusOrder = () => {
       return prevOrders.map(order => {
         if (order.id === orderId) {
           return { ...order, status: newStatus };
-  }
+        }
         return order;
       });
     });
   };
-const token = localStorage.getItem('accessToken'); 
-useEffect(() =>{
-  function getOrdersReady() {fetch('http://localhost:8080/orders', {
+  const token = localStorage.getItem('accessToken');
+  useEffect(() => {
+    function getOrdersReady() {
+      fetch('http://localhost:8080/orders', {
 
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-    'authorization': `Bearer ${token}`,
-  }
-  })
-  .then((resp) => resp.json())
-  .then((dataOrders) => {
-    console.log(dataOrders)
-    setOrders(dataOrders)
-  })
-  .catch(error => console.log(error))}
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'authorization': `Bearer ${token}`,
+        }
+      })
+      .then((resp) => resp.json())
+      .then((dataOrders) => {
+        console.log(dataOrders)
+        setOrders(dataOrders)
+      })
+      .catch(error => console.log(error))
+    }
 
-  getOrdersReady();
-  const intervalId = setInterval(getOrdersReady, 10000)
+    getOrdersReady();
+    const intervalId = setInterval(getOrdersReady, 10000)
     //este retorno es opcional del useEffect, evita que se ejecute cuando estoy en otra pantalla o que se pueda duplicar
     return () => {
       clearInterval(intervalId)
     };
-  
-}, [token])
 
-  return(
-  <> 
-  <Background/>
-    <NavOrders/>
-    <section className='title-chef-orders'>
-      <h1 className='title-status-chef'>Listas para servir</h1>
+  }, [token])
+
+  return (
+    <>
+      <Background />
+      <NavOrders />
+      <section className='title-chef-orders'>
+        <h1 className='title-status-chef'>Listas para servir</h1>
       </section>
-    <section className='container-order-status'>
+      <section className='container-order-status'>
         <div className='container-order-ticket-status'>
-        {orders
-        .filter(order => order.status === 'delivery')
-        .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatusDelivered} showButton={true} text="Entregado"/>))}
-        </div> 
-   </section> 
-  </>
+          {orders
+            .filter(order => order.status === 'delivery')
+            .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatusDelivered} showButton={true} text="Entregado" />))}
+        </div>
+      </section>
+    </>
   );
 };
 

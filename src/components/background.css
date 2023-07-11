@@ -1,6 +1,5 @@
-
-.background-app{
-  margin-top:-10px;
+.background-app {
+  margin-top: -10px;
   background-color: #013E49;
   /* padding: 100px; */
   width: 100%;
@@ -10,7 +9,8 @@
   justify-content: center;
   position: fixed;
 }
-.up-options{
+
+.up-options {
   margin: 0 auto;
   width: 95%;
   height: 95%;
@@ -20,7 +20,8 @@
   position: fixed;
 
 }
-.nav-waiter{
+
+.nav-waiter {
   margin: 0 auto;
   /* width: 95vw; */
   height: 20%;

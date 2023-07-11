@@ -1,11 +1,9 @@
 import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 import './form.css'
+import { PropTypes } from 'prop-types'
 
-
-const Form = ({ isEditForm,handleAddEdit,editWorker,
-     newUserData, setNewUserData,
-     closeModal }) => {
+const Form = ({ isEditForm, handleAddEdit, newUserData, setNewUserData }) => {
     const {
         register,
         handleSubmit,
@@ -19,48 +17,45 @@ const Form = ({ isEditForm,handleAddEdit,editWorker,
     const newUserPasswordValue = (event) => {
         setNewUserData({ ...newUserData, password: event.target.value })
     };
- 
+
     //  fn que obtiene los valores de las opciones seleccionadas
-     const newUserRoleValue = (selectedOption) => {
+    const newUserRoleValue = (selectedOption) => {
         setNewUserData({ ...newUserData, role: selectedOption.value })
     };
-   //se crean las constantes para el select de los roles
+    //se crean las constantes para el select de los roles
     const options = [
         { value: 'waiter', label: 'Mesera(o)' },
         { value: 'chef', label: 'Chef' },
         { value: 'admin', label: 'Admin' },
     ];
 
-    //función para resetear los valores del input
-    // const resetForm = () => {
-    //     reset();
-    //     setNewUserData({ email: '', password: '', role: '' });
-    // };
-
-
-    //console.log('newUserData', newUserData);
-
     return (
         <form className='container-form' onSubmit={handleSubmit((data) => {
-            console.log('form submit data',data);
+            console.log('form submit data', data);
             handleAddEdit(newUserData);
-            // editWorker(newUserData);
-            // closeModal();
         })}>
-            <input type='email'{...register('email', { required: true })} value={newUserData.email} onChange={newUserEmailValue} placeholder='Correo electrónico'/>
+            <input type='email'{...register('email', { required: true })} value={newUserData.email} onChange={newUserEmailValue} placeholder='Correo electrónico' />
             {errors.email && <p>Email requerido</p>}
-            <input type='password'{...register('password', { required: true })} value={newUserData.password} onChange={newUserPasswordValue} placeholder='Contraseña'/>
+            <input type='password'{...register('password', { required: true })} value={newUserData.password} onChange={newUserPasswordValue} placeholder='Contraseña' />
             {errors.password && <p>Contraseña requerida</p>}
             <Select
                 onChange={newUserRoleValue}
                 options={options}
                 value={newUserData.role ? { value: newUserData.role, label: newUserData.role } : null}
             />
-            {/* <input type='text'{...register('rol', { required: true })} value ={newUserData.role} onChange={newUserRoleValue} />
-            {errors.rol && <p>Porfavor agrega un rol</p>} */}
             <input className='btn-form-submit-accept' type="submit" value={isEditForm ? 'Editar' : 'Agregar'} />
         </form>
     );
 
+}
+Form.propTypes = {
+    isEditForm: PropTypes.bool,
+    handleAddEdit: PropTypes.func,
+    newUserData: PropTypes.shape({
+        email: PropTypes.string,
+        password: PropTypes.string,
+        role: PropTypes.string,
+    }),
+    setNewUserData: PropTypes.func
 }
 export default Form

@@ -196,7 +196,6 @@ const Admin = () => {
     else {
       addWorker();
       closeModal();
-      // value ='agregar'
     }
   }
 
@@ -205,11 +204,8 @@ const Admin = () => {
       <Background />
       <NavAdmin />
       <div className='container-dashboard-btnAddWorker'>
-        {/* <div className='container-btn-add-worker'>
-        <Button  className='btn-add-worker' text='Agregar Trabajador' dataTestid={'Testidbtn'} onClick={() => handleAddWorker()}></Button>
-        </div> */}
         <Dashboard
-        setShowEditForm = {setShowEditForm}
+          setShowEditForm={setShowEditForm}
           workers={workers}
           openModal={openModal}
           closeModal={closeModal}
@@ -224,15 +220,13 @@ const Admin = () => {
         handleClickModal={modalData.aceptarFn}
         text={modalData.modalText}
         textBtn={modalData.modalBtnText} >
-        <Form 
-        handleAddEdit = {handleAddEdit}
-          // editWorker={editWorker}
+        <Form
+          handleAddEdit={handleAddEdit}
           newUserData={newUserData}
           setNewUserData={setNewUserData}
           handleClickModal={modalData.aceptarFn}
           closeModal={closeModal}
           isEditForm={showEditForm} />
-        {/* <EditForm editWorker={editWorker} editUserData={editUserData} setEditUserData={setEditUserData} handleClickModal={modalData.aceptarFn} closeModal={closeModal}></EditForm> */}
       </ModalApp>
     </>
   )

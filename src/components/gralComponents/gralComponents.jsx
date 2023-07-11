@@ -15,7 +15,6 @@ export const Button = ({ onClick, text, className, disabled, dataTestid, icon })
   );
 };
 
-
 Input.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
@@ -29,6 +28,7 @@ Button.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   dataTestid: PropTypes.string,
+  icon: PropTypes.element,
 };
 
 

@@ -11,16 +11,14 @@ const Products = ({ handleAddProduct }) => {
   const [selectedMenu, setSelectedMenu] = useState('Desayuno')
   const [getProductsRequestStatus, setGetProductsRequestStatus] = useState('loading')
   const typeMenu = (selectedType) => {
-    console.log('BUTTON CLICK',selectedType)
+    console.log('BUTTON CLICK', selectedType)
     setSelectedMenu(selectedType)
   };
-
   const getProductsContainerTestId = useCallback(() => {
     if (selectedMenu === 'Desayuno') return 'products_breakfast_container'
     return 'products_lunch_container'
   }, [selectedMenu])
-  //const token = localStorage.getItem('accessToken');
-  //console.log(token);
+
   useEffect(() => {
     getProducts(setGetProductsRequestStatus, setProducts);
   }, []);
@@ -32,19 +30,18 @@ const Products = ({ handleAddProduct }) => {
           <Button dataTestid={'btn_breakfast'} className="btn btn-primary btn-order" text="Desayuno" onClick={() => typeMenu("Desayuno")} />
           <Button dataTestid={'btn_lunch'} className="btn btn-primary btn-order" text="Almuerzo/Cena" onClick={() => typeMenu("Almuerzo")} />
         </div>
-        {getProductsRequestStatus === 'loading' ? <span>Cargando...</span> : null }
+        {getProductsRequestStatus === 'loading' ? <span>Cargando...</span> : null}
         {getProductsRequestStatus === 'success' && products.length ? (
           <div className='container-products' data-testid={getProductsContainerTestId()}>
             {products
               .filter(product => product.type === selectedMenu)
-              .map(product => (<Card key={product.id} product={product} handleAddProduct={handleAddProduct}/>))
+              .map(product => (<Card key={product.id} product={product} handleAddProduct={handleAddProduct} />))
             }
           </div>
         ) : null}
       </div>
     </>
   )
-
 };
 
 Products.propTypes = {

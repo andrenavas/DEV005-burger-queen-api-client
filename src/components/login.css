@@ -3,10 +3,11 @@ h1 {
   color: black;
 }
 
-.container-xl{
+.container-xl {
   display: flex;
 
 }
+
 .container-email-password-logo {
   padding: 60px;
   margin: 0 auto;
@@ -16,27 +17,31 @@ h1 {
   height: 570px;
   border-radius: 40px;
 }
-form{
+
+form {
   margin: 0 auto;
 }
 
 .bq-container-height {
-   height: 100vh; 
+  height: 100vh;
 }
 
-.login-logo{
+.login-logo {
   width: 200px;
   height: auto;
   margin-bottom: 40px;
 }
-.container-logo-login{
+
+.container-logo-login {
   justify-content: center;
 }
-.login-button{
+
+.login-button {
   background-color: #04404B;
   border: none;
 }
-.error-message{
+
+.error-message {
   color: rgb(173, 38, 38);
   margin-top: 5px;
 }
