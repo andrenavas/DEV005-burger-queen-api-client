@@ -12,7 +12,7 @@ import './dashboardProducts.css'
 const iconEditWorker = <FontAwesomeIcon icon={faUserPen} size="2xl" style={{ color: "#1E3050", }} />
 const iconDeleteWorker = <FontAwesomeIcon icon={faUserXmark} size="2xl" style={{ color: "#D11515", }} />
 
-const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handleBorrar, handleEditar }) => {
+const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handleDeleteProduct, handleEditar }) => {
   const [modalData, setModalData] = useState({
     modalText: '',
     modalBtnText: '',
@@ -49,7 +49,7 @@ const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handle
                       <img className ='dashboard-products-image'src={product.image} alt="products-image" />
                     </td>
                     <td className='container-edit-icon' onClick={() => { setShowEditForm(true); handleEditar(product) }}><i>{iconEditWorker}</i></td>
-                    <td className='container-delete-icon' onClick={() => handleBorrar(product)}><i>{iconDeleteWorker}</i></td>
+                    <td className='container-delete-icon' onClick={() => handleDeleteProduct(product)}><i>{iconDeleteWorker}</i></td>
                   </TableRow>
                 ))}
               </TableBody>

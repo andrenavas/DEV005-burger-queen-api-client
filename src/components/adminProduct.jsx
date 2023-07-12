@@ -53,37 +53,37 @@ const AdminProducts = () => {
   const closeModal = () => {
     setModalIsOpenId(false)
   }
-  // const deleteWorker = (user) => {
-  //   console.log('eliminar')
-  //   console.log('HOLA', user.id)
-  //   fetch(`http://localhost:8080/users/${user.id}`, {
+  const deleteProduct = (product) => {
+    console.log('eliminar')
+    console.log('HOLA', product.id)
+    fetch(`http://localhost:8080/products/${product.id}`, {
 
-  //     method: 'DELETE',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'authorization': `Bearer ${token}`,
-  //     },
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`,
+      },
 
-  //   })
-  //     .then((resp) => resp.json())
-  //     .then((user) => {
-  //       updateProductsData(user)
-  //     })
-  //     .catch(error => console.log(error))
+    })
+      .then((resp) => resp.json())
+      .then((product) => {
+        updateProductsData(product)
+      })
+      .catch(error => console.log(error))
 
-  //   console.log('eliminar')
-  // }
-  // // Actualizando la lista trabajadores . 
-  // const updateProductsData = (user) => {
-  //   setProducts(prevProducts => {
-  //     return prevProducts.map(worker => {
-  //       if (worker.id === user.id) {
-  //         return { worker };
-  //       }
-  //       return worker;
-  //     });
-  //   });
-  // };
+    console.log('eliminar')
+  }
+  // Actualizando la lista trabajadores . 
+  const updateProductsData = (item) => {
+    setProducts(prevProducts => {
+      return prevProducts.map(product => {
+        if (product.id === item.id) {
+          return {product};
+        }
+        return product;
+      });
+    });
+  };
   // const [editUserData, setEditUserData] = useState({
   //   email: '',
   //   password: '',
@@ -176,19 +176,19 @@ const AdminProducts = () => {
   //   });
   //   openModal();
   // };
-  // const handleBorrar = (worker) => {
-  //   // setModalText('¿Estás seguro que deseas borrar al trabajador?');
-  //   // setModalBtnText('Borrar');
-  //   setModalData({
-  //     modalText: '¿Estás seguro que deseas borrar al trabajador?',
-  //     modalBtnText: 'Borrar',
-  //     aceptarFn: () => {
-  //       deleteWorker(worker)
-  //       closeModal();
-  //     }
-  //   });
-  //   openModal();
-  // };
+  const handleDeleteProduct = (product) => {
+    // setModalText('¿Estás seguro que deseas borrar al trabajador?');
+    // setModalBtnText('Borrar');
+    setModalData({
+      modalText: '¿Estás seguro que deseas BORRAR el product?',
+      modalBtnText: 'Borrar',
+      aceptarFn: () => {
+        deleteProduct(product)
+        closeModal();
+      }
+    });
+    openModal();
+  };
   const [showEditForm, setShowEditForm] = useState(true)
 
   const handleAddEditProduct = (product) => {
@@ -215,7 +215,7 @@ const AdminProducts = () => {
           closeModal={closeModal}
           modalIsOpen={modalIsOpenId}
           handleAddProduct={handleAddProduct}
-          // handleBorrar={handleBorrar}
+          handleDeleteProduct={handleDeleteProduct}
           // handleEditar={handleEditar}
            />
       </div>
