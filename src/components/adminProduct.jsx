@@ -84,37 +84,42 @@ const AdminProducts = () => {
       });
     });
   };
-  // const [editUserData, setEditUserData] = useState({
-  //   email: '',
-  //   password: '',
-  //   role: ''
-  // });
+  const [editProductData, setEditProductData] = useState({
+    name: '',
+    type: '',
+    image: '',
+    price: '',
+  });
 
-  // const editWorker = (user) => {
-  //   console.log('editar', user)
-  //   const editWorker = {
-  //     email: user.email,
-  //     password: user.password,
-  //     role: user.role
-  //   };
-  //   fetch(`http://localhost:8080/users/${user.id}`, {
-  //     method: 'PATCH',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'authorization': `Bearer ${token}`,
-  //     },
-  //     body: JSON.stringify(editWorker),
-  //   })
-  //     .then(() => {
-  //       setEditUserData.email = '',
-  //         setEditUserData.password = '',
-  //         setEditUserData.role = '',
-  //         editUserData.email = '',
-  //         editUserData.password = '',
-  //         editUserData.role = ''
-  //     })
+  const editProduct = (product) => {
+    console.log('editar', product)
+    const editProduct = {
+      name: product.name,
+      type: product.type,
+      image:product.image,
+      price: product.price,
+     
+    };
+    fetch(`http://localhost:8080/products/${product.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(editProduct),
+    })
+      .then(() => {
+        setEditProductData.name = '',
+        setEditProductData.type = '',
+        setEditProductData.image = '',
+        setEditProductData.price = '',
+        editProductData.name = '',
+        editProductData.type = '',
+        editProductData.image ='',
+        editProductData.price = ''
+      })
 
-  // }
+  }
   const [newProductData, setNewProductData] = useState({
     name: '',
     type: '',
@@ -161,21 +166,21 @@ const AdminProducts = () => {
     });
     openModal();
   };
-  // const handleEditar = (worker) => {
-  //   // setModalText('¿Estás seguro que deseas editar al trabajador?');
-  //   // setModalBtnText('Editar');
-  //   setNewUserData(worker);
-  //   setModalData({
-  //     modalText: '¿Estás seguro que deseas editar al trabajador?',
-  //     modalBtnText: 'Editar',
-  //     aceptarFn: () => {
-  //       setNewUserData(worker);
-  //       editWorker(worker);
-  //       closeModal();
-  //     }
-  //   });
-  //   openModal();
-  // };
+  const handleEditProduct = (product) => {
+    // setModalText('¿Estás seguro que deseas editar al trabajador?');
+    // setModalBtnText('Editar');
+    setNewProductData(product);
+    setModalData({
+      modalText: '¿Estás seguro que deseas editar al trabajador?',
+      modalBtnText: 'Editar',
+      aceptarFn: () => {
+        setNewProductData(product);
+        editProduct(product);
+        closeModal();
+      }
+    });
+    openModal();
+  };
   const handleDeleteProduct = (product) => {
     // setModalText('¿Estás seguro que deseas borrar al trabajador?');
     // setModalBtnText('Borrar');
@@ -216,7 +221,7 @@ const AdminProducts = () => {
           modalIsOpen={modalIsOpenId}
           handleAddProduct={handleAddProduct}
           handleDeleteProduct={handleDeleteProduct}
-          // handleEditar={handleEditar}
+          handleEditProduct={handleEditProduct}
            />
       </div>
       <ModalApp

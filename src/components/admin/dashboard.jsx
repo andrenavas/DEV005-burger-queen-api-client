@@ -30,7 +30,7 @@ const Dashboard = ({ setShowEditForm, workers, handleAddWorker, handleBorrar, ha
             <Table className='table-dashboard-workers'>
               <TableHead>
                 <TableRow className='table-subtitles'>
-                  <TableCell >Id</TableCell>
+                  <TableCell >Nº</TableCell>
                   <TableCell>Nombre</TableCell>
                   <TableCell>Rol</TableCell>
                   <TableCell>Correo</TableCell>
@@ -41,7 +41,7 @@ const Dashboard = ({ setShowEditForm, workers, handleAddWorker, handleBorrar, ha
               <TableBody>
                 {Array.isArray && workers.map((worker, index) => (
                   <TableRow key={index}>
-                    <td className='dashboard-table-row'>{worker.id}</td>
+                    <td className='dashboard-table-row'>{index + 1 }</td>
                     <td className='dashboard-table-row'>{worker.email}</td>
                     <td className='dashboard-table-row'>{worker.role}</td>
                     <td className='dashboard-table-row'>{worker.email}</td>
