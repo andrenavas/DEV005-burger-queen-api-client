@@ -12,6 +12,7 @@ import Waiter from './components/waiter';
 import Chef from './components/chef';
 import StatusOrder from './components/status-order';
 import Admin from './components/admin';
+import AdminProducts from './components/adminProduct'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin/>,
+  },
+  {
+    path: "/adminProducts",
+    element: <AdminProducts/>,
   },
 ]);
 

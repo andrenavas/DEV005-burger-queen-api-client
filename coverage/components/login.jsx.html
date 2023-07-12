@@ -358,77 +358,77 @@ const Login = () =&gt; {
         'Content-Type': 'application/json'
       }
     })
-    .then(async (response) =&gt; {
-      if(response.ok)<span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        return response.json();</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-      throw new Error(await response.json());
-    })
-    .then((data) =&gt; {
-<span class="cstat-no" title="statement not covered" >      if(data.user.role === 'waiter' || data.user.role ==='admin'){</span>
-<span class="cstat-no" title="statement not covered" >       navigateTo('/waiter');</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem('accessToken', data.accessToken);</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem('userEmail', data.user.email);</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem('userRole', data.user.role);</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem('userId', data.user.id);</span>
+      .then(async (response) =&gt; {
+        if (response.ok) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >          return response.json();</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+        throw new Error(await response.json());
+      })
+      .then((data) =&gt; {
+<span class="cstat-no" title="statement not covered" >        if (data.user.role === 'waiter' || data.user.role === 'admin') {</span>
+<span class="cstat-no" title="statement not covered" >          navigateTo('/waiter');</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('accessToken', data.accessToken);</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('userEmail', data.user.email);</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('userRole', data.user.role);</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('userId', data.user.id);</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        console.log('EL TOKEN', token);</span>
-<span class="cstat-no" title="statement not covered" >        console.log('EL MAIL', userEmail);</span>
-<span class="cstat-no" title="statement not covered" >        console.log('EL ROL', userRole);</span>
-<span class="cstat-no" title="statement not covered" >        console.log('userId', userId);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >          console.log('EL TOKEN', token);</span>
+<span class="cstat-no" title="statement not covered" >          console.log('EL MAIL', userEmail);</span>
+<span class="cstat-no" title="statement not covered" >          console.log('EL ROL', userRole);</span>
+<span class="cstat-no" title="statement not covered" >          console.log('userId', userId);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      if(data.user.role === 'chef'){</span>
-<span class="cstat-no" title="statement not covered" >        navigateTo('/chef');</span>
-<span class="cstat-no" title="statement not covered" >         localStorage.setItem('accessToken', data.accessToken);</span>
-<span class="cstat-no" title="statement not covered" >         localStorage.setItem('userEmail', data.user.email);</span>
-<span class="cstat-no" title="statement not covered" >         localStorage.setItem('userRole', data.user.role);</span>
-<span class="cstat-no" title="statement not covered" >         localStorage.setItem('userId', data.user.id);</span>
-<span class="cstat-no" title="statement not covered" > </span>
-<span class="cstat-no" title="statement not covered" >        //  console.log('EL TOKEN CHEF', token);</span>
-<span class="cstat-no" title="statement not covered" >        //  console.log('EL MAIL CHEF', userEmail);</span>
-<span class="cstat-no" title="statement not covered" >        //  console.log('EL ROL CHEF', userRole);</span>
-<span class="cstat-no" title="statement not covered" >        //  console.log('userId CHEF', userId);</span>
-<span class="cstat-no" title="statement not covered" >       }</span>
-<span class="cstat-no" title="statement not covered" >       if(data.user.role === 'admin'){</span>
-<span class="cstat-no" title="statement not covered" >        navigateTo('/admin');</span>
-<span class="cstat-no" title="statement not covered" >         localStorage.setItem('accessToken', data.accessToken);</span>
-<span class="cstat-no" title="statement not covered" >         localStorage.setItem('userEmail', data.user.email);</span>
-<span class="cstat-no" title="statement not covered" >         localStorage.setItem('userRole', data.user.role);</span>
-<span class="cstat-no" title="statement not covered" >         localStorage.setItem('userId', data.user.id);</span>
-<span class="cstat-no" title="statement not covered" > </span>
-<span class="cstat-no" title="statement not covered" >        //  console.log('EL TOKEN ADMIN', token);</span>
-<span class="cstat-no" title="statement not covered" >        //  console.log('EL MAIL ADMIN', userEmail);</span>
-<span class="cstat-no" title="statement not covered" >        //  console.log('EL ROL ADMIN', userRole);</span>
-<span class="cstat-no" title="statement not covered" >        //  console.log('userId ADMIN', userId);</span>
-<span class="cstat-no" title="statement not covered" >       }</span>
-<span class="cstat-no" title="statement not covered" >      </span>
-    })
-    .catch((error) =&gt; {
-      if(error.message === 'Cannot find user'){
-        error.message = 'Usuario no existe';
-<span class="branch-0 cbranch-no" title="branch not covered" >      } else if (error.message === 'Incorrect password'){</span>
-<span class="cstat-no" title="statement not covered" >        error.message = 'Contraseña incorrecta';</span>
-<span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        error.message = 'Credenciales incorrectas, ponte en contacto con el administrador'</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-      setErrorMessage(error.message);
-      reset();
+<span class="cstat-no" title="statement not covered" >        if (data.user.role === 'chef') {</span>
+<span class="cstat-no" title="statement not covered" >          navigateTo('/chef');</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('accessToken', data.accessToken);</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('userEmail', data.user.email);</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('userRole', data.user.role);</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('userId', data.user.id);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >          //  console.log('EL TOKEN CHEF', token);</span>
+<span class="cstat-no" title="statement not covered" >          //  console.log('EL MAIL CHEF', userEmail);</span>
+<span class="cstat-no" title="statement not covered" >          //  console.log('EL ROL CHEF', userRole);</span>
+<span class="cstat-no" title="statement not covered" >          //  console.log('userId CHEF', userId);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (data.user.role === 'admin') {</span>
+<span class="cstat-no" title="statement not covered" >          navigateTo('/admin');</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('accessToken', data.accessToken);</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('userEmail', data.user.email);</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('userRole', data.user.role);</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('userId', data.user.id);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >          //  console.log('EL TOKEN ADMIN', token);</span>
+<span class="cstat-no" title="statement not covered" >          //  console.log('EL MAIL ADMIN', userEmail);</span>
+<span class="cstat-no" title="statement not covered" >          //  console.log('EL ROL ADMIN', userRole);</span>
+<span class="cstat-no" title="statement not covered" >          //  console.log('userId ADMIN', userId);</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+      })
+      .catch((error) =&gt; {
+        if (error.message === 'Cannot find user') {
+          error.message = 'Usuario no existe';
+<span class="branch-0 cbranch-no" title="branch not covered" >        } else if (error.message === 'Incorrect password') {</span>
+<span class="cstat-no" title="statement not covered" >          error.message = 'Contraseña incorrecta';</span>
+<span class="cstat-no" title="statement not covered" >        } else {</span>
+<span class="cstat-no" title="statement not covered" >          error.message = 'Credenciales incorrectas, ponte en contacto con el administrador'</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+        setErrorMessage(error.message);
+        reset();
       })
   }
   return (
     &lt;&gt;
-      &lt;section style={{backgroundImage: `url(${FondoBQIpad})`,backgroundRepeat: 'no-repeat',}} 
-      className='container-xl bq-container-height align-items-center'&gt;
+      &lt;section style={{ backgroundImage: `url(${FondoBQIpad})`, backgroundRepeat: 'no-repeat', }}
+        className='container-xl bq-container-height align-items-center'&gt;
         &lt;div className='container container-email-password-logo align-items-center d-flex justify-content-center'&gt;
           &lt;div className='row align-items-center container-logo-login'&gt;
-            &lt;img src={BQLogo} className='login-logo' alt='Burger Queen Logo'/&gt;
+            &lt;img src={BQLogo} className='login-logo' alt='Burger Queen Logo' /&gt;
             &lt;form onSubmit={handleSubmit(onSubmit)}&gt;
               &lt;div className='mb-3'&gt;
                 &lt;label htmlFor='inputEmail' className='form-label'&gt;
                   Correo electrónico
                 &lt;/label&gt;
-                &lt;input {...register('email', { required: 'Este campo es requerido', pattern: { value: /^\S+@\S+$/i, message: 'Correo electrónico inválido'}})}
+                &lt;input {...register('email', { required: 'Este campo es requerido', pattern: { value: /^\S+@\S+$/i, message: 'Correo electrónico inválido' } })}
                   type='email'
                   className='form-control'
                   id='inputEmail'
@@ -439,12 +439,12 @@ const Login = () =&gt; {
                 &lt;label htmlFor='inputPassword' className='form-label'&gt;
                   Contraseña
                 &lt;/label&gt;
-                &lt;input {...register('password', {required: 'Este campo es requerido'})}
+                &lt;input {...register('password', { required: 'Este campo es requerido' })}
                   type='password'
                   className='form-control'
                   id='inputPassword'
                 /&gt;
-                {errorMessage ? (&lt;div className='error-message'&gt;{errorMessage}&lt;/div&gt;):''}
+                {errorMessage ? (&lt;div className='error-message'&gt;{errorMessage}&lt;/div&gt;) : ''}
               &lt;/div&gt;
               &lt;div className='container-login-button d-flex justify-content-center'&gt;
                 &lt;button type='submit' className='btn btn-primary login-button'&gt;
@@ -466,7 +466,7 @@ export default Login</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-06T14:12:07.704Z
+                at 2023-07-11T14:03:53.706Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.45% </span>
+                <span class="strong">84.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>47/55</span>
+                <span class='fraction'>45/53</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.45% </span>
+                <span class="strong">84.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>47/55</span>
+                <span class='fraction'>45/53</span>
             </div>
         
             
@@ -115,10 +115,7 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -141,7 +138,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -179,49 +175,47 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import Orders from '../../assets/img/Orders.png'
 &nbsp;
-&nbsp;
-const logoutIcon = &lt;FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{color:"#db3f0a",}} /&gt;
+const logoutIcon = &lt;FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{ color: "#db3f0a", }} /&gt;
 &nbsp;
 const NavWaiter = () =&gt; {
   const navigateTo = useNavigate();
   const logout = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    navigateTo('/');</span>
-<span class="cstat-no" title="statement not covered" >  } </span>
+<span class="cstat-no" title="statement not covered" >  }</span>
   const navMenu = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    // console.log('click en order')</span>
-<span class="cstat-no" title="statement not covered" >     navigateTo('/waiter');</span>
+<span class="cstat-no" title="statement not covered" >    navigateTo('/waiter');</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
   const statusOrder = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    // console.log('click en order')</span>
-<span class="cstat-no" title="statement not covered" >     navigateTo('/statusorder');</span>
+<span class="cstat-no" title="statement not covered" >    navigateTo('/statusorder');</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
   return (
     &lt;&gt;
-    &lt;section className='section-waiter'&gt;
-    &lt;div className='waiter-nav'&gt;
-      &lt;div className='logos'&gt;
-          &lt;div className='container-logo-order-waiter'&gt;
+      &lt;section className='section-waiter'&gt;
+        &lt;div className='waiter-nav'&gt;
+          &lt;div className='logos'&gt;
+            &lt;div className='container-logo-order-waiter'&gt;
               &lt;div className='container-orders-view'&gt;
-              &lt;div className='container-order-logo'onClick={navMenu}&gt;
-                &lt;img src={IconoMesero} className='waiterIcon' alt='waiter icon' /&gt;
-              &lt;/div&gt;
-                &lt;div className='container-order-logo'onClick={statusOrder}&gt;
-                  &lt;img src={Orders} className='orderLogo' alt='orders icon'/&gt; 
+                &lt;div className='container-order-logo' onClick={navMenu}&gt;
+                  &lt;img src={IconoMesero} className='waiterIcon' alt='waiter icon' /&gt;
                 &lt;/div&gt;
-                 
+                &lt;div className='container-order-logo' onClick={statusOrder}&gt;
+                  &lt;img src={Orders} className='orderLogo' alt='orders icon' /&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;h1 className='title-view'&gt; Mesera/Mesero &lt;/h1&gt;
+            &lt;div className='container-logos'&gt;
+              &lt;img src={BQLogo} className='BQLogo' alt='hours icon' /&gt;
+              &lt;img src={IconoHrs} className='hrsIcon' alt='hours icon' /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div className='container-logout' onClick={logout}&gt;
+            {logoutIcon}
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;h1 className='title-view'&gt; Mesera/Mesero &lt;/h1&gt;
-        &lt;div className='container-logos'&gt;
-          &lt;img src={BQLogo} className='BQLogo' alt='hours icon'/&gt;
-          &lt;img src={IconoHrs} className='hrsIcon' alt='hours icon'/&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div className='container-logout' onClick={logout}&gt;
-        {logoutIcon}
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
+      &lt;/section&gt;
     &lt;/&gt;
   );
 };
@@ -232,7 +226,7 @@ export default NavWaiter</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-06T14:12:07.704Z
+                at 2023-07-11T14:03:53.706Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

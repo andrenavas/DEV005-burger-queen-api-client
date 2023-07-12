@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688652727772" clover="3.2.0">
-  <project timestamp="1688652727772" name="All files">
-    <metrics statements="809" coveredstatements="634" conditionals="49" coveredconditionals="44" methods="35" coveredmethods="19" elements="893" coveredelements="697" complexity="0" loc="809" ncloc="809" packages="4" files="14" classes="14"/>
+<coverage generated="1689084233762" clover="3.2.0">
+  <project timestamp="1689084233762" name="All files">
+    <metrics statements="777" coveredstatements="597" conditionals="47" coveredconditionals="41" methods="35" coveredmethods="19" elements="859" coveredelements="657" complexity="0" loc="777" ncloc="777" packages="4" files="14" classes="14"/>
     <package name="components">
-      <metrics statements="396" coveredstatements="236" conditionals="17" coveredconditionals="15" methods="12" coveredmethods="6"/>
-      <file name="background.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\background.jsx">
-        <metrics statements="16" coveredstatements="16" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="391" coveredstatements="226" conditionals="14" coveredconditionals="12" methods="12" coveredmethods="6"/>
+      <file name="background.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/background.jsx">
+        <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -20,28 +20,27 @@
         <line num="12" count="10" type="stmt"/>
         <line num="13" count="10" type="stmt"/>
         <line num="14" count="10" type="stmt"/>
-        <line num="15" count="10" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="chef.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\chef.jsx">
-        <metrics statements="123" coveredstatements="81" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="2"/>
+      <file name="chef.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/chef.jsx">
+        <metrics statements="120" coveredstatements="72" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
         <line num="13" count="3" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
-        <line num="16" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
         <line num="19" count="3" type="stmt"/>
         <line num="20" count="3" type="stmt"/>
@@ -49,17 +48,17 @@
         <line num="22" count="3" type="stmt"/>
         <line num="23" count="3" type="stmt"/>
         <line num="24" count="3" type="stmt"/>
-        <line num="25" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="26" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
         <line num="27" count="3" type="stmt"/>
         <line num="28" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
         <line num="30" count="3" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="33" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="34" count="3" type="stmt"/>
-        <line num="35" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
         <line num="36" count="3" type="stmt"/>
         <line num="37" count="3" type="stmt"/>
         <line num="38" count="3" type="stmt"/>
@@ -68,14 +67,14 @@
         <line num="41" count="3" type="stmt"/>
         <line num="42" count="3" type="stmt"/>
         <line num="43" count="3" type="stmt"/>
-        <line num="44" count="3" type="stmt"/>
+        <line num="44" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="45" count="3" type="stmt"/>
-        <line num="46" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="46" count="3" type="stmt"/>
         <line num="47" count="3" type="stmt"/>
         <line num="48" count="3" type="stmt"/>
         <line num="49" count="3" type="stmt"/>
-        <line num="50" count="3" type="stmt"/>
-        <line num="51" count="3" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
@@ -106,11 +105,11 @@
         <line num="79" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
         <line num="81" count="0" type="stmt"/>
-        <line num="82" count="0" type="stmt"/>
-        <line num="83" count="0" type="stmt"/>
+        <line num="82" count="3" type="stmt"/>
+        <line num="83" count="3" type="stmt"/>
         <line num="84" count="3" type="stmt"/>
-        <line num="85" count="3" type="stmt"/>
-        <line num="86" count="3" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
         <line num="87" count="0" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
@@ -118,8 +117,8 @@
         <line num="91" count="0" type="stmt"/>
         <line num="92" count="0" type="stmt"/>
         <line num="93" count="0" type="stmt"/>
-        <line num="94" count="0" type="stmt"/>
-        <line num="95" count="0" type="stmt"/>
+        <line num="94" count="3" type="stmt"/>
+        <line num="95" count="3" type="stmt"/>
         <line num="96" count="3" type="stmt"/>
         <line num="97" count="3" type="stmt"/>
         <line num="98" count="3" type="stmt"/>
@@ -143,13 +142,10 @@
         <line num="116" count="3" type="stmt"/>
         <line num="117" count="3" type="stmt"/>
         <line num="118" count="3" type="stmt"/>
-        <line num="119" count="3" type="stmt"/>
-        <line num="120" count="3" type="stmt"/>
-        <line num="121" count="3" type="stmt"/>
-        <line num="122" count="1" type="stmt"/>
-        <line num="123" count="1" type="stmt"/>
+        <line num="119" count="1" type="stmt"/>
+        <line num="120" count="1" type="stmt"/>
       </file>
-      <file name="login.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\login.jsx">
+      <file name="login.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/login.jsx">
         <metrics statements="133" coveredstatements="89" conditionals="8" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -285,8 +281,8 @@
         <line num="132" count="1" type="stmt"/>
         <line num="133" count="1" type="stmt"/>
       </file>
-      <file name="waiter.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\waiter.jsx">
-        <metrics statements="124" coveredstatements="50" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="1"/>
+      <file name="waiter.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/waiter.jsx">
+        <metrics statements="123" coveredstatements="50" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -321,22 +317,22 @@
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
         <line num="36" count="8" type="stmt"/>
         <line num="37" count="8" type="stmt"/>
-        <line num="38" count="8" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
+        <line num="45" count="8" type="stmt"/>
         <line num="46" count="8" type="stmt"/>
         <line num="47" count="8" type="stmt"/>
         <line num="48" count="8" type="stmt"/>
         <line num="49" count="8" type="stmt"/>
-        <line num="50" count="8" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
@@ -350,10 +346,10 @@
         <line num="61" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
+        <line num="64" count="8" type="stmt"/>
         <line num="65" count="8" type="stmt"/>
         <line num="66" count="8" type="stmt"/>
-        <line num="67" count="8" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
         <line num="69" count="0" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
@@ -390,7 +386,7 @@
         <line num="101" count="0" type="stmt"/>
         <line num="102" count="0" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
+        <line num="104" count="8" type="stmt"/>
         <line num="105" count="8" type="stmt"/>
         <line num="106" count="8" type="stmt"/>
         <line num="107" count="8" type="stmt"/>
@@ -404,18 +400,17 @@
         <line num="115" count="8" type="stmt"/>
         <line num="116" count="8" type="stmt"/>
         <line num="117" count="8" type="stmt"/>
-        <line num="118" count="8" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
         <line num="119" count="1" type="stmt"/>
         <line num="120" count="1" type="stmt"/>
         <line num="121" count="1" type="stmt"/>
         <line num="122" count="1" type="stmt"/>
         <line num="123" count="1" type="stmt"/>
-        <line num="124" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.chef">
-      <metrics statements="99" coveredstatements="96" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="2"/>
-      <file name="navChef.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\chef\navChef.jsx">
+      <metrics statements="88" coveredstatements="85" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="2"/>
+      <file name="navChef.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/chef/navChef.jsx">
         <metrics statements="35" coveredstatements="33" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -453,8 +448,8 @@
         <line num="34" count="3" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
       </file>
-      <file name="orderTicket.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\chef\orderTicket.jsx">
-        <metrics statements="64" coveredstatements="63" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="1"/>
+      <file name="orderTicket.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/chef/orderTicket.jsx">
+        <metrics statements="53" coveredstatements="52" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -474,29 +469,29 @@
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="28" count="2" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
+        <line num="33" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="34" count="0" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
-        <line num="41" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="42" count="0" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
@@ -508,22 +503,11 @@
         <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
         <line num="53" count="1" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.gralComponents">
-      <metrics statements="53" coveredstatements="51" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="3"/>
-      <file name="apiRequest.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\gralComponents\apiRequest.jsx">
+      <metrics statements="55" coveredstatements="53" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
+      <file name="apiRequest.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/gralComponents/apiRequest.jsx">
         <metrics statements="23" coveredstatements="21" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="7" type="stmt"/>
@@ -549,8 +533,8 @@
         <line num="22" count="7" type="stmt"/>
         <line num="23" count="7" type="stmt"/>
       </file>
-      <file name="gralComponents.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\gralComponents\gralComponents.jsx">
-        <metrics statements="30" coveredstatements="30" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="gralComponents.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/gralComponents/gralComponents.jsx">
+        <metrics statements="32" coveredstatements="32" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="7" type="stmt"/>
@@ -562,11 +546,11 @@
         <line num="9" count="36" type="stmt"/>
         <line num="10" count="36" type="stmt"/>
         <line num="11" count="36" type="stmt"/>
-        <line num="12" count="36" type="stmt"/>
+        <line num="12" count="36" type="cond" truecount="0" falsecount="1"/>
         <line num="13" count="36" type="stmt"/>
         <line num="14" count="36" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="15" count="36" type="stmt"/>
+        <line num="16" count="36" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
@@ -581,12 +565,14 @@
         <line num="28" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.waiter">
-      <metrics statements="261" coveredstatements="251" conditionals="23" coveredconditionals="21" methods="16" coveredmethods="8"/>
-      <file name="card.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\waiter\card.jsx">
-        <metrics statements="28" coveredstatements="28" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <metrics statements="243" coveredstatements="233" conditionals="23" coveredconditionals="21" methods="16" coveredmethods="8"/>
+      <file name="card.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/waiter/card.jsx">
+        <metrics statements="27" coveredstatements="27" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -609,15 +595,14 @@
         <line num="20" count="5" type="stmt"/>
         <line num="21" count="5" type="stmt"/>
         <line num="22" count="5" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
       </file>
-      <file name="clientName.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\waiter\clientName.jsx">
-        <metrics statements="34" coveredstatements="32" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <file name="clientName.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/waiter/clientName.jsx">
+        <metrics statements="29" coveredstatements="27" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -641,20 +626,15 @@
         <line num="21" count="7" type="stmt"/>
         <line num="22" count="7" type="stmt"/>
         <line num="23" count="7" type="stmt"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="25" count="7" type="stmt"/>
-        <line num="26" count="7" type="stmt"/>
-        <line num="27" count="7" type="stmt"/>
-        <line num="28" count="7" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
       </file>
-      <file name="navWaiter.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\waiter\navWaiter.jsx">
-        <metrics statements="55" coveredstatements="47" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="1"/>
+      <file name="navWaiter.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/waiter/navWaiter.jsx">
+        <metrics statements="53" coveredstatements="45" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -665,20 +645,20 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="7" type="stmt"/>
         <line num="13" count="7" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="7" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
         <line num="25" count="7" type="stmt"/>
         <line num="26" count="7" type="stmt"/>
         <line num="27" count="7" type="stmt"/>
@@ -707,12 +687,10 @@
         <line num="50" count="7" type="stmt"/>
         <line num="51" count="7" type="stmt"/>
         <line num="52" count="7" type="stmt"/>
-        <line num="53" count="7" type="stmt"/>
-        <line num="54" count="7" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
       </file>
-      <file name="products.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\waiter\products.jsx">
-        <metrics statements="53" coveredstatements="53" conditionals="14" coveredconditionals="14" methods="4" coveredmethods="3"/>
+      <file name="products.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/waiter/products.jsx">
+        <metrics statements="50" coveredstatements="50" conditionals="14" coveredconditionals="14" methods="4" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -729,46 +707,43 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="17" count="12" type="stmt"/>
-        <line num="18" count="12" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="17" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
         <line num="21" count="12" type="stmt"/>
-        <line num="22" count="12" type="stmt"/>
-        <line num="23" count="12" type="stmt"/>
-        <line num="24" count="12" type="cond" truecount="1" falsecount="0"/>
-        <line num="25" count="7" type="stmt"/>
+        <line num="22" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="24" count="12" type="stmt"/>
+        <line num="25" count="12" type="stmt"/>
         <line num="26" count="12" type="stmt"/>
         <line num="27" count="12" type="stmt"/>
         <line num="28" count="12" type="stmt"/>
         <line num="29" count="12" type="stmt"/>
         <line num="30" count="12" type="stmt"/>
-        <line num="31" count="12" type="stmt"/>
+        <line num="31" count="12" type="cond" truecount="1" falsecount="0"/>
         <line num="32" count="12" type="stmt"/>
-        <line num="33" count="12" type="cond" truecount="1" falsecount="0"/>
-        <line num="34" count="12" type="stmt"/>
-        <line num="35" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="36" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="37" count="4" type="stmt"/>
-        <line num="38" count="4" type="stmt"/>
-        <line num="39" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="36" count="4" type="stmt"/>
+        <line num="37" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="39" count="4" type="stmt"/>
         <line num="40" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="41" count="4" type="stmt"/>
-        <line num="42" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="43" count="7" type="stmt"/>
+        <line num="41" count="7" type="stmt"/>
+        <line num="42" count="12" type="stmt"/>
+        <line num="43" count="12" type="stmt"/>
         <line num="44" count="12" type="stmt"/>
         <line num="45" count="12" type="stmt"/>
-        <line num="46" count="12" type="stmt"/>
-        <line num="47" count="12" type="stmt"/>
-        <line num="48" count="12" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
       </file>
-      <file name="shoppingCart.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\waiter\shoppingCart.jsx">
-        <metrics statements="40" coveredstatements="40" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
+      <file name="shoppingCart.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/waiter/shoppingCart.jsx">
+        <metrics statements="39" coveredstatements="39" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -799,7 +774,7 @@
         <line num="28" count="8" type="stmt"/>
         <line num="29" count="8" type="stmt"/>
         <line num="30" count="8" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
@@ -808,10 +783,9 @@
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
       </file>
-      <file name="shoppingList.jsx" path="C:\Users\famil\DEV005-burger-queen-api-client\src\components\waiter\shoppingList.jsx">
-        <metrics statements="51" coveredstatements="51" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
+      <file name="shoppingList.jsx" path="/Users/pauli/laboratoria/DEV005-burger-queen-api-client/src/components/waiter/shoppingList.jsx">
+        <metrics statements="45" coveredstatements="45" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -840,29 +814,23 @@
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
+        <line num="29" count="8" type="stmt"/>
+        <line num="30" count="8" type="stmt"/>
+        <line num="31" count="8" type="stmt"/>
+        <line num="32" count="8" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
+        <line num="34" count="8" type="stmt"/>
         <line num="35" count="8" type="stmt"/>
         <line num="36" count="8" type="stmt"/>
         <line num="37" count="8" type="stmt"/>
         <line num="38" count="8" type="stmt"/>
         <line num="39" count="8" type="stmt"/>
-        <line num="40" count="8" type="stmt"/>
-        <line num="41" count="8" type="stmt"/>
-        <line num="42" count="8" type="stmt"/>
-        <line num="43" count="8" type="stmt"/>
-        <line num="44" count="8" type="stmt"/>
-        <line num="45" count="8" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
       </file>
     </package>
   </project>

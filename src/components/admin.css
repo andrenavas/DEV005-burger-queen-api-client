@@ -22,7 +22,8 @@
 
 .container-table-workers {
     border-radius: 20px;
-    border: 2px solid yellow
+    border: 2px solid yellow;
+    height: 465px;
 }
 
 .table-dashboard-workers {

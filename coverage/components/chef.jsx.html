@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.85% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>81/123</span>
+                <span class='fraction'>72/120</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.85% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>81/123</span>
+                <span class='fraction'>72/120</span>
             </div>
         
             
@@ -184,22 +184,13 @@
 <a name='L119'></a><a href='#L119'>119</a>
 <a name='L120'></a><a href='#L120'>120</a>
 <a name='L121'></a><a href='#L121'>121</a>
-<a name='L122'></a><a href='#L122'>122</a>
-<a name='L123'></a><a href='#L123'>123</a>
-<a name='L124'></a><a href='#L124'>124</a>
-<a name='L125'></a><a href='#L125'>125</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -218,12 +209,16 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -282,7 +277,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -315,9 +309,7 @@
 import './chef.css';
 import NavChef from './chef/navChef';
 import OrderTicket from './chef/orderTicket';
-import { useState, useEffect} from 'react';
-&nbsp;
-&nbsp;
+import { useState, useEffect } from 'react';
 &nbsp;
 const Chef = () =&gt; {
 &nbsp;
@@ -326,7 +318,7 @@ const Chef = () =&gt; {
   // const [dataExit, setDataExit] = useState(null);
   const token = localStorage.getItem('accessToken');
   //variable que se crea al presionar el boton de chef cuando el pedido está listo
-  useEffect(() =&gt;{ 
+  useEffect(() =&gt; {
     function getOrders() {
       fetch('http://localhost:8080/orders', {
         method: 'GET',
@@ -335,24 +327,24 @@ const Chef = () =&gt; {
           'authorization': `Bearer ${token}`,
         }
       })
-      .then((resp) =&gt; resp.json())
-      .then((dataOrders) =&gt; {
-        // console.log(dataOrders);
-        setOrders(dataOrders);
-      })
-      .catch(error =&gt; {
-<span class="cstat-no" title="statement not covered" >        console.log(error)</span>
-      })
-      .finally(() =&gt; {
-        /* const intervalId = setTimeout(() =&gt; {
-          clearTimeout(intervalId);
-          getOrders();
-        }, 10000) */
-      });
+        .then((resp) =&gt; resp.json())
+        .then((dataOrders) =&gt; {
+<span class="cstat-no" title="statement not covered" >          // console.log(dataOrders);</span>
+<span class="cstat-no" title="statement not covered" >          setOrders(dataOrders);</span>
+        })
+        .catch(error =&gt; {
+<span class="cstat-no" title="statement not covered" >          console.log(error)</span>
+        })
+        .finally(() =&gt; {
+<span class="cstat-no" title="statement not covered" >          /* const intervalId = setTimeout(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            clearTimeout(intervalId);</span>
+<span class="cstat-no" title="statement not covered" >            getOrders();</span>
+<span class="cstat-no" title="statement not covered" >          }, 10000) */</span>
+        });
     }
     // se ejecuta getOrders una vez para que la primera llamada sea inmediata y no esperar 5 segundos
     getOrders();
-    
+&nbsp;
     // crear un intervalo, donde va la función que trae la petición fetch y luego el tiempo en milisegundos(5 segundos)
     const intervalId = setInterval(getOrders, 10000)
     //este retorno es opcional del useEffect, evita que se ejecute cuando estoy en otra pantalla o que se pueda duplicar
@@ -362,9 +354,9 @@ const Chef = () =&gt; {
   }, [token])
 &nbsp;
   const changeStatus = <span class="fstat-no" title="function not covered" >(order) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      //Cambiando el estado de la orden de pending a delivery</span>
+<span class="cstat-no" title="statement not covered" >    //Cambiando el estado de la orden de pending a delivery</span>
 <span class="cstat-no" title="statement not covered" >    // console.log(order.id)</span>
-<span class="cstat-no" title="statement not covered" >          //agreggamos constante newDataExit y le asignamos la hora actual</span>
+<span class="cstat-no" title="statement not covered" >    //agregamos constante newDataExit y le asignamos la hora actual</span>
 <span class="cstat-no" title="statement not covered" >    const dataEntry = order.dataEntry;</span>
 <span class="cstat-no" title="statement not covered" >    const newDataExit = new Date(Date.now()).toLocaleTimeString();</span>
 <span class="cstat-no" title="statement not covered" >    const entryTime = new Date(`01/01/2000 ${dataEntry}`);</span>
@@ -383,16 +375,16 @@ const Chef = () =&gt; {
 <span class="cstat-no" title="statement not covered" >      method: 'PATCH',</span>
 <span class="cstat-no" title="statement not covered" >      headers: {</span>
 <span class="cstat-no" title="statement not covered" >        'Content-Type': 'application/json',</span>
-<span class="cstat-no" title="statement not covered" >        'authorization': `Bearer ${token}`,  </span>
+<span class="cstat-no" title="statement not covered" >        'authorization': `Bearer ${token}`,</span>
 <span class="cstat-no" title="statement not covered" >      },</span>
 <span class="cstat-no" title="statement not covered" >      body: JSON.stringify(dataOrder)</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
-<span class="cstat-no" title="statement not covered" >    .then((resp) =&gt; resp.json())</span>
-<span class="cstat-no" title="statement not covered" >    .then((updatedOrder) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    //actualizamos los estados</span>
-<span class="cstat-no" title="statement not covered" >      updateOrderStatus(updatedOrder.id, updatedOrder.status, minutesDiference);</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
-<span class="cstat-no" title="statement not covered" >    .catch(error =&gt; console.log(error))</span>
+<span class="cstat-no" title="statement not covered" >      .then((resp) =&gt; resp.json())</span>
+<span class="cstat-no" title="statement not covered" >      .then((updatedOrder) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        //actualizamos los estados</span>
+<span class="cstat-no" title="statement not covered" >        updateOrderStatus(updatedOrder.id, updatedOrder.status, minutesDiference);</span>
+<span class="cstat-no" title="statement not covered" >      })</span>
+<span class="cstat-no" title="statement not covered" >      .catch(error =&gt; console.log(error))</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // Actualizando la lista de pedidos luego del cambio de estado  
@@ -400,36 +392,35 @@ const Chef = () =&gt; {
 <span class="cstat-no" title="statement not covered" >    setOrders(prevOrders =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      return prevOrders.map(order =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (order.id === orderId) {</span>
-<span class="cstat-no" title="statement not covered" >          return { ...order, status: newStatus, dataExit: minutesDiference};</span>
+<span class="cstat-no" title="statement not covered" >          return { ...order, status: newStatus, dataExit: minutesDiference };</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        return order;</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
   let showButton = true;
-&nbsp;
-  return(
-  &lt;&gt; 
-  &lt;Background/&gt;
-    &lt;NavChef/&gt; 
-    &lt;section className='title-chef-orders'&gt;
-      &lt;h1 className='title-status-chef'&gt;Pendientes&lt;/h1&gt;
-      &lt;h1 className='title-status-chef'&gt;Listas para servir&lt;/h1&gt;
+  return (
+    &lt;&gt;
+      &lt;Background /&gt;
+      &lt;NavChef /&gt;
+      &lt;section className='title-chef-orders'&gt;
+        &lt;h1 className='title-status-chef'&gt;Pendientes&lt;/h1&gt;
+        &lt;h1 className='title-status-chef'&gt;Listas para servir&lt;/h1&gt;
       &lt;/section&gt;
-    &lt;section className='container-order-cooking'&gt;
+      &lt;section className='container-order-cooking'&gt;
         &lt;div className='container-order-ticket'&gt;
-        {orders
-        .filter(order =&gt; order.status === 'pending')
-        .map(order =&gt; (&lt;OrderTicket key={order.id} order={order} changeStatus={changeStatus} showButton= {showButton} text="Preparado"/&gt;))}
+          {orders
+            .filter(order =&gt; order.status === 'pending')
+            .map(order =&gt; (&lt;OrderTicket key={order.id} order={order} changeStatus={changeStatus} showButton={showButton} text="Preparado" /&gt;))}
         &lt;/div&gt;
         &lt;div className='container-order-to-delivery'&gt;
-        {orders
-        .filter(order =&gt; order.status === 'delivery')
-        .map(order =&gt; (&lt;OrderTicket key={order.id} order={order} showButton= {false} /&gt;))}
+          {orders
+            .filter(order =&gt; order.status === 'delivery')
+            .map(order =&gt; (&lt;OrderTicket key={order.id} order={order} showButton={false} /&gt;))}
         &lt;/div&gt;
-        
-   &lt;/section&gt; 
-  &lt;/&gt;
+&nbsp;
+      &lt;/section&gt;
+    &lt;/&gt;
   );
 };
 &nbsp;
@@ -442,7 +433,7 @@ export default Chef
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-06T14:12:07.704Z
+                at 2023-07-11T14:03:53.706Z
             </div>
         <script src="../prettify.js"></script>
         <script>

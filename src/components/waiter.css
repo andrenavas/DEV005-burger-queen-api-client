@@ -139,12 +139,13 @@ h1 {
   padding-top: 1%;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 1%;
 }
 
 .container-menu {
   position: relative;
   background-color: #d9d9d9cb;
-  height: 485px;
+  height: 500px;
   width: 85%;
   border-radius: 20px;
   margin-left: 0.5%;
@@ -170,12 +171,13 @@ h1 {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 1%;
+  gap: 3%;
   padding: 1%;
   width: 100%;
-  height: 90%;
+  height: 89.5%;
   justify-content: space-around;
   align-items: center;
+  overflow: auto;
 }
 
 .product-img {
