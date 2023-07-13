@@ -34,10 +34,9 @@ const NavOrders = () => {
                 <img src={IconoOrders} className='orderLogo' alt='orders icon' />
               </div>
             </div>
-            <h1> Estado de órdenes </h1>
+            <h1 className='title-view'> Estado de órdenes </h1>
             <div className='container-logos'>
               <img src={BQLogo} className='BQLogo' alt='hours icon' />
-              <img src={IconoHrs} className='hrsIcon' alt='hours icon' />
             </div>
           </div>
           <div className='container-logout' onClick={logout}>

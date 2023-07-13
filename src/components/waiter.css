@@ -1,6 +1,6 @@
 h1 {
-  font-size: large;
-  color: #04404B;
+  font-size: larger;
+  color:rgba(7, 20, 59, 1) ;
 }
 
 .section-waiter {
@@ -11,8 +11,8 @@ h1 {
 .waiter-nav {
   margin: 0 auto;
   width: 95vw;
-  height: 20%;
-  background-color: white;
+  height: 10%;
+  /* background-color: rgba(234, 106, 18, 0.7) ; */
   border-radius: 20px 20px 0 0;
   margin-top: 1%;
 }
@@ -22,15 +22,14 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* margin-top: 1%; */
-  /* position: fixed; */
+  border-bottom: solid 3px rgba(234, 106, 18, 1) ;
 }
 
 .waiterIcon {
   position: relative;
   width: 100px;
   height: 100px;
-  margin: 35px 0px;
+  margin: 20px 0px;
 }
 
 .orderLogo {
@@ -56,7 +55,8 @@ h1 {
 }
 
 .title-view {
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: bold;
   margin: 0px 10px;
 }
 
@@ -104,32 +104,34 @@ h1 {
 .input-name {
   height: 35px;
   margin: 10px;
-  color: #04404B;
+  color: rgba(7, 20, 59, 1);
 }
 
 .btn-order {
-  background-color: white;
-  color: #04404B;
-  cursor: pointer;
-  border: 1px solid black;
+  background-color: rgba(234, 106, 18, 1);
+  font-size: 20px;
+  color: white;
+  border: 1px solid rgba(234, 106, 18, 1);
 }
 
 .btn-cook {
-  background-color: white;
-  color: #04404B;
-  border: 1px solid black;
+  background-color: rgba(234, 106, 18, 1);
+  color: white;
+  border: 1px solid rgba(234, 106, 18, 1);
 }
 
 .btn-add:active {
   background-color: #ef7035;
   color: rgb(227, 206, 193);
+  
 }
 
 .clientName {
   /* background-color: red; */
   height: 35px;
   width: 30%;
-  color: white;
+  font-size: 20px;
+  color: rgba(7, 20, 59, 1);
   margin: 10px 10px 10px 50px;
   vertical-align: text-bottom;
   padding: 3px;
@@ -144,12 +146,12 @@ h1 {
 
 .container-menu {
   position: relative;
-  background-color: #d9d9d9cb;
-  height: 500px;
+  background-color: rgba(255, 255, 255, 1);
+  height: 530px;
   width: 85%;
   border-radius: 20px;
   margin-left: 0.5%;
-  border: #04404B 10px double;
+  border: solid 3px rgba(234, 106, 18, 0.7);
   /* background-color: orange; */
 }
 
@@ -168,14 +170,14 @@ h1 {
 
 .container-products {
   /* background-color: yellow; */
+  padding-top: 3%;
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 3%;
-  padding: 1%;
+  gap: 50px;
   width: 100%;
   height: 89.5%;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   overflow: auto;
 }
@@ -187,14 +189,14 @@ h1 {
 
 .container-order {
   position: relative;
-  background-color: #d9d9d9cb;
+  background-color: rgba(255, 255, 255, 1);
   height: 95%;
   width: 45%;
-  margin-left: 2%;
+  margin-left: 1%;
   border-radius: 20px;
   /* border: 2px solid blue; */
-  padding: 10px 0px 5px 0px;
-  border: #04404B 10px double;
+  padding: 10px 4px 5px 4px;
+  border: solid 3px rgba(234, 106, 18, 0.7);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -204,41 +206,45 @@ h1 {
 
 .card-product {
   background-color: white;
-  width: 22%;
-  height: 40%;
+  width: 30%;
+  height: 50%;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid rgba(234, 106, 18, 1);
   padding: 0.5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .product-name {
   text-align: center;
   align-items: center;
   margin-top: 2%;
-  font-size: 14px;
+  font-size: 20px;
+  font-weight: bold;
   height: 40px;
 }
 
 .product-image {
   /* background-color: blue; */
-  width: 80%;
-  height: 60%;
+  width: 120px;
+  height: 120px;
   border-radius: 10px;
   margin-left: 12px;
-  /* revisar con andre */
-
+  margin-top: 10%;
 }
 
 .container-price-btnAdd {
   /* background-color: red; */
   font-size: 12px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 2%;
+  margin-top: 5%;
 }
 
 .product-price {
-  font-size: 14px;
+  font-size: 20px;
   margin: 0px 4px 0px 8px;
 }
 
@@ -247,12 +253,15 @@ h1 {
   width: 30px;
   height: 30px;
   border-style: none;
-  background-color: #D98F4E;
-  color: #04404B;
-  border: 1px solid black;
-  font-size: 16px;
+  background-color: rgba(234, 106, 18, 1);
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(234, 106, 18, 1);
+  font-size: 24px;
   font-weight: bold;
   box-shadow: 0px 2px 4px #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* box-shadow: 5px 5px rgba(0,0,0,0.5); */
 }
 
@@ -264,14 +273,16 @@ h1 {
 table,
 th,
 td {
-  font-size: 12px;
-  border: 1px solid black;
+  font-size: 14px;
+  border: 1px solid rgba(234, 106, 18, 1);
   text-align: center;
   padding: 3px;
+  color: rgba(7, 20, 59, 1);
 }
 
 th {
-  font-size: 13px;
+  font-size: 16px;
+  color:rgba(7, 20, 59, 1);
 }
 
 .container-shopping-list {
