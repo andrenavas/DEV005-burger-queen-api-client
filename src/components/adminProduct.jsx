@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import ModalApp from './gralComponents/modal';
 import './admin.css';
 import FormProducts from './gralComponents/formProducts';
+import { useNavigate } from 'react-router-dom';
 
 const AdminProducts = () => {
   const [products, setProducts] = useState([]);
@@ -207,6 +208,14 @@ const AdminProducts = () => {
       closeModal();
     }
   }
+  const navigateTo = useNavigate();
+  const workersView = () => {
+    navigateTo('/admin');
+  }
+  // const productsView = () => {
+  //   console.log('click en order')
+  //   navigateTo('/adminProducts');
+  // };
 
   return (
     <>
@@ -222,6 +231,7 @@ const AdminProducts = () => {
           handleAddProduct={handleAddProduct}
           handleDeleteProduct={handleDeleteProduct}
           handleEditProduct={handleEditProduct}
+          workersView = {workersView}
            />
       </div>
       <ModalApp

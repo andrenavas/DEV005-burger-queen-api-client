@@ -12,7 +12,7 @@ const iconAddProduct = <FontAwesomeIcon icon={faSquarePlus} size="2xl" style={{ 
 const iconEditProduct = <FontAwesomeIcon icon={faPenToSquare} size="2xl" style={{ color: "#1E3050", }} />
 const iconDeleteProduct = <FontAwesomeIcon icon={faRectangleXmark} size="2xl" style={{ color: "#D11515", }} />
 
-const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handleDeleteProduct, handleEditProduct }) => {
+const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handleDeleteProduct, handleEditProduct, workersView }) => {
   const [modalData, setModalData] = useState({
     modalText: '',
     modalBtnText: '',
@@ -23,6 +23,9 @@ const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handle
       <div className='new-container'>
         <div className="container-table">
           <div className='new-container-btn-add'>
+          <div className='container-btn-admin-workers-products'>
+            <Button className="btn btn-primary btn-admin-workers" text="Trabajadores" onClick={workersView} />
+           </div>
             <Button className='btn-add-worker' dataTestid={'Testidbtn-ololo'} icon={iconAddProduct} onClick={() => { setShowEditForm(false); handleAddProduct(); }} >
               <FontAwesomeIcon icon={iconDeleteProduct} />
             </Button>
