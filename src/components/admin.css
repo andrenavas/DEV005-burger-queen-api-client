@@ -21,9 +21,10 @@
 }
 
 .container-table-workers {
+    margin-top: 0.3%;
     border-radius: 20px;
-    border: 2px solid yellow;
-    height: 465px;
+    border: 1px solid rgba(234, 106, 18, 1);
+    height: 548px;
 }
 
 .table-dashboard-workers {
@@ -34,7 +35,8 @@
 
 .table-subtitles {
     background-color: rgb(219, 216, 216);
-    font-size: 25px;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
 }
 
 .dashboard-table-row {
@@ -44,20 +46,17 @@
 }
 
 .btn-add-worker {
+    margin-top: 0.2%;
     border-radius: 20px;
-    /* background-color: rgb(237, 151, 120); */
-    height: 60px;
+    background-color: rgb(234, 106, 18,1);
+    background-color: none;
+    height: 45px;
     padding: 2%;
-    margin: 1%;
     display: flex;
     align-items: center;
-}
-
-.container-btn-add-worker {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    border: none;
+    gap: 10%;
+    color: white;
 }
 
 .new-container {

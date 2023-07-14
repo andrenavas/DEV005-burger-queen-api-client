@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { Button } from '../gralComponents/gralComponents';
 import './dashboardProducts.css'
 
-const iconAddProduct = <FontAwesomeIcon icon={faSquarePlus} size="2xl" style={{ color: "#1E3050", }} />
+const iconAddProduct = <FontAwesomeIcon icon={faSquarePlus} size="xl" style={{ color: "#FFFF", }} />
 const iconEditProduct = <FontAwesomeIcon icon={faPenToSquare} size="2xl" style={{ color: "#1E3050", }} />
 const iconDeleteProduct = <FontAwesomeIcon icon={faRectangleXmark} size="2xl" style={{ color: "#D11515", }} />
 
@@ -24,9 +24,9 @@ const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handle
         <div className="container-table">
           <div className='new-container-btn-add'>
           <div className='container-btn-admin-workers-products'>
-            <Button className="btn btn-primary btn-admin-workers" text="Trabajadores" onClick={workersView} />
+            <Button className="btn btn-admin-workers all" text="Trabajadores" onClick={workersView} />
            </div>
-            <Button className='btn-add-worker' dataTestid={'Testidbtn-ololo'} icon={iconAddProduct} onClick={() => { setShowEditForm(false); handleAddProduct(); }} >
+            <Button className='btn-add-worker all' text={'Producto'} dataTestid={'Testidbtn-ololo'} icon={iconAddProduct} onClick={() => { setShowEditForm(false); handleAddProduct(); }} >
               <FontAwesomeIcon icon={iconDeleteProduct} />
             </Button>
           </div>

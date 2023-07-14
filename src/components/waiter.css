@@ -10,7 +10,7 @@ h1 {
 
 .waiter-nav {
   margin: 0 auto;
-  width: 95vw;
+  width: 99vw;
   height: 10%;
   /* background-color: rgba(234, 106, 18, 0.7) ; */
   border-radius: 20px 20px 0 0;
@@ -22,7 +22,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-bottom: solid 3px rgba(234, 106, 18, 1) ;
+  border-bottom: solid 2.5px rgba(234, 106, 18, 1) ;
 }
 
 .waiterIcon {
@@ -172,6 +172,7 @@ h1 {
   /* background-color: yellow; */
   padding-top: 3%;
   position: relative;
+  padding-bottom: 1%;
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
@@ -294,4 +295,10 @@ th {
 
 .container-delete-icon {
   padding: 5px;
+}
+.all{
+  width: 188px;
+  height: 44px;
+  border-radius: 24px;
+  font-size: 22px;
 }

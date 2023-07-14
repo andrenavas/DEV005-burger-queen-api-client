@@ -35,7 +35,7 @@ const OrderTicket = ({ order, changeStatus, showButton, text }) => {
           }
           <div className="container-btn-add">
             {showButton &&
-              <Button className="btn-order-ready" text={text} showButton={true} onClick={() => changeStatus(order)} />
+              <Button className="btn-order-ready all" text={text} showButton={true} onClick={() => changeStatus(order)} />
             }
           </div>
         </div>

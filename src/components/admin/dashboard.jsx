@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPen } from '@fortawesome/free-solid-svg-icons';
 import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
-const iconAddWorker = <FontAwesomeIcon icon={faUserPlus} size="2xl" style={{ color: "#1E3050", }} />
+const iconAddWorker = <FontAwesomeIcon icon={faUserPlus} size="xl" style={{ color: "FFFF", }} />
 import { useState } from 'react';
 import { Button } from '../gralComponents/gralComponents';
 
@@ -23,9 +23,9 @@ const Dashboard = ({ setShowEditForm, workers, handleAddWorker, handleBorrar, ha
         <div className="container-table">
           <div className='new-container-btn-add'>
           <div className='container-btn-admin-workers-products'>
-            <Button className="btn btn-primary btn-admin-products" text="Productos" onClick={productsView} />
+            <Button className="btn btn-admin-workers all" text="Productos" onClick={productsView} />
            </div>
-            <Button className='btn-add-worker' dataTestid={'Testidbtn'} icon={iconAddWorker} onClick={() => { setShowEditForm(false); handleAddWorker(); }} >
+            <Button className='btn-add-worker all'text={'Trabajador'} dataTestid={'Testidbtn'} icon={iconAddWorker} onClick={() => { setShowEditForm(false); handleAddWorker(); }} >
               <FontAwesomeIcon icon={iconDeleteWorker} />
             </Button>
           </div>

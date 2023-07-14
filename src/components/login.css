@@ -16,6 +16,7 @@ h1 {
   width: 560px;
   height: 570px;
   border-radius: 40px;
+  font-size: 20px;
 }
 
 form {
@@ -37,8 +38,9 @@ form {
 }
 
 .login-button {
-  background-color: #04404B;
+  background-color: rgba(234, 106, 18, 1);
   border: none;
+  font-size: 20px;
 }
 
 .error-message {
