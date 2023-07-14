@@ -14,7 +14,7 @@ const ModalApp = ({ isOpen, onRequestClose, handleClickModal, text, textBtn, chi
       contentLabel="ModalApp"
       style={customStyles}
     >
-      <h1>{text}</h1>
+      <h1 className='modal-text'>{text}</h1>
       {textBtn !== 'Borrar' && children}
       <ContainerButtonModal>
         {textBtn === 'Borrar' && <button className='btn-accept' onClick={handleClickModal}>{textBtn}</button>}

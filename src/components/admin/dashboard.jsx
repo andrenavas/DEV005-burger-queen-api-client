@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPen } from '@fortawesome/free-solid-svg-icons';
 import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
-const iconAddWorker = <FontAwesomeIcon icon={faUserPlus} size="xl" style={{ color: "FFFF", }} />
+const iconAddWorker = <FontAwesomeIcon icon={faUserPlus} size="l" style={{ color: "FFFF", }} />
 import { useState } from 'react';
 import { Button } from '../gralComponents/gralComponents';
 
@@ -33,12 +33,12 @@ const Dashboard = ({ setShowEditForm, workers, handleAddWorker, handleBorrar, ha
             <Table className='table-dashboard-workers'>
               <TableHead>
                 <TableRow className='table-subtitles'>
-                  <TableCell >Nº</TableCell>
-                  <TableCell>Nombre</TableCell>
-                  <TableCell>Rol</TableCell>
-                  <TableCell>Correo</TableCell>
-                  <TableCell>Editar</TableCell>
-                  <TableCell>Eliminar</TableCell>
+                  <th>Nº</th>
+                  <th>Nombre</th>
+                  <th>Rol</th>
+                  <th>Correo</th>
+                  <th>Editar</th>
+                  <th>Eliminar</th>
                 </TableRow>
               </TableHead>
               <TableBody>

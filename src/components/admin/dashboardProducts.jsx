@@ -1,8 +1,8 @@
 import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material'
 import { PropTypes } from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPenToSquare} from '@fortawesome/free-solid-svg-icons';
-import { faRectangleXmark} from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { Button } from '../gralComponents/gralComponents';
@@ -23,9 +23,9 @@ const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handle
       <div className='new-container'>
         <div className="container-table">
           <div className='new-container-btn-add'>
-          <div className='container-btn-admin-workers-products'>
-            <Button className="btn btn-admin-workers all" text="Trabajadores" onClick={workersView} />
-           </div>
+            <div className='container-btn-admin-workers-products'>
+              <Button className="btn btn-admin-workers all" text="Trabajadores" onClick={workersView} />
+            </div>
             <Button className='btn-add-worker all' text={'Producto'} dataTestid={'Testidbtn-ololo'} icon={iconAddProduct} onClick={() => { setShowEditForm(false); handleAddProduct(); }} >
               <FontAwesomeIcon icon={iconDeleteProduct} />
             </Button>
@@ -34,13 +34,13 @@ const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handle
             <Table className='table-dashboard-workers'>
               <TableHead>
                 <TableRow className='table-subtitles'>
-                  <TableCell >Nº</TableCell>
-                  <TableCell>Producto</TableCell>
-                  <TableCell>Precio</TableCell>
-                  <TableCell>Tipo</TableCell>
-                  <TableCell>Imagen</TableCell>
-                  <TableCell>Editar</TableCell>
-                  <TableCell>Eliminar</TableCell>
+                  <th>Nº</th>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Tipo</th>
+                  <th>Imagen</th>
+                  <th>Editar</th>
+                  <th>Eliminar</th>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -51,7 +51,7 @@ const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handle
                     <td className='dashboard-table-row'>${product.price}</td>
                     <td className='dashboard-table-row'>{product.type}</td>
                     <td className='dashboard-table-row'>
-                      <img className ='dashboard-products-image'src={product.image} alt="products-image" />
+                      <img className='dashboard-products-image' src={product.image} alt="products-image" />
                     </td>
                     <td className='container-edit-icon' onClick={() => { setShowEditForm(true); handleEditProduct(product) }}><i>{iconEditProduct}</i></td>
                     <td className='container-delete-icon' onClick={() => handleDeleteProduct(product)}><i>{iconDeleteProduct}</i></td>

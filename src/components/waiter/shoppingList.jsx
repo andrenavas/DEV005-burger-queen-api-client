@@ -14,7 +14,7 @@ const ShoppingList = ({ selectedProducts, totalPrice, reduceProduct }) => {
           <th>Precio</th>
           <th>Cant</th>
           <th>Total</th>
-          <td></td>
+          <td>Eliminar</td>
         </tr>
       </thead>
       <tbody>

@@ -10,7 +10,7 @@ export const customStyles = {
     transform: 'translate(-50%, -50%)',
     backgroundColor: '#FFFFF',
     border: '1px solid #ccc',
-    padding: '20px',
+    paddingBottom: '100px',
     borderRadius: '10px',
     boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
     width: '70%',
@@ -25,9 +25,7 @@ export const customStyles = {
   }
 };
 export const ContainerButtonModal = styled.div`
-//   background-color: red;
-  width: 40%;
+  // background-color: red;
+  width: 100%;
   padding: 10px;
-  display:flex;
-  justify-content: space-around;
     `;
