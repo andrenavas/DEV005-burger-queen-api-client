@@ -107,12 +107,16 @@ const Admin = () => {
       body: JSON.stringify(editWorker),
     })
       .then(() => {
-        setEditUserData.email = '',
-          setEditUserData.password = '',
-          setEditUserData.role = '',
-          editUserData.email = '',
-          editUserData.password = '',
-          editUserData.role = ''
+        // setEditUserData({
+        //   email: '',
+        //   password: '',
+        //   role: ''
+        // });
+        // setNewUserData({
+        //   email: '',
+        //   password: '',
+        //   role: ''
+        // });
       })
 
   }
@@ -138,16 +142,20 @@ const Admin = () => {
       body: JSON.stringify(newWorker),
     })
       .then(() => {
-        setNewUserData.email = '',
-          setNewUserData.password = '',
-          setNewUserData.role = '',
-          newUserData.email = '',
-          newUserData.password = '',
-          newUserData.role = ''
+          setNewUserData({
+            email: '',
+            password: '',
+            role: ''
+          });
       })
   }
   const handleAddWorker = () => {
     console.log('Abrir el modal');
+    setNewUserData({
+      email: '',
+      password: '',
+      role: ''
+    });
     setModalData({
       modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
       modalBtnText: 'Agregar'
@@ -162,6 +170,7 @@ const Admin = () => {
     // setModalText('¿Estás seguro que deseas editar al trabajador?');
     // setModalBtnText('Editar');
     setNewUserData(worker);
+    // setEditUserData(worker);
     setModalData({
       modalText: '¿Estás seguro que deseas editar al trabajador?',
       modalBtnText: 'Editar',
@@ -192,11 +201,20 @@ const Admin = () => {
     if (showEditForm) {
       editWorker(worker);
       closeModal();
-
+      setEditUserData({
+        email: '',
+        password: '',
+        role: ''
+      });
     }
     else {
       addWorker();
       closeModal();
+      setNewUserData({
+        email: '',
+        password: '',
+        role: ''
+      });
     }
   }
   const navigateTo = useNavigate();
