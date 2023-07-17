@@ -38,18 +38,20 @@ const Form = ({ isEditForm, handleAddEditProduct, newProductData, setNewProductD
             console.log('form submit data', data);
             handleAddEditProduct(newProductData);
         })}>
-            <input type='text'{...register('name', { required: true })} value={newProductData.name} onChange={newProductNameValue} placeholder='nombre del producto' />
-            {errors.email && <p>nombre requerido</p>}
-            <input type='url'{...register('image', { required: true })} value={newProductData.image} onChange={newProductImageValue} placeholder='URL de la imagen' />
-            {errors.password && <p>URL requerida</p>}
-            <input type='text'{...register('price', { required: true })} value={newProductData.price} onChange={newProductPriceValue} placeholder='Precio' />
-            {errors.password && <p>Precio requerido</p>}
-            <Select
-                onChange={newProductTypeValue}
-                options={options}
-                value={newProductData.type ? { value: newProductData.type, label: newProductData.type } : null}
-            />
-            <input className='btn-form-submit-accept' type="submit" value={isEditForm ? 'Editar' : 'Agregar'} />
+            <div className='container-input-form-products'>
+                <input type='text'{...register('name', { required: true })} value={newProductData.name} onChange={newProductNameValue} placeholder='nombre del producto' />
+                {errors.email && <p>nombre requerido</p>}
+                <input type='url'{...register('image', { required: true })} value={newProductData.image} onChange={newProductImageValue} placeholder='URL de la imagen' />
+                {errors.password && <p>URL requerida</p>}
+                <input type='text'{...register('price', { required: true })} value={newProductData.price} onChange={newProductPriceValue} placeholder='Precio' />
+                {errors.password && <p>Precio requerido</p>}
+                <Select
+                    onChange={newProductTypeValue}
+                    options={options}
+                    value={newProductData.type ? { value: newProductData.type, label: newProductData.type } : null}
+                />
+            </div>
+            <input className='btn-form-products-submit-accept' type="submit" value={isEditForm ? 'Editar' : 'Agregar'} />
         </form>
     );
 

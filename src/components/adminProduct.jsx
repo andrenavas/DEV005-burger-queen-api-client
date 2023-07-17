@@ -172,7 +172,7 @@ const AdminProducts = () => {
     // setModalBtnText('Editar');
     setNewProductData(product);
     setModalData({
-      modalText: '¿Estás seguro que deseas editar al trabajador?',
+      modalText: '¿Estás seguro que deseas EDITAR el producto?',
       modalBtnText: 'Editar',
       aceptarFn: () => {
         setNewProductData(product);
@@ -186,7 +186,7 @@ const AdminProducts = () => {
     // setModalText('¿Estás seguro que deseas borrar al trabajador?');
     // setModalBtnText('Borrar');
     setModalData({
-      modalText: '¿Estás seguro que deseas BORRAR el product?',
+      modalText: '¿Estás seguro que deseas BORRAR el producto?',
       modalBtnText: 'Borrar',
       aceptarFn: () => {
         deleteProduct(product)

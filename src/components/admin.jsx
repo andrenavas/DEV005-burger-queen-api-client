@@ -172,7 +172,7 @@ const Admin = () => {
     setNewUserData(worker);
     // setEditUserData(worker);
     setModalData({
-      modalText: '¿Estás seguro que deseas editar al trabajador?',
+      modalText: '¿Estás seguro que deseas EDITAR al trabajador?',
       modalBtnText: 'Editar',
       aceptarFn: () => {
         setNewUserData(worker);
@@ -186,7 +186,7 @@ const Admin = () => {
     // setModalText('¿Estás seguro que deseas borrar al trabajador?');
     // setModalBtnText('Borrar');
     setModalData({
-      modalText: '¿Estás seguro que deseas borrar al trabajador?',
+      modalText: '¿Estás seguro que deseas BORRAR al trabajador?',
       modalBtnText: 'Borrar',
       aceptarFn: () => {
         deleteWorker(worker)
