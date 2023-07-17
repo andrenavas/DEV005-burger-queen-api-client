@@ -2,7 +2,7 @@ import { Button } from '../gralComponents/gralComponents';
 import PropTypes from 'prop-types';
 // import { useEffect, useState } from 'react';
 
-const OrderTicket = ({ order, changeStatus, showButton, text }) => {
+const OrderTicket = ({ order, changeStatus, showButton, text, handleModalMessage }) => {
   return (
     <>
       <div className="ticket-order">
@@ -35,7 +35,7 @@ const OrderTicket = ({ order, changeStatus, showButton, text }) => {
           }
           <div className="container-btn-add">
             {showButton &&
-              <Button className="btn-order-ready all" text={text} showButton={true} onClick={() => changeStatus(order)} />
+              <Button className="btn-order-ready all" text={text} showButton={true} onClick={() => {changeStatus(order), handleModalMessage()}} />
             }
           </div>
         </div>
@@ -48,6 +48,7 @@ OrderTicket.propTypes = {
   order: PropTypes.object,
   changeStatus: PropTypes.func,
   showButton: PropTypes.bool,
-  text: PropTypes.string
+  text: PropTypes.string,
+  handleModalMessage: PropTypes.func
 }
 export default OrderTicket

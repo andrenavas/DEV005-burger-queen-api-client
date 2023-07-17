@@ -4,9 +4,10 @@ import { Button } from '../gralComponents/gralComponents';
 import { useState, useEffect } from 'react';
 
 
-const ShoppingCart = ({ selectedProducts, totalPrice, reduceProduct, sendOrder, clientValue }) => {
+const ShoppingCart = ({ selectedProducts, totalPrice, reduceProduct, sendOrder, clientValue, handleModalMessage }) => {
   //habilita/deshabilita el btn de cocinar
   //  console.log(selectedProducts)
+  
   const [btnActive, setBtnActive] = useState(false);
   useEffect(() => {
     //evaluar un valor y cambiarlos a boolean, se usa doble !!(doble negación)
@@ -22,7 +23,7 @@ const ShoppingCart = ({ selectedProducts, totalPrice, reduceProduct, sendOrder, 
           <ShoppingList selectedProducts={selectedProducts} totalPrice={totalPrice} reduceProduct={reduceProduct} />
         </div>
         <div className='container-btn-order'>
-          <Button className="btn btn-cook all" onClick={() => sendOrder()} text="Enviar Pedido" disabled={!btnActive} />
+          <Button className="btn btn-cook all" onClick={() => {sendOrder(), handleModalMessage()}} text="Enviar Pedido" disabled={!btnActive} />
         </div>
       </div>
     </>
@@ -34,6 +35,7 @@ ShoppingCart.propTypes = {
   totalPrice: PropTypes.number,
   reduceProduct: PropTypes.func,
   sendOrder: PropTypes.func,
-  clientValue: PropTypes.string
+  clientValue: PropTypes.string,
+  handleModalMessage: PropTypes.func
 }
 export default ShoppingCart

@@ -4,6 +4,7 @@ import './chef.css';
 import OrderTicket from './chef/orderTicket';
 import { useState, useEffect } from 'react';
 import NavOrders from './orders/navOrders';
+import ModalMessage from './gralComponents/modalMessage';
 
 const StatusOrder = () => {
 
@@ -49,12 +50,12 @@ const StatusOrder = () => {
           'authorization': `Bearer ${token}`,
         }
       })
-      .then((resp) => resp.json())
-      .then((dataOrders) => {
-        console.log(dataOrders)
-        setOrders(dataOrders)
-      })
-      .catch(error => console.log(error))
+        .then((resp) => resp.json())
+        .then((dataOrders) => {
+          console.log(dataOrders)
+          setOrders(dataOrders)
+        })
+        .catch(error => console.log(error))
     }
 
     getOrdersReady();
@@ -65,6 +66,27 @@ const StatusOrder = () => {
     };
 
   }, [token])
+
+  //funciones que abren y cierran el modal
+  const [modalMessageIsOpen, setModalMessageIsOpenId] = useState(false)
+  const [modalMessageSettings, setModalMessageSettings] = useState({
+    modalText: '',
+  });
+  //función abre el modal
+  const openModalMessage = () => {
+    setModalMessageIsOpenId(true)
+  }
+  //fn que cierra el modal
+  const closeModalMessage = () => {
+    setModalMessageIsOpenId(false)
+  }
+
+  const handleModalMessage = () => {
+    setModalMessageSettings({
+      modalText: 'El pedido ha sido entregado al cliente',
+    });
+    openModalMessage();
+  };
 
   return (
     <>
@@ -77,7 +99,12 @@ const StatusOrder = () => {
         <div className='container-order-ticket-status'>
           {orders
             .filter(order => order.status === 'delivery')
-            .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatusDelivered} showButton={true} text="Entregado" />))}
+            .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatusDelivered} showButton={true} handleModalMessage={handleModalMessage} text="Entregado" />))}
+          <ModalMessage
+            isOpen={modalMessageIsOpen}
+            onRequestClose={closeModalMessage}
+            text={modalMessageSettings.modalText}
+          />
         </div>
       </section>
     </>

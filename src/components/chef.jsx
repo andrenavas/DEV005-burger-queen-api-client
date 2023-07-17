@@ -3,7 +3,7 @@ import './chef.css';
 import NavChef from './chef/navChef';
 import OrderTicket from './chef/orderTicket';
 import { useState, useEffect } from 'react';
-
+import ModalMessage from './gralComponents/modalMessage';
 const Chef = () => {
 
   const [orders, setOrders] = useState([]);
@@ -92,6 +92,26 @@ const Chef = () => {
     });
   };
   let showButton = true;
+  //funciones que abren y cierran el modal
+  const [modalMessageIsOpen, setModalMessageIsOpenId] = useState(false)
+  const [modalMessageSettings, setModalMessageSettings] = useState({
+    modalText: '',
+  });
+  //función abre el modal
+  const openModalMessage = () => {
+    setModalMessageIsOpenId(true)
+  }
+  //fn que cierra el modal
+  const closeModalMessage = () => {
+    setModalMessageIsOpenId(false)
+  }
+
+  const handleModalMessage = () => {
+    setModalMessageSettings({
+      modalText: 'El pedido ya está preparado',
+    });
+    openModalMessage();
+  };
   return (
     <>
       <Background />
@@ -104,7 +124,12 @@ const Chef = () => {
         <div className='container-order-ticket'>
           {orders
             .filter(order => order.status === 'pending')
-            .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatus} showButton={showButton} text="Preparado" />))}
+            .map(order => (<OrderTicket key={order.id} order={order} changeStatus={changeStatus} showButton={showButton} handleModalMessage={handleModalMessage} text="Preparado" />))}
+          <ModalMessage
+            isOpen={modalMessageIsOpen}
+            onRequestClose={closeModalMessage}
+            text={modalMessageSettings.modalText}
+          />
         </div>
         <div className='container-order-to-delivery'>
           {orders

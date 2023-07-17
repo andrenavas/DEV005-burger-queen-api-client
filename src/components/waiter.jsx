@@ -6,6 +6,7 @@ import Products from './waiter/products';
 import ShoppingCart from './waiter/shoppingCart';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import ModalMessage from './gralComponents/modalMessage';
 
 const Waiter = () => {
 
@@ -101,6 +102,28 @@ const Waiter = () => {
       })
       .catch(error => console.log(error))
   };
+
+  //funciones que abren y cierran el modal
+  const [modalMessageIsOpen, setModalMessageIsOpenId] = useState(false)
+  const [modalMessageSettings, setModalMessageSettings] = useState({
+    modalText: '',
+  });
+  //función abre el modal
+  const openModalMessage = () => {
+    setModalMessageIsOpenId(true)
+  }
+  //fn que cierra el modal
+  const closeModalMessage = () => {
+    setModalMessageIsOpenId(false)
+  }
+
+  const handleModalMessage = () => {
+    setModalMessageSettings({
+      modalText: 'Tu pedido ha sido enviado a la cocina',
+    });
+    openModalMessage();
+  };
+
   return (
     <>
       <Background />
@@ -110,7 +133,12 @@ const Waiter = () => {
       </section>
       <section className='container-order-products'>
         <Products handleAddProduct={handleAddProduct} />
-        <ShoppingCart selectedProducts={selectedProducts} totalPrice={totalPrice} reduceProduct={reduceProduct} sendOrder={sendOrder} clientValue={clientValue} />
+        <ShoppingCart selectedProducts={selectedProducts} totalPrice={totalPrice} reduceProduct={reduceProduct} sendOrder={sendOrder} clientValue={clientValue} handleModalMessage={handleModalMessage} />
+        <ModalMessage
+          isOpen={modalMessageIsOpen}
+          onRequestClose={closeModalMessage}
+          text={modalMessageSettings.modalText}
+        />
       </section>
     </>
   );

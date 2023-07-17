@@ -16,7 +16,7 @@ const ModalApp = ({ isOpen, onRequestClose, handleClickModal, text, textBtn, chi
     >
       <h1 className='modal-text'>{text}</h1>
       {textBtn !== 'Borrar' && children}
-      <ContainerButtonModal>
+      <ContainerButtonModal className='container-btn-modal-accept-cancel'>
         {textBtn === 'Borrar' && <button className='btn-accept' onClick={handleClickModal}>{textBtn}</button>}
         <button className='btn-cancel' onClick={onRequestClose}>Cancelar</button>
       </ContainerButtonModal>
