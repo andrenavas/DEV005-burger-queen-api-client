@@ -213,13 +213,6 @@ const Admin = () => {
       });
     }
   }
-  const navigateTo = useNavigate();
-
-  const productsView = () => {
-    console.log('click en order')
-    navigateTo('/adminProducts');
-  };
-
   return (
     <>
       <Background />
@@ -234,7 +227,8 @@ const Admin = () => {
           handleAddWorker={handleAddWorker}
           handleBorrar={handleBorrar}
           handleEditar={handleEditar}
-          productsView={productsView} />
+       
+          />
       </div>
       <ModalApp
         isOpen={modalIsOpenId}

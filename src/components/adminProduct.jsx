@@ -220,11 +220,6 @@ const AdminProducts = () => {
       });
     }
   }
-  const navigateTo = useNavigate();
-  const workersView = () => {
-    navigateTo('/admin');
-  }
-
   return (
     <>
       <Background />
@@ -239,7 +234,6 @@ const AdminProducts = () => {
           handleAddProduct={handleAddProduct}
           handleDeleteProduct={handleDeleteProduct}
           handleEditProduct={handleEditProduct}
-          workersView = {workersView}
            />
       </div>
       <ModalApp

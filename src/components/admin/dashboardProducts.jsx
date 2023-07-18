@@ -22,9 +22,6 @@ const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handle
       <div className='new-container'>
         <div className="container-table">
           <div className='new-container-btn-add'>
-            <div className='container-btn-admin-workers-products'>
-              <Button className="btn btn-admin-workers all" text="Trabajadores" onClick={workersView} />
-            </div>
             <Button className='btn-add-worker all' text={'Producto'} dataTestid={'Testidbtn-ololo'} icon={iconAddProduct} onClick={() => { setShowEditForm(false); handleAddProduct(); }} >
               <FontAwesomeIcon icon={iconDeleteProduct} />
             </Button>

@@ -40,8 +40,9 @@ h1 {
 }
 
 .container-order-logo {
-  width: 82px;
-  height: 82px;
+  font-size: 15px;
+  width: 83px;
+  height: 83px;
   display: flex;
   flex-direction: column;
   justify-content: center;
