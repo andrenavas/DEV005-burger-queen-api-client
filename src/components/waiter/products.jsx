@@ -27,8 +27,14 @@ const Products = ({ handleAddProduct }) => {
     <>
       <div className='container-menu'>
         <div className='container-btn-menu'>
-          <Button dataTestid={'btn_breakfast'} className="btn btn-order all" text="Desayuno" onClick={() => typeMenu("Desayuno")} />
-          <Button dataTestid={'btn_lunch'} className="btn btn-order all" text="Almuerzo/Cena" onClick={() => typeMenu("Almuerzo")} />
+          <Button dataTestid={'btn_breakfast'} 
+          // className="btn-order all" 
+          className={`btn-order all ${selectedMenu === 'Desayuno' ? 'btn-selected' : ''}`}
+          text="Desayuno" onClick={() => typeMenu("Desayuno")} />
+          <Button dataTestid={'btn_lunch'}
+          //  className="btn-order all" 
+          className={`btn-order all ${selectedMenu === 'Almuerzo' ? 'btn-selected' : ''}`}
+          text="Almuerzo/Cena" onClick={() => typeMenu("Almuerzo")} />
         </div>
         {getProductsRequestStatus === 'loading' ? <span>Cargando...</span> : null}
         {getProductsRequestStatus === 'success' && products.length ? (
