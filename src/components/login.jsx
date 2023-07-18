@@ -118,7 +118,7 @@ const Login = () => {
                 {errorMessage ? (<div className='error-message'>{errorMessage}</div>) : ''}
               </div>
               <div className='container-login-button d-flex justify-content-center'>
-                <button type='submit' className='btn btn-primary login-button'>
+                <button type='submit' className='login-button all'>
                   Iniciar Sesión
                 </button>
               </div>
