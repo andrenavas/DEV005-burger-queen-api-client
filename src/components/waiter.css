@@ -40,14 +40,15 @@ h1 {
 }
 
 .container-order-logo {
-  width: 100px;
+  width: 82px;
+  height: 82px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-
-.container-orders-view {
-  width: 200px;
-  display: flex;
+  border-radius: 100px;
+  color: white;
+  background-color: rgba(234, 106, 18, 1) ;
 }
 
 .title {
@@ -150,7 +151,7 @@ h1 {
 .container-menu {
   position: relative;
   background-color: rgba(255, 255, 255, 1);
-  height: 530px;
+  height: 590px;
   width: 85%;
   border-radius: 20px;
   margin-left: 0.5%;
@@ -211,7 +212,7 @@ h1 {
 .card-product {
   background-color: white;
   width: 30%;
-  height: 50%;
+  height: 44%;
   border-radius: 10px;
   border: 1px solid rgba(234, 106, 18, 1);
   padding: 0.5%;

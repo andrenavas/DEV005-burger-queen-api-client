@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import IconoAdmin from '../../assets/img/IconoAdmin.png'
 import BQLogo from '../../assets/img/BQLogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
@@ -15,8 +14,8 @@ const NavAdmin = () => {
     <>
       <section className='section-waiter'>
         <div className='waiter-nav'>
-          <div className='logos'>
-            <img src={IconoAdmin} className='waiterIcon' alt='waiter icon' />
+          <div className='logos'>Admin
+            {/* <img src={IconoAdmin} className='waiterIcon' alt='waiter icon' /> */}
             <h1 className='title-view'> Administrar Trabajadores </h1>
             <div className='container-logos'>
               <img src={BQLogo} className='BQLogo' alt='hours icon' />
