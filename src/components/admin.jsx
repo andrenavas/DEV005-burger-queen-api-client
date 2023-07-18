@@ -159,10 +159,6 @@ const Admin = () => {
     setModalData({
       modalText: '¿Estás seguro que deseas AGREGAR al trabajador?',
       modalBtnText: 'Agregar'
-      // aceptarFn: () => {
-      //   addWorker(worker);
-      //   closeModal();
-      // }
     });
     openModal();
   };
@@ -223,7 +219,6 @@ const Admin = () => {
     console.log('click en order')
     navigateTo('/adminProducts');
   };
-
 
   return (
     <>

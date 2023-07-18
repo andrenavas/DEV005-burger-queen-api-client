@@ -1,22 +1,22 @@
-import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material'
+import { TableContainer, Table, TableHead, TableBody, TableRow } from '@mui/material'
 import { PropTypes } from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPen } from '@fortawesome/free-solid-svg-icons';
 import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 const iconAddWorker = <FontAwesomeIcon icon={faUserPlus} size="l" style={{ color: "FFFF", }} />
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Button } from '../gralComponents/gralComponents';
 
 const iconEditWorker = <FontAwesomeIcon icon={faUserPen} size="2xl" style={{ color: "#1E3050", }} />
 const iconDeleteWorker = <FontAwesomeIcon icon={faUserXmark} size="2xl" style={{ color: "#D11515", }} />
 
 const Dashboard = ({ setShowEditForm, workers, handleAddWorker, handleBorrar, handleEditar, productsView }) => {
-  const [modalData, setModalData] = useState({
-    modalText: '',
-    modalBtnText: '',
-    aceptarFn: () => { }
-  });
+  // const [modalData, setModalData] = useState({
+  //   modalText: '',
+  //   modalBtnText: '',
+  //   aceptarFn: () => { }
+  // });
   return (
     <>
       <div className='new-container'>
@@ -66,6 +66,7 @@ Dashboard.propTypes = {
   workers: PropTypes.array,
   handleAddWorker: PropTypes.func,
   handleBorrar: PropTypes.func,
-  handleEditar: PropTypes.func
+  handleEditar: PropTypes.func,
+  productsView: PropTypes.func
 }
 export default Dashboard

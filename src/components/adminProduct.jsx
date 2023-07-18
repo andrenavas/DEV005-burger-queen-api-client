@@ -110,14 +110,14 @@ const AdminProducts = () => {
       body: JSON.stringify(editProduct),
     })
       .then(() => {
-        setEditProductData.name = '',
-        setEditProductData.type = '',
-        setEditProductData.image = '',
-        setEditProductData.price = '',
-        editProductData.name = '',
-        editProductData.type = '',
-        editProductData.image ='',
-        editProductData.price = ''
+        // setEditProductData.name = '',
+        // setEditProductData.type = '',
+        // setEditProductData.image = '',
+        // setEditProductData.price = '',
+        // editProductData.name = '',
+        // editProductData.type = '',
+        // editProductData.image ='',
+        // editProductData.price = ''
       })
 
   }
@@ -145,25 +145,25 @@ const AdminProducts = () => {
       body: JSON.stringify(newProduct),
     })
       .then(() => {
-        setNewProductData.name = '',
-        setNewProductData.type = '',
-        setNewProductData.image = '',
-        setNewProductData.price = '',
-        newProductData.name ='',
-        newProductData.type ='',
-        newProductData.image ='',
-        newProductData.price = ''
+        setNewProductData({
+          name: '',
+          type: '',
+          image: '',
+          price: ''
+        });
       })
   }
   const handleAddProduct = () => {
     console.log('Abrir el modal');
+    setNewProductData({
+      name: '',
+      type: '',
+      image: '',
+      price: ''
+    });
     setModalData({
       modalText: '¿Estás seguro que deseas AGREGAR un producto?',
       modalBtnText: 'Agregar'
-      // aceptarFn: () => {
-      //   addWorker(worker);
-      //   closeModal();
-      // }
     });
     openModal();
   };
@@ -201,21 +201,29 @@ const AdminProducts = () => {
     if (showEditForm) {
       editProduct(product);
       closeModal();
+      setEditProductData({
+        name: '',
+        type: '',
+        image: '',
+        price: ''
+      });
 
     }
     else {
       addProduct();
       closeModal();
+      setNewProductData({
+        name: '',
+        type: '',
+        image: '',
+        price: ''
+      });
     }
   }
   const navigateTo = useNavigate();
   const workersView = () => {
     navigateTo('/admin');
   }
-  // const productsView = () => {
-  //   console.log('click en order')
-  //   navigateTo('/adminProducts');
-  // };
 
   return (
     <>

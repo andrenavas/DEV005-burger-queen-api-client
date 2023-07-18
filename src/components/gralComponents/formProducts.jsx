@@ -58,12 +58,13 @@ const Form = ({ isEditForm, handleAddEditProduct, newProductData, setNewProductD
 }
 Form.propTypes = {
     isEditForm: PropTypes.bool,
-    handleAddEdit: PropTypes.func,
-    newUserData: PropTypes.shape({
-        email: PropTypes.string,
-        password: PropTypes.string,
-        role: PropTypes.string,
+    handleAddEditProduct: PropTypes.func,
+    newProductData: PropTypes.shape({
+        name: PropTypes.string,
+        image: PropTypes.string,
+        price: PropTypes.string,
+        type: PropTypes.string,
     }),
-    setNewUserData: PropTypes.func
+    setNewProductData: PropTypes.func
 }
 export default Form

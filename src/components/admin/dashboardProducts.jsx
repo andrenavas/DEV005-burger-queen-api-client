@@ -1,10 +1,9 @@
-import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material'
+import { TableContainer, Table, TableHead, TableBody, TableRow } from '@mui/material'
 import { PropTypes } from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
 import { Button } from '../gralComponents/gralComponents';
 import './dashboardProducts.css'
 
@@ -13,11 +12,11 @@ const iconEditProduct = <FontAwesomeIcon icon={faPenToSquare} size="2xl" style={
 const iconDeleteProduct = <FontAwesomeIcon icon={faRectangleXmark} size="2xl" style={{ color: "#D11515", }} />
 
 const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handleDeleteProduct, handleEditProduct, workersView }) => {
-  const [modalData, setModalData] = useState({
-    modalText: '',
-    modalBtnText: '',
-    aceptarFn: () => { }
-  });
+  // const [modalData, setModalData] = useState({
+  //   modalText: '',
+  //   modalBtnText: '',
+  //   aceptarFn: () => { }
+  // });
   return (
     <>
       <div className='new-container'>
@@ -68,9 +67,10 @@ const DashboardProducts = ({ setShowEditForm, products, handleAddProduct, handle
 
 DashboardProducts.propTypes = {
   setShowEditForm: PropTypes.func,
-  workers: PropTypes.array,
-  handleAddWorker: PropTypes.func,
-  handleBorrar: PropTypes.func,
-  handleEditar: PropTypes.func
+  products: PropTypes.array,
+  handleAddProduct: PropTypes.func,
+  handleDeleteProduct: PropTypes.func,
+  handleEditProduct: PropTypes.func,
+  workersView: PropTypes.func
 }
 export default DashboardProducts
