@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/chef/navChef.jsx</title>
+    <title>Code coverage report for components/gralComponents/modalMessageStyles.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/chef</a> navChef.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/gralComponents</a> modalMessageStyles.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.28% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/35</span>
+                <span class='fraction'>34/34</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.28% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/35</span>
+                <span class='fraction'>34/34</span>
             </div>
         
             
@@ -107,72 +107,72 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useNavigate } from 'react-router-dom';
-import IconoChef from '../../assets/img/IconoChef.png'
-import IconoHrs from '../../assets/img/IconoHrs.png'
-import BQLogo from '../../assets/img/BQLogo.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import styled from 'styled-components';
 &nbsp;
-const logoutIcon = &lt;FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{ color: "#db3f0a", }} /&gt;
-&nbsp;
-const NavChef = () =&gt; {
-  const navigateTo = useNavigate();
-  const logout = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    navigateTo('/');</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-  return (
-    &lt;&gt;
-      &lt;section className='section-waiter'&gt;
-        &lt;div className='waiter-nav'&gt;
-          &lt;div className='logos'&gt;
-            &lt;img src={IconoChef} className='waiterIcon' alt='waiter icon' /&gt;
-            &lt;h1&gt; Chefcita / Chefcito &lt;/h1&gt;
-            &lt;div className='container-logos'&gt;
-              &lt;img src={BQLogo} className='BQLogo' alt='hours icon' /&gt;
-              &lt;img src={IconoHrs} className='hrsIcon' alt='hours icon' /&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div className='container-logout' onClick={logout}&gt;
-            {logoutIcon}
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
-    &lt;/&gt;
-  );
+export const customMessageStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        backgroundColor: '#FFFFF',
+        border: '1px solid #ccc',
+        // paddingBottom: '100px',
+        borderRadius: '10px',
+        boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
+        width: '70%',
+        heigth: '800px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    overlay: {
+        backgroundColor: 'rgba(0, 0, 0, 0.2)'
+    }
 };
-export default NavChef</pre></td></tr></table></pre>
+&nbsp;
+export const ContainerButtonModalMessage = styled.div`
+    //background-color: red;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+      `;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-11T14:03:53.706Z
+                at 2023-07-19T14:52:01.352Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
