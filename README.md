@@ -3,6 +3,7 @@
 ## Preambulo
 
 React JS es un potente y popular framework de desarrollo front-end que nos permite construir aplicaciones web de manera eficiente y escalable. Su enfoque basado en componentes y el manejo del estado en tiempo real nos brinda la posibilidad de crear interfaces interactivas y dinámicas. En este proyecto, nos hemos embarcado en la emocionante tarea de construir una interfaz para un restaurante de hamburguesas llamado Burger Queen. Nuestro objetivo es desarrollar una solución que les permita tomar pedidos de manera ordenada y eficiente, mejorando la experiencia tanto para el cliente como para el personal de cocina.
+![Burger-Queen](src\assets\img\BurgerQueen.png)
 
 ## Resumen del proyecto
 
@@ -61,20 +62,31 @@ Para interactuar con la aplicación:
 ).
 - Utilizar alguno de los siguientes usuarios para identificarse:
 
-|  Usuario  mesero          | Password| |  Usuario  chef           | Password| |  Usuario  administrador  | Password| 
-|---------------------------|---------| |--------------------------|---------| |--------------------------|---------|
-| mesero@burgerqueen.com    | 123456  | | admin@burgerqueen.com    | 123456  | | admin@burgerqueen.com    | 123456  |
-
-
+| Usuario                | Contraseña| Rol            |
+|------------------------|-----------|----------------|
+| mesero@burgerqueen.com |   123456  | Mesero         |
+| chef@burgerqueen.com   |   123456  | Chef           |
+| admin@burgerqueen.com  |   123456  | Administrador  |
 
 
 ## Prototipos de alta fidelidad
 
 Para brindar una experiencia visual clara y atractiva, hemos desarrollado prototipos de alta fidelidad que representan la interfaz del sistema. Estos prototipos contienen las interacciones y elementos necesarios para cumplir con las historias de usuario definidas.
 
-A continuación, se presentan los enlaces a los prototipos:
+A continuación, se presentan las imagenes de los prototipos:
 
 - ![Prototipo de alta fidelidad - Login](src/assets/img/PrototypeLogin.png)
 - ![Prototipo de alta fidelidad - Vista Mesero](src/assets/img/PrototypeWaiter.png)
 
-Esperamos que este proyecto sea una oportunidad para aprender y familiarizarnos con React JS, sus conceptos de manejo de estado y desarrollo de interfaces web. Agradecemos la confianza de Burger Queen en nuestro equipo y estamos emocionados de presentarles una solución que optimizará la toma de pedidos y mejorará la experiencia de sus clientes.
+## Interfaz de Usuario
+
+### Producto final
+
+#### Inicio de sesión
+![Interfaz de Usuario - Login](src\assets\img\loginBQ.png)
+
+#### Mesero/Mesera
+![Interfaz de Usuario - Mesero/Mesera](src\assets\img\waiterBQ.png)
+
+#### Chef
+![Interfaz de Usuario - Chef](src\assets\img\chefBQ.png)
