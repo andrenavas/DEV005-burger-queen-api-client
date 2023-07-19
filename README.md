@@ -3,7 +3,8 @@
 ## Preambulo
 
 React JS es un potente y popular framework de desarrollo front-end que nos permite construir aplicaciones web de manera eficiente y escalable. Su enfoque basado en componentes y el manejo del estado en tiempo real nos brinda la posibilidad de crear interfaces interactivas y dinámicas. En este proyecto, nos hemos embarcado en la emocionante tarea de construir una interfaz para un restaurante de hamburguesas llamado Burger Queen. Nuestro objetivo es desarrollar una solución que les permita tomar pedidos de manera ordenada y eficiente, mejorando la experiencia tanto para el cliente como para el personal de cocina.
-![Burger-Queen](src\assets\img\BurgerQueen.png)
+
+- ![Burger-Queen](src\assets\img\BurgerQueen.png)
 
 ## Resumen del proyecto
 
@@ -83,10 +84,10 @@ A continuación, se presentan las imagenes de los prototipos:
 ### Producto final
 
 #### Inicio de sesión
-![Interfaz de Usuario - Login](src\assets\img\loginBQ.png)
+- ![Interfaz de Usuario - Login](src\assets\img\loginBQ.png)
 
 #### Mesero/Mesera
-![Interfaz de Usuario - Mesero/Mesera](src\assets\img\waiterBQ.png)
+- ![Interfaz de Usuario - Mesero/Mesera](src\assets\img\waiterBQ.png)
 
 #### Chef
-![Interfaz de Usuario - Chef](src\assets\img\chefBQ.png)
+- ![Interfaz de Usuario - Chef](src\assets\img\chefBQ.png)
