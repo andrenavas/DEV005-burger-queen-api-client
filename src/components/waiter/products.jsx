@@ -1,54 +1,53 @@
 import { Button } from '../gralComponents/gralComponents';
 import Card from './card';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { getProducts } from '../gralComponents/apiRequest';
 
-
-const Products = ({handleAddProduct}) => {
+const Products = ({ handleAddProduct }) => {
   const [products, setProducts] = useState([]);
   //use State para almacenar las opciones del tipo de menu
-  const [selectedMenu, setSelectedMenu] = useState('')
+  const [selectedMenu, setSelectedMenu] = useState('Desayuno')
+  const [getProductsRequestStatus, setGetProductsRequestStatus] = useState('loading')
   const typeMenu = (selectedType) => {
-    console.log(selectedType)
+    console.log('BUTTON CLICK', selectedType)
     setSelectedMenu(selectedType)
   };
-  //const token = localStorage.getItem('accessToken');
-  //console.log(token);
+  const getProductsContainerTestId = useCallback(() => {
+    if (selectedMenu === 'Desayuno') return 'products_breakfast_container'
+    return 'products_lunch_container'
+  }, [selectedMenu])
+
   useEffect(() => {
-    const token = localStorage.getItem('accessToken');
+    getProducts(setGetProductsRequestStatus, setProducts);
+  }, []);
 
-    fetch('http://localhost:8080/products', {
-
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'authorization': `Bearer ${token}`,
-      }
-    })
-    .then((resp) => resp.json())
-    .then((productsData) => {
-      setProducts(productsData)
-    })
-    .catch(error => console.log(error))
-  },[]);
-
-return (
-  <>
-    <div className='container-menu'>
-      <div className='container-btn-menu'>
-        <Button className="btn btn-primary btn-order" text="Desayuno" onClick={() => typeMenu("Desayuno")}/>
-        <Button className="btn btn-primary btn-order" text="Almuerzo/Cena" onClick={() => typeMenu("Almuerzo")}/>
+  return (
+    <>
+      <div className='container-menu'>
+        <div className='container-btn-menu'>
+          <Button dataTestid={'btn_breakfast'} 
+          // className="btn-order all" 
+          className={`btn-order all ${selectedMenu === 'Desayuno' ? 'btn-selected' : ''}`}
+          text="Desayuno" onClick={() => typeMenu("Desayuno")} />
+          <Button dataTestid={'btn_lunch'}
+          //  className="btn-order all" 
+          className={`btn-order all ${selectedMenu === 'Almuerzo' ? 'btn-selected' : ''}`}
+          text="Almuerzo/Cena" onClick={() => typeMenu("Almuerzo")} />
+        </div>
+        {getProductsRequestStatus === 'loading' ? <span>Cargando...</span> : null}
+        {getProductsRequestStatus === 'success' && products.length ? (
+          <div className='container-products' data-testid={getProductsContainerTestId()}>
+            {products
+              .filter(product => product.type === selectedMenu)
+              .map(product => (<Card key={product.id} product={product} handleAddProduct={handleAddProduct} />))
+            }
+          </div>
+        ) : null}
       </div>
-      <div className='container-products'>
-        {products
-        .filter(product => product.type === selectedMenu) 
-        .map(product => (<Card key={product.id} product={product} handleAddProduct= {handleAddProduct}/>))
-       }
-      </div>
-    </div>
-  </>
-)
+    </>
+  )
 };
 
 Products.propTypes = {

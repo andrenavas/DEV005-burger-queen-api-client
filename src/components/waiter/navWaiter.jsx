@@ -1,48 +1,41 @@
 import { useNavigate } from 'react-router-dom';
-import IconoMesero from '../../assets/img/IconoMesero.png';
-import IconoHrs from '../../assets/img/IconoHrs.png'
 import BQLogo from '../../assets/img/BQLogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import Orders from '../../assets/img/Orders.png'
+import { faRightFromBracket, faBurger } from '@fortawesome/free-solid-svg-icons'
+// import { Button } from '../gralComponents/gralComponents';
 
-
-const logoutIcon = <FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{color:"#db3f0a",}} />
+const logoutIcon = <FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{ color: "#D11515", }} />
+const iconOrdersReady = <FontAwesomeIcon icon={faBurger} size="2xl" style={{ color: "#FFFF", }} />
 
 const NavWaiter = () => {
   const navigateTo = useNavigate();
   const logout = () => {
     navigateTo('/');
-  } 
+  }
+
   const statusOrder = () => {
-    console.log('click en order')
-     navigateTo('/statusorder');
+    // console.log('click en order')
+    navigateTo('/statusorder');
   };
   return (
     <>
-    <section className='section-waiter'>
-    <div className='waiter-nav'>
-      <div className='logos'>
-          <div className='container-logo-order-waiter'>
-              <div className='container-orders-view'>
-                <img src={IconoMesero} className='waiterIcon' alt='waiter icon' />
-                <div className='container-order-logo'onClick={statusOrder}>
-                  <img src={Orders} className='orderLogo' alt='orders icon'/> 
-                </div>
-                 
+      <section className='section-waiter'>
+        <div className='waiter-nav'>
+          <div className='logos'>
+            <div className='container-logo-order-waiter'>
+              <div className='container-order-logo' onClick={statusOrder}>Ordenes{iconOrdersReady}
+              </div>
+            </div>
+            <h1 className='title-view'> Mesera/Mesero </h1>
+            <div className='container-logos'>
+              <img src={BQLogo} className='BQLogo' alt='hours icon' />
+            </div>
+          </div>
+          <div className='container-logout' onClick={logout}>
+            {logoutIcon}
           </div>
         </div>
-        <h1 className='title-view'> Mesera/Mesero </h1>
-        <div className='container-logos'>
-          <img src={BQLogo} className='BQLogo' alt='hours icon'/>
-          <img src={IconoHrs} className='hrsIcon' alt='hours icon'/>
-        </div>
-      </div>
-      <div className='container-logout' onClick={logout}>
-        {logoutIcon}
-      </div>
-    </div>
-  </section>
+      </section>
     </>
   );
 };

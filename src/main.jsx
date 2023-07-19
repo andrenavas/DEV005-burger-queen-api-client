@@ -11,6 +11,8 @@ import ErrorPage from './components/error-page';
 import Waiter from './components/waiter';
 import Chef from './components/chef';
 import StatusOrder from './components/status-order';
+import Admin from './components/admin';
+import AdminProducts from './components/adminProduct'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
   {
     path: "/statusorder",
     element: <StatusOrder/>,
+  },
+  {
+    path: "/admin",
+    element: <Admin/>,
+  },
+  {
+    path: "/adminProducts",
+    element: <AdminProducts/>,
   },
 ]);
 
