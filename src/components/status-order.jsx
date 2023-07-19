@@ -13,7 +13,7 @@ const StatusOrder = () => {
   const changeStatusDelivered = (order) => {
     // console.log('Cambiando status a entregado');
     const token = localStorage.getItem('accessToken');
-    fetch(`http://localhost:8080/orders/${order.id}`, {
+    fetch(`https://burgerqueen-apimock-andreypauli.onrender.com/orders/${order.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const StatusOrder = () => {
   const token = localStorage.getItem('accessToken');
   useEffect(() => {
     function getOrdersReady() {
-      fetch('http://localhost:8080/orders', {
+      fetch('https://burgerqueen-apimock-andreypauli.onrender.com/orders', {
 
         method: 'GET',
         headers: {

@@ -15,7 +15,7 @@ const Admin = () => {
   //variable que se crea al presionar el boton de chef cuando el pedido está listo
   useEffect(() => {
     function getWorkers() {
-      fetch('http://localhost:8080/users', {
+      fetch('https://burgerqueen-apimock-andreypauli.onrender.com/users', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const Admin = () => {
   const deleteWorker = (user) => {
     console.log('eliminar')
     console.log('HOLA', user.id)
-    fetch(`http://localhost:8080/users/${user.id}`, {
+    fetch(`https://burgerqueen-apimock-andreypauli.onrender.com/users/${user.id}`, {
 
       method: 'DELETE',
       headers: {
@@ -98,7 +98,7 @@ const Admin = () => {
       password: user.password,
       role: user.role
     };
-    fetch(`http://localhost:8080/users/${user.id}`, {
+    fetch(`https://burgerqueen-apimock-andreypauli.onrender.com/users/${user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ const Admin = () => {
       password: newUserData.password,
       role: newUserData.role
     };
-    fetch('http://localhost:8080/users', {
+    fetch('https://burgerqueen-apimock-andreypauli.onrender.com/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

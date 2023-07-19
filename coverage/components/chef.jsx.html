@@ -320,7 +320,7 @@ const Chef = () =&gt; {
   //variable que se crea al presionar el boton de chef cuando el pedido está listo
   useEffect(() =&gt; {
     function getOrders() {
-      fetch('http://localhost:8080/orders', {
+      fetch('https://burgerqueen-apimock-andreypauli.onrender.com/orders', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -370,7 +370,7 @@ const Chef = () =&gt; {
 <span class="cstat-no" title="statement not covered" >      status: 'delivery',</span>
 <span class="cstat-no" title="statement not covered" >      dataExit: minutesDiference,</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
-<span class="cstat-no" title="statement not covered" >    fetch(`http://localhost:8080/orders/${order.id}`, {</span>
+<span class="cstat-no" title="statement not covered" >    fetch(`https://burgerqueen-apimock-andreypauli.onrender.com/orders/${order.id}`, {</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >      method: 'PATCH',</span>
 <span class="cstat-no" title="statement not covered" >      headers: {</span>

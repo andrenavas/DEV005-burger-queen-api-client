@@ -1,6 +1,6 @@
 export const getProducts = (setGetProductsRequestStatus, setProducts) => {
   const token = localStorage.getItem('accessToken');  
-  fetch('http://localhost:8080/products', {
+  fetch('https://burgerqueen-apimock-andreypauli.onrender.com/products', {
 
     method: 'GET',
     headers: {

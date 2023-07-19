@@ -13,7 +13,7 @@ const Chef = () => {
   //variable que se crea al presionar el boton de chef cuando el pedido está listo
   useEffect(() => {
     function getOrders() {
-      fetch('http://localhost:8080/orders', {
+      fetch('https://burgerqueen-apimock-andreypauli.onrender.com/orders', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const Chef = () => {
       status: 'delivery',
       dataExit: minutesDiference,
     };
-    fetch(`http://localhost:8080/orders/${order.id}`, {
+    fetch(`https://burgerqueen-apimock-andreypauli.onrender.com/orders/${order.id}`, {
 
       method: 'PATCH',
       headers: {

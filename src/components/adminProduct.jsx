@@ -15,7 +15,7 @@ const AdminProducts = () => {
   //variable que se crea al presionar el boton de chef cuando el pedido está listo
   useEffect(() => {
     function getProducts() {
-      fetch('http://localhost:8080/products', {
+      fetch('https://burgerqueen-apimock-andreypauli.onrender.com/products', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const AdminProducts = () => {
   const deleteProduct = (product) => {
     console.log('eliminar')
     console.log('HOLA', product.id)
-    fetch(`http://localhost:8080/products/${product.id}`, {
+    fetch(`https://burgerqueen-apimock-andreypauli.onrender.com/products/${product.id}`, {
 
       method: 'DELETE',
       headers: {
@@ -101,7 +101,7 @@ const AdminProducts = () => {
       price: product.price,
      
     };
-    fetch(`http://localhost:8080/products/${product.id}`, {
+    fetch(`https://burgerqueen-apimock-andreypauli.onrender.com/products/${product.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ const AdminProducts = () => {
       image: newProductData.image,
       price: newProductData.price
     };
-    fetch('http://localhost:8080/products', {
+    fetch('https://burgerqueen-apimock-andreypauli.onrender.com/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

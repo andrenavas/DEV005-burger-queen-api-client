@@ -84,7 +84,7 @@ const Waiter = () => {
       dataExit: null,
     };
 
-    fetch('http://localhost:8080/orders', {
+    fetch('https://burgerqueen-apimock-andreypauli.onrender.com/orders', {
 
       method: 'POST',
       headers: {

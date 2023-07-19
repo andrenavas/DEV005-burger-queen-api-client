@@ -21,7 +21,7 @@ const Login = () => {
     // console.log(data.email)
     // console.log(data.password)
 
-    fetch('http://localhost:8080/login', {
+    fetch('https://burgerqueen-apimock-andreypauli.onrender.com/login', {
 
       method: 'POST',
       body: JSON.stringify({ email: data.email, password: data.password }), // data can be `string` or {object}!
