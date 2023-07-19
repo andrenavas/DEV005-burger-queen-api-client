@@ -1,5 +1,5 @@
 import './login.css'
-import BQLogo from '../assets/img/BQlogo.png'
+import BQLogo from '../assets/img/BQLogo.png'
 import FondoBQIpad from '../assets/img/FondoBQIpad.png'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
